@@ -315,6 +315,12 @@ function takeMoney() {
 
 Output:
 
+<img width="1586" height="865" alt="1" src="https://github.com/user-attachments/assets/4b142fff-1bdb-4056-baa3-53b80fcbca96" />
+<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/83c2c6c9-2973-48c3-b31d-3a96449901df" />
+<img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/c01ff25f-7094-4e40-9774-58f1801b6971" />
+
+
+
 # Penjelasan
 # 🎁 Fitur Cairin THR - Ramadan Web
 
