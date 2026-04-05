@@ -2,7 +2,7 @@
     <br />
     <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
     <br />
-    <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
+    <h3>MODUL 5 <br> BOOTSTRAP </h3>
     <br />
     <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
     <br />
@@ -34,63 +34,17 @@
 
 ## Dasar Teori
 
-JavaScript merupakan bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web. JavaScript berjalan di sisi client (browser) dan memungkinkan halaman web merespons aksi pengguna seperti klik, input, maupun perubahan elemen secara dinamis.
+Bootstrap merupakan **framework CSS** yang digunakan untuk mempercepat proses pengembangan tampilan web dengan menyediakan kumpulan class siap pakai. Dengan Bootsrap, developer tidak perlu menulis styling dari nol karena sudah tersedia komponen seperti grid system, navbar, card, button, utilities, yang dapat langsung digunakan untuk membangun antarmuka yang konsisten dan responsif.
 
-Dalam pengembangan web, JavaScript bekerja bersama HTML dan CSS dengan peran yang berbeda, yaitu HTML sebagai struktur, CSS sebagai pengendali logika serta interaksi. Dengan JavaScript, elemen HTML dapat dimanipulasi secara langsung melalui DOM (Document Object Model), seperti mengubah isi, atribut, maupun gaya satu elemen.
+Salah satu konsep utama dalam Bootstrap adalah **grid system**, yaitu sistem layout berbasis baris (`row`) dan kolom (`col`) yang memudahkan pengaturan posisi elemen secara fleksibel dan otomatis menyesuaikan berbagai ukuran layar. Hal ini menjadikan tampilan web lebih responsif tanpa perlu penulisan CSS tambahan.
 
-Salah satu konsep penting dalam JavaScript adalah **event handling**, yaitu kemampuan untuk menangani berbagai aksi pengguna seperti `click`, `submit`, dan `hover`. Event ini digunakan untuk menjalankan fungsi tertentu sehingga halaman web menjadi lebih responsif dan interaktif.
+Bootstrap juga menyediakan berbagai **komponen UI** seperti navbar, card, button, dan alert yang dapat digunakan dengan hanya menambahkan class tertentu pada elemen HTML. Selain itu, terdapat **utility class** seperti pengaturan warna (`bd-*`, `text-*`), spacing (`m-*`, `p-*`), serta alignment yang membantu mempercepat proses styling tanpa perlu membuat file CSS terpisah.
 
-Selain JavaScript, terdapat library bernama **jQuery** yang dikembangkan oleh Resig pada tahun 2006 untuk menyederhanakan penulisan kode JavaScript. jQuery memungkinkan manipulasi elemen HTML dilakukan dengan sintaks yang lebih ringkas dan efisien.
-
-Beberapa fitur utama jQuery meliputi kemampuan untuk melakukan manipulasi DOM dengan selector yang sederhana, menangani event dengan lebih mudah, mendukung teknologi AJAX untuk komunikasi data secara asynchronous, serta menyediakan berbagai animasi bawaan yang dapat digunakan untuk halaman web. Selain itu, jQuery memiliki ukuran file yang relatif ringan sehingga tetap efisien untuk digunakan dalam pengembangan aplikasi web.
-
-Dengan kombinasi JavaScript dan jQuery, proses pengembangan halaman web menjadi lebih cepat, terstruktur, dan mampu menghasilkan interaksi yang lebih dinamis serta meningkatkan pengalaman pengguna.
+Dalam penggunaannya, Bootstrap biasanya diintegrasikan melalui **CDN (Content Delivery Network)** sehingga dapat langsung digunakan tanpa instalasi. Dengan pendekatan ini, pengembangan halaman menjadi lebih cepat, terstruktur, dan efisien, terutama untuk membangun tampilan modern berbasis komponen.
 
 ## Tugas 4: Mode Suci (Edisi Ramadan)
 
 ### 1. Source Code
-
-```javascript
-class THRController {
-    constructor() {
-        this.thrButton = document.getElementById('thrButton');
-        
-        this.thrModal = new bootstrap.Modal(document.getElementById('thrModal'));
-        
-        this.giftIcon = document.getElementById('giftIcon');
-
-        this.init();
-    }
-
-    init() {
-        this.thrButton.addEventListener('click', () => this.handleClick());
-    }
-
-    handleClick() {
-        this.thrButton.style.transform = 'scale(0.95)';
-
-        setTimeout(() => {
-            this.thrButton.style.transform = 'scale(1)';
-            this.thrModal.show();
-            this.animateGiftIcon();
-        }, 100);
-    }
-
-    animateGiftIcon() {
-        this.giftIcon.style.animation = 'none';
-
-        setTimeout(() => {
-            this.giftIcon.style.animation = 'bounce 0.6s ease-in-out 3';
-        }, 10);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    new THRController();
-});
-```
-
-**Kode Lengkap:** [assets/js/thr.js](assets/js/thr.js)
 
 ```html
 ...
