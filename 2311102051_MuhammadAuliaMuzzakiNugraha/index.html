@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masjid Al-Hikmah - Mode Suci Ramadan</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body class="bg-body-tertiary text-dark">
+    <button
+      id="thrSurpriseBtn"
+      class="btn btn-warning position-fixed bottom-0 end-0 m-3 rounded-pill px-4 py-2 fw-semibold shadow-lg z-3"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#thrModal"
+    >
+      <i class="bi bi-cash-coin me-2"></i>Surprise THR
+    </button>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#">Masjid Al-Hikmah</a>
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navRamadan"
+          aria-controls="navRamadan"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navRamadan">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="#jadwal">Jadwal</a></li>
+            <li class="nav-item"><a class="nav-link" href="#program">Program</a></li>
+            <li class="nav-item"><a class="nav-link" href="#donasi">Donasi</a></li>
+            <li class="nav-item ms-lg-2">
+              <a href="#donasi" class="btn btn-light rounded-pill px-4 fw-semibold text-primary">Infak Sekarang</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="beranda" class="py-5">
+      <div class="container py-4">
+        <div class="row g-4 g-lg-5 align-items-center">
+          <div class="col-lg-7">
+            <div class="card border-0 shadow-lg h-100">
+              <div class="card-body p-4 p-lg-5">
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge rounded-pill text-bg-warning text-dark px-3 py-2">Mode Suci</span>
+                <span class="badge rounded-pill text-bg-primary px-3 py-2">Edisi Ramadan 1447 H</span>
+              </div>
+              <h1 class="display-5 fw-bold text-primary lh-1 mb-3">
+                Sambut Ramadan dengan Hati yang Lebih Indah<br>di Masjid Al-Hikmah
+              </h1>
+
+              <div class="d-flex flex-wrap gap-3 mb-4">
+                <a href="#jadwal" class="btn btn-primary btn-lg rounded-pill px-4 py-3 fw-semibold">
+                  <i class="bi bi-stars me-2"></i>Lihat Agenda Ramadan
+                </a>
+                <a href="#program" class="btn btn-outline-primary btn-lg rounded-pill px-4 py-3 fw-semibold">
+                  <i class="bi bi-grid-1x2-fill me-2"></i>Eksplor Program
+                </a>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 bg-light">
+                    <div class="card-body">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-primary-subtle text-primary p-3 mb-3 fs-4">
+                      <i class="bi bi-moon-stars-fill"></i>
+                    </div>
+                    <h6 class="fw-bold mb-1">Tarawih Premium</h6>
+                    <p class="small text-secondary mb-0">Nuansa khusyuk, tertata, dan teduh setiap malam.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 bg-light">
+                    <div class="card-body">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-warning-subtle text-warning p-3 mb-3 fs-4">
+                      <i class="bi bi-book-half"></i>
+                    </div>
+                    <h6 class="fw-bold mb-1">Tadarus Harian</h6>
+                    <p class="small text-secondary mb-0">Rapi, interaktif, dan ramah untuk semua jamaah.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 bg-light">
+                    <div class="card-body">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-info-subtle text-info p-3 mb-3 fs-4">
+                      <i class="bi bi-heart-pulse-fill"></i>
+                    </div>
+                    <h6 class="fw-bold mb-1">Sedekah Aktif</h6>
+                    <p class="small text-secondary mb-0">Amanah, elegan, dan mudah diakses jamaah.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+              <div class="card border-0 shadow-lg h-100">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="d-flex justify-content-between align-items-start mb-4">
+                    <div>
+                      <span class="badge text-bg-primary rounded-pill px-3 py-2 mb-3">Live Waktu Ramadan</span>
+                      <h3 class="fw-bold text-primary mb-1">Waktu Ibadah Hari Ini</h3>
+                    </div>
+                    <div class="rounded-circle bg-warning-subtle text-warning p-3 fs-4">
+                      <i class="bi bi-lamp-fill"></i>
+                    </div>
+                  </div>
+
+                  <div class="d-grid gap-3">
+                    <div class="list-group-item rounded-4 border d-flex justify-content-between align-items-center py-3 px-4 bg-primary-subtle">
+                      <div>
+                        <div class="fw-semibold text-primary">Imsak</div>
+                        <small class="text-secondary">Persiapan sahur terbaik</small>
+                      </div>
+                      <span class="badge rounded-pill text-bg-primary fs-6 px-3 py-2">04:25</span>
+                    </div>
+                    <div class="list-group-item rounded-4 border d-flex justify-content-between align-items-center py-3 px-4 bg-white">
+                      <div>
+                        <div class="fw-semibold text-primary">Subuh</div>
+                        <small class="text-secondary">Awali hari dengan cahaya iman</small>
+                      </div>
+                      <span class="badge rounded-pill text-bg-info fs-6 px-3 py-2">04:35</span>
+                    </div>
+                    <div class="list-group-item rounded-4 border d-flex justify-content-between align-items-center py-3 px-4 bg-white">
+                      <div>
+                        <div class="fw-semibold text-primary">Dzuhur</div>
+                        <small class="text-secondary">Istirahat sejenak untuk shalat berjamaah</small>
+                      </div>
+                      <span class="badge rounded-pill text-bg-success fs-6 px-3 py-2">12:05</span>
+                    </div>
+                    <div class="list-group-item rounded-4 border d-flex justify-content-between align-items-center py-3 px-4 bg-white">
+                      <div>
+                        <div class="fw-semibold text-primary">Ashar</div>
+                        <small class="text-secondary">Waktu untuk beraktivitas dengan penuh semangat</small>
+                      </div>
+                      <span class="badge rounded-pill text-bg-success fs-6 px-3 py-2">15:05</span>
+                    </div>
+                    <div class="list-group-item rounded-4 border d-flex justify-content-between align-items-center py-3 px-4 bg-white">
+                      <div>
+                        <div class="fw-semibold text-primary">Maghrib</div>
+                        <small class="text-secondary">Momen berbuka penuh syukur</small>
+                      </div>
+                      <span class="badge rounded-pill text-bg-warning text-dark fs-6 px-3 py-2">17:58</span>
+                    </div>
+                    <div class="list-group-item rounded-4 border d-flex justify-content-between align-items-center py-3 px-4 bg-primary-subtle">
+                      <div>
+                        <div class="fw-semibold text-primary">Isya & Tarawih</div>
+                        <small class="text-secondary">Malam penuh ketenangan</small>
+                      </div>
+                      <span class="badge rounded-pill text-bg-primary fs-6 px-3 py-2">19:10</span>
+                    </div>
+                  </div>
+
+                  <div class="alert border-0 rounded-4 mt-4 mb-0 bg-warning-subtle text-dark">
+                    <strong>Ramadan Kareem.</strong> Buat lebih bermakna dengan mengikuti semua kegiatan dan program kami selama bulan suci ini!
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container"><hr class="my-0 border-primary opacity-25" /></div>
+
+    <section id="jadwal" class="py-5">
+      <div class="container py-3">
+        <div class="text-center mb-5">
+          <span class="badge rounded-pill text-bg-primary px-3 py-2 mb-3">Agenda Harian</span>
+          <h2 class="display-6 fw-bold text-primary mb-2">Jadwal Kegiatan Ramadan</h2>
+          <p class="text-secondary mb-0">Disusun dengan layout card modern yang ringan dan nyaman dilihat.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <div class="card h-100 rounded-4 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <span class="badge text-bg-primary rounded-pill px-3 py-2">Pagi</span>
+                  <i class="bi bi-sunrise-fill fs-4 text-primary"></i>
+                </div>
+                <h5 class="fw-bold">Kuliah Subuh</h5>
+                <p class="text-secondary">Kajian inspiratif dengan tampilan section yang lebih clean dan eksklusif.</p>
+                <div class="small text-primary fw-semibold">05:00 - 06:00</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="card h-100 rounded-4 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <span class="badge text-bg-info rounded-pill px-3 py-2">Sore</span>
+                  <i class="bi bi-book-half fs-4 text-info"></i>
+                </div>
+                <h5 class="fw-bold">Tadarus & Tahsin</h5>
+                <p class="text-secondary">Aktivitas sore dengan sentuhan visual segar dan tertata.</p>
+                <div class="small text-primary fw-semibold">16:30 - 17:30</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="card h-100 rounded-4 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <span class="badge text-bg-warning text-dark rounded-pill px-3 py-2">Petang</span>
+                  <i class="bi bi-cup-hot-fill fs-4 text-warning"></i>
+                </div>
+                <h5 class="fw-bold">Buka Puasa Bersama</h5>
+                <p class="text-secondary">Kebersamaan hangat dengan komposisi UI lebih modern dan hidup.</p>
+                <div class="small text-primary fw-semibold">17:40 - 18:10</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <div class="card h-100 rounded-4 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <span class="badge text-bg-success rounded-pill px-3 py-2">Malam</span>
+                  <i class="bi bi-moon-stars-fill fs-4 text-success"></i>
+                </div>
+                <h5 class="fw-bold">Isya, Tarawih & Witir</h5>
+                <p class="text-secondary">Nuansa malam lebih premium dengan hierarchy yang jelas.</p>
+                <div class="small text-primary fw-semibold">19:10 - 20:30</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="program" class="py-5">
+      <div class="container py-3">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body p-4 p-lg-5">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                <div>
+                  <span class="badge rounded-pill text-bg-primary px-3 py-2 mb-3">Program Unggulan</span>
+                  <h2 class="fw-bold text-primary mb-0">Kegiatan Ramadan Masjid Al-Hikmah</h2>
+                </div>
+                <a href="#" class="btn btn-outline-primary rounded-pill px-4 fw-semibold">Semua Program</a>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="card h-100 border-primary-subtle bg-light">
+                    <div class="card-body">
+                    <h5 class="fw-bold mb-2"><i class="bi bi-people-fill text-primary me-2"></i>Kajian Keluarga</h5>
+                    <p class="text-secondary mb-0">Materi yang menenangkan dan relevan dengan kebutuhan keluarga Muslim masa kini.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-primary-subtle bg-light">
+                    <div class="card-body">
+                    <h5 class="fw-bold mb-2"><i class="bi bi-book-half text-primary me-2"></i>Pesantren Kilat</h5>
+                    <p class="text-secondary mb-0">Belajar akhlak dan Al-Qur'an dengan atmosfer modern yang tetap religius.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-primary-subtle bg-light">
+                    <div class="card-body">
+                    <h5 class="fw-bold mb-2"><i class="bi bi-gift-fill text-primary me-2"></i>Santunan Dhuafa</h5>
+                    <p class="text-secondary mb-0">Program berbagi yang ditampilkan lebih percaya diri dan penuh empati.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-primary-subtle bg-light">
+                    <div class="card-body">
+                    <h5 class="fw-bold mb-2"><i class="bi bi-stars text-primary me-2"></i>I'tikaf 10 Malam</h5>
+                    <p class="text-secondary mb-0">Area fokus spiritual untuk mengejar Lailatul Qadar dengan kesan elegan.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card border-0 rounded-4 h-100 text-bg-primary shadow-sm">
+              <div class="card-body p-4 p-lg-5 d-flex flex-column justify-content-between">
+                <div>
+                  <span class="badge text-bg-light text-primary rounded-pill px-3 py-2 mb-3">Inspirasi</span>
+                  <h3 class="fw-bold mb-3">"Ramadan adalah saat terbaik untuk memperindah hati dan amal."</h3>
+                  <p class="text-white-50 mb-4">Kebaikan sangat berarti dalam menjalani bulan suci ini.</p>
+                </div>
+                <div class="d-grid gap-3">
+                  <button class="btn btn-light rounded-pill btn-lg fw-semibold text-primary">Gabung Kajian</button>
+                  <button class="btn btn-outline-light rounded-pill btn-lg">Lihat Detail</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="donasi" class="py-5">
+      <div class="container py-3">
+        <div class="card border-0 rounded-4 overflow-hidden shadow-lg">
+          <div class="card-body p-4 p-lg-5">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-6">
+                <span class="badge rounded-pill text-bg-warning text-dark px-3 py-2 mb-3">Aksi Kebaikan</span>
+                <h2 class="fw-bold text-primary mb-3">Infak Ramadan</h2>
+                <p class="text-secondary mb-4">
+                  Bantu kami menyebarkan keberkahan Ramadan dengan donasi yang amanah, transparan, dan mudah diakses. Setiap kontribusi akan sangat berarti untuk mendukung program sosial dan keagamaan kami selama bulan suci ini.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge text-bg-primary rounded-pill px-3 py-2">Ifthar Jamaah</span>
+                  <span class="badge text-bg-info rounded-pill px-3 py-2">Santunan Yatim</span>
+                  <span class="badge text-bg-success rounded-pill px-3 py-2">Operasional</span>
+                  <span class="badge text-bg-warning text-dark rounded-pill px-3 py-2">Wakaf Qur'an</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="p-4 rounded-4 bg-primary text-white shadow">
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4 class="fw-bold mb-0"><i class="bi bi-bank2 me-2"></i>Donasi Sekarang</h4>
+                  </div>
+                  <div class="list-group gap-3 mb-4">
+                    <div class="list-group-item border-0 rounded-4 d-flex justify-content-between align-items-center bg-white bg-opacity-10 text-white py-3 px-4">
+                      <span>Bank Syariah</span>
+                      <strong>1289 2312 11</strong>
+                    </div>
+                    <div class="list-group-item border-0 rounded-4 d-flex justify-content-between align-items-center bg-white bg-opacity-10 text-white py-3 px-4">
+                      <span>Atas Nama</span>
+                      <strong>Masjid Al-Hikmah</strong>
+                    </div>
+                    <div class="list-group-item border-0 rounded-4 d-flex justify-content-between align-items-center bg-white bg-opacity-10 text-white py-3 px-4">
+                      <span>Konfirmasi</span>
+                      <strong>0812-3456-7890</strong>
+                    </div>
+                  </div>
+                  <div class="d-grid gap-3">
+                    <button class="btn btn-light rounded-pill btn-lg fw-semibold text-primary">
+                      <i class="bi bi-send-fill me-2"></i>Salurkan Donasi
+                    </button>
+                    <button class="btn btn-outline-light rounded-pill btn-lg">Hubungi Panitia</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-4 pb-5 bg-primary text-white mt-4">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-1">Masjid Al-Hikmah</h5>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <div class="d-flex justify-content-md-end gap-3 fs-4">
+              <i class="bi bi-facebook"></i>
+              <i class="bi bi-instagram"></i>
+              <i class="bi bi-youtube"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="modal fade"
+      id="thrModal"
+      tabindex="-1"
+      aria-labelledby="thrModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+          <div class="modal-header bg-success text-white">
+            <h5 id="thrModalLabel" class="modal-title fw-bold">
+              <i class="bi bi-wallet2 me-2"></i>Rezeki Dadakan
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-4 p-lg-5 text-center">
+            <span
+              id="thrStatusBadge"
+              class="badge text-bg-warning rounded-pill px-3 py-2 mb-3"
+            >
+              Memproses transfer THR...
+            </span>
+            <h2 class="fw-bold text-success mb-2">Selamat, Anda mendapatkan THR!</h2>
+            <p class="text-secondary mb-4">
+              Berasa cair seketika. Semoga rezekinya berkah, lancar, dan bikin senyum lebar.
+            </p>
+
+            <div class="card border-success-subtle bg-success-subtle mb-4">
+              <div class="card-body py-3">
+                <div class="small text-uppercase fw-semibold text-secondary mb-1">Simulasi THR</div>
+                <p id="thrAmount" class="display-6 fw-bold text-success mb-0">Rp 0</p>
+            </div>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+              <span class="badge text-bg-primary rounded-pill px-3 py-2">Ifthar Jamaah</span>
+              <span class="badge text-bg-info rounded-pill px-3 py-2">Santunan Yatim</span>
+              <span class="badge text-bg-success rounded-pill px-3 py-2">Operasional Masjid</span>
+            </div>
+
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button id="rerollThrBtn" type="button" class="btn btn-outline-success rounded-pill px-4 fw-semibold">
+                <i class="bi bi-arrow-repeat me-2"></i>Acak Lagi
+              </button>
+              <button type="button" class="btn btn-success rounded-pill px-4 fw-semibold" data-bs-dismiss="modal">
+                <i class="bi bi-stars me-2"></i>Alhamdulillah!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const thrModal = document.getElementById("thrModal");
+      const thrAmount = document.getElementById("thrAmount");
+      const thrStatusBadge = document.getElementById("thrStatusBadge");
+      const rerollThrBtn = document.getElementById("rerollThrBtn");
+
+      const nominalPool = [750000, 900000, 1100000, 1250000, 1500000, 2000000];
+
+      function formatRupiah(value) {
+        return new Intl.NumberFormat("id-ID").format(value);
+      }
+
+      function animateThrAmount(target) {
+        const duration = 1500;
+        const startTime = performance.now();
+
+        function frame(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 4);
+          const currentValue = Math.floor(target * eased);
+
+          thrAmount.textContent = "Rp " + formatRupiah(currentValue);
+
+          if (progress < 1) {
+            requestAnimationFrame(frame);
+          }
+        }
+
+        requestAnimationFrame(frame);
+      }
+
+      function runThrSimulation() {
+        if (!thrAmount || !thrStatusBadge) {
+          return;
+        }
+
+        const target = nominalPool[Math.floor(Math.random() * nominalPool.length)];
+
+        thrAmount.textContent = "Rp 0";
+        thrStatusBadge.textContent = "Memproses transfer THR...";
+        thrStatusBadge.className = "badge text-bg-warning rounded-pill px-3 py-2 mb-3";
+
+        animateThrAmount(target);
+
+        window.setTimeout(function () {
+          thrStatusBadge.textContent = "Transfer berhasil";
+          thrStatusBadge.className = "badge text-bg-success rounded-pill px-3 py-2 mb-3";
+        }, 900);
+      }
+
+      if (thrModal) {
+        thrModal.addEventListener("shown.bs.modal", function () {
+          runThrSimulation();
+        });
+      }
+
+      if (rerollThrBtn) {
+        rerollThrBtn.addEventListener("click", function () {
+          runThrSimulation();
+        });
+      }
+    </script>
+  </body>
+</html>
