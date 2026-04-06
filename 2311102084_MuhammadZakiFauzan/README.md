@@ -10,9 +10,9 @@
   <br />
   <h3>Disusun Oleh :</h3>
   <p>
-    <strong>Rasyid Nafsyarie</strong>
+    <strong>Muhammad Zaki Fauzan</strong>
     <br>
-    <strong>2311102011</strong>
+    <strong>2311102084</strong>
     <br>
     <strong>S1 IF-11-REG05</strong>
   </p>
@@ -57,7 +57,6 @@ Bootstrap merupakan framework open-source berbasis HTML, CSS, dan JavaScript yan
             background: linear-gradient(135deg, #0f5132 0%, #198754 100%);
             min-height: 100vh;
         }
-        /* Efek hover khusus untuk tombol THR agar lebih interaktif */
         .btn-thr {
             transition: transform 0.3s, box-shadow 0.3s;
         }
