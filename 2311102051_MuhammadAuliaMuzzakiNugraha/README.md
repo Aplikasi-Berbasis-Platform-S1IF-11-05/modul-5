@@ -89,48 +89,6 @@ Bootstrap adalah framework front-end berbasis HTML, CSS, dan JavaScript yang dig
 ```
 🔗 [Klik di sini untuk membuka file `index.html`](./index.html)
 
-### Source code - css
-
-```css
-:root {
-  --bs-primary: #0d6efd;
-  --ramadan-deep: #0b3d91;
-  --ramadan-text: #0a2540;
-  --ramadan-muted: #4a6b8a;
-  --ramadan-shadow: 0 10px 40px rgba(4, 24, 64, 0.18);
-}
-
-body {
-  min-height: 100vh;
-  color: var(--ramadan-text);
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(255, 255, 255, 0.6),
-      transparent 30%
-    ),
-    radial-gradient(
-      circle at top right,
-      rgba(255, 221, 87, 0.2),
-      transparent 24%
-    ),
-    linear-gradient(135deg, #eef5ff 0%, #dcecff 40%, #cfe3ff 100%);
-}
-
-.text-secondary {
-  color: var(--ramadan-muted) !important;
-}
-
-.mica-panel {
-  background: rgba(13, 61, 145, 0.75) !important;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow: var(--ramadan-shadow);
-}
-```
-
-
 
 Output:
 <img src="./assets/task1.png" alt="preview" style="width:100%; max-width:900px;">
