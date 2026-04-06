@@ -1,0 +1,701 @@
+<div align="center">
+  <br />
+  <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
+  <br />
+  <h3>MODUL 5 <br> Bootstrap + JavaScript </h3>
+  <br />
+  <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
+  <br />
+  <br />
+  <br />
+  <h3>Disusun Oleh :</h3>
+  <p>
+    <strong>Grashela Ayudia Prameswari</strong>
+    <br>
+    <strong>2311102318</strong>
+    <br>
+    <strong>S1 IF-11-REG05</strong>
+  </p>
+  <br />
+  <h3>Dosen Pengampu :</h3>
+  <p>
+    <strong>Dedi Agung Prabowo, S.Kom., M.Kom</strong>
+  </p>
+  <br />
+  <br />
+  <h4>Asisten Praktikum :</h4>
+  <strong>Apri Pandu Wicaksono </strong>
+  <br>
+  <strong>Hamka Zaenul Ardi</strong>
+  <br />
+  <h3>LABORATORIUM HIGH PERFORMANCE <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2026 </h3>
+</div>
+
+<hr>
+
+# Dasar Teori
+JavaScript merupakan bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web. Dengan JavaScript, elemen-elemen HTML dapat dimanipulasi secara dinamis, mulai dari mengubah konten, menambahkan animasi, hingga merespons aksi pengguna seperti klik, hover, dan input data.
+
+Dalam pengembangan web modern, JavaScript sering dikombinasikan dengan Bootstrap untuk menciptakan pengalaman pengguna yang lebih kaya. Bootstrap sendiri menyediakan komponen interaktif seperti modal, collapse, dan carousel yang memerlukan JavaScript (melalui Bootstrap JS Bundle) untuk dapat berfungsi. Selain itu, pengembang juga dapat menulis JavaScript kustom untuk menambahkan fitur-fitur unik yang tidak tersedia secara bawaan di Bootstrap.
+
+Beberapa konsep JavaScript yang umum digunakan dalam pengembangan web antara lain DOM manipulation untuk mengakses dan mengubah elemen HTML, event listener untuk merespons interaksi pengguna, animasi menggunakan CSS transitions dan JavaScript timing functions, serta penggunaan template literals dan arrow functions dari ES6. Dengan menggabungkan Bootstrap dan JavaScript, pengembang dapat membangun halaman web yang tidak hanya responsif dan rapi, tetapi juga interaktif dan menarik.
+
+# Tugas 5
+## 1. Source Kode HTML
+```html
+<!-- 2311102318 -->
+<!-- Grashela Ayudia Prameswari -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Mubarak</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">
+                <i class="bi bi-moon-stars-fill me-2"></i>Ramadan Mubarak
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#beranda">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aktivitas">Aktivitas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#jadwal">Jadwal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#doa">Doa</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="container-fluid bg-dark text-center py-5">
+        <div class="container py-5">
+            <p class="fs-1">&#127769;</p>
+            <h1 class="display-3 fw-bold text-warning mb-3">Selamat Menjalankan Ibadah Puasa</h1>
+            <p class="lead text-light-emphasis fs-5 mb-4">
+                Ramadan 1447 H &mdash; Semoga bulan suci ini membawa ketenangan hati,
+                keberkahan rezeki, dan ampunan dari Allah SWT.
+            </p>
+            <a href="#aktivitas" class="btn btn-warning btn-lg fw-semibold shadow">
+                <i class="bi bi-arrow-down-circle me-2"></i>Jelajahi
+            </a>
+        </div>
+    </section>
+
+    <!-- Aktivitas Ramadan -->
+    <section id="aktivitas" class="container py-5">
+        <h2 class="text-center fw-bold text-warning mb-2">Aktivitas Ramadan</h2>
+        <p class="text-center text-secondary mb-5">Kegiatan utama selama bulan suci Ramadan</p>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-success text-light shadow-lg h-100 text-center border-0 rounded-4">
+                    <div class="card-body py-5">
+                        <i class="bi bi-sunrise fs-1 mb-3 d-block"></i>
+                        <h5 class="card-title fw-bold">Sahur</h5>
+                        <p class="card-text">Bangun di sepertiga malam untuk makan sahur dan berdoa sebelum memulai puasa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-warning text-dark shadow-lg h-100 text-center border-0 rounded-4">
+                    <div class="card-body py-5">
+                        <i class="bi bi-book fs-1 mb-3 d-block"></i>
+                        <h5 class="card-title fw-bold">Tadarus</h5>
+                        <p class="card-text">Membaca dan mentadabburi Al-Quran untuk meningkatkan keimanan dan ketaqwaan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-success text-light shadow-lg h-100 text-center border-0 rounded-4">
+                    <div class="card-body py-5">
+                        <i class="bi bi-mosque fs-1 mb-3 d-block"></i>
+                        <h5 class="card-title fw-bold">Tarawih</h5>
+                        <p class="card-text">Menunaikan shalat tarawih berjamaah di masjid untuk menambah pahala.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card bg-warning text-dark shadow-lg h-100 text-center border-0 rounded-4">
+                    <div class="card-body py-5">
+                        <i class="bi bi-cup-hot fs-1 mb-3 d-block"></i>
+                        <h5 class="card-title fw-bold">Berbuka</h5>
+                        <p class="card-text">Menikmati waktu berbuka puasa dengan penuh rasa syukur bersama keluarga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jadwal Imsakiyah -->
+    <section id="jadwal" class="container py-5">
+        <h2 class="text-center fw-bold text-warning mb-2">Jadwal Imsakiyah</h2>
+        <p class="text-center text-secondary mb-5">Contoh jadwal imsakiyah wilayah Purwokerto</p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped table-hover align-middle text-center shadow rounded-4 overflow-hidden">
+                        <thead class="table-success text-dark">
+                            <tr>
+                                <th>Waktu</th>
+                                <th>Jam</th>
+                                <th>Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-semibold">Imsak</td>
+                                <td>04:15</td>
+                                <td><span class="badge bg-success">Mulai berpuasa</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Subuh</td>
+                                <td>04:25</td>
+                                <td><span class="badge bg-info text-dark">Shalat Subuh</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Dzuhur</td>
+                                <td>11:50</td>
+                                <td><span class="badge bg-info text-dark">Shalat Dzuhur</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Ashar</td>
+                                <td>15:10</td>
+                                <td><span class="badge bg-info text-dark">Shalat Ashar</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Maghrib</td>
+                                <td>17:45</td>
+                                <td><span class="badge bg-warning text-dark">Berbuka puasa</span></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-semibold">Isya</td>
+                                <td>18:55</td>
+                                <td><span class="badge bg-secondary">Shalat Isya & Tarawih</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doa Ramadan -->
+    <section id="doa" class="container py-5">
+        <h2 class="text-center fw-bold text-warning mb-2">Doa Harian Ramadan</h2>
+        <p class="text-center text-secondary mb-5">Doa-doa penting selama bulan Ramadan</p>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card bg-dark border border-success shadow h-100 rounded-4">
+                    <div class="card-header bg-success text-light fw-bold text-center rounded-top-4">
+                        <i class="bi bi-star-fill me-2"></i>Doa Niat Puasa
+                    </div>
+                    <div class="card-body text-center py-4">
+                        <p class="fs-4 fw-bold text-warning mb-3" dir="rtl">
+                            نَوَيْتُ صَوْمَ غَدٍ عَنْ أَدَاءِ فَرْضِ شَهْرِ رَمَضَانَ هٰذِهِ السَّنَةِ لِلّٰهِ تَعَالٰى
+                        </p>
+                        <p class="fst-italic text-light">
+                            "Nawaitu shauma ghadin 'an adaa-i fardhi syahri ramadhaana haadzihis sanati lillaahi ta'aalaa."
+                        </p>
+                        <p class="text-secondary">
+                            Artinya: Saya niat berpuasa esok hari untuk menunaikan fardhu di bulan Ramadan tahun ini karena Allah Ta'ala.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card bg-dark border border-warning shadow h-100 rounded-4">
+                    <div class="card-header bg-warning text-dark fw-bold text-center rounded-top-4">
+                        <i class="bi bi-star-fill me-2"></i>Doa Berbuka Puasa
+                    </div>
+                    <div class="card-body text-center py-4">
+                        <p class="fs-4 fw-bold text-warning mb-3" dir="rtl">
+                            اَللّٰهُمَّ لَكَ صُمْتُ وَبِكَ اٰمَنْتُ وَعَلٰى رِزْقِكَ أَفْطَرْتُ
+                        </p>
+                        <p class="fst-italic text-light">
+                            "Allahumma laka shumtu wa bika aamantu wa 'alaa rizqika afthartu."
+                        </p>
+                        <p class="text-secondary">
+                            Artinya: Ya Allah, karena-Mu aku berpuasa, kepada-Mu aku beriman, dan dengan rezeki-Mu aku berbuka.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Motivasi -->
+    <section class="container py-5">
+        <h2 class="text-center fw-bold text-warning mb-5">Motivasi Ramadan</h2>
+
+        <div id="carouselMotivasi" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselMotivasi" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselMotivasi" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselMotivasi" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner rounded-4 shadow-lg">
+                <div class="carousel-item active">
+                    <div class="bg-success text-center py-5 px-3">
+                        <div class="py-5">
+                            <i class="bi bi-chat-quote fs-1 text-warning mb-3 d-block"></i>
+                            <blockquote class="blockquote fs-4 text-light">
+                                "Barangsiapa berpuasa di bulan Ramadan karena iman dan mengharap pahala, maka diampuni dosa-dosanya yang telah lalu."
+                            </blockquote>
+                            <figcaption class="blockquote-footer text-warning mt-3">
+                                HR. Bukhari & Muslim
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="bg-success text-center py-5 px-3">
+                        <div class="py-5">
+                            <i class="bi bi-chat-quote fs-1 text-warning mb-3 d-block"></i>
+                            <blockquote class="blockquote fs-4 text-light">
+                                "Puasa adalah perisai. Maka janganlah berkata kotor dan jangan pula bertindak bodoh."
+                            </blockquote>
+                            <figcaption class="blockquote-footer text-warning mt-3">
+                                HR. Bukhari
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="bg-success text-center py-5 px-3">
+                        <div class="py-5">
+                            <i class="bi bi-chat-quote fs-1 text-warning mb-3 d-block"></i>
+                            <blockquote class="blockquote fs-4 text-light">
+                                "Sesungguhnya Allah tidak melihat rupa dan harta kalian, tetapi Dia melihat hati dan amal kalian."
+                            </blockquote>
+                            <figcaption class="blockquote-footer text-warning mt-3">
+                                HR. Muslim
+                            </figcaption>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselMotivasi" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselMotivasi" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Accordion Tips -->
+    <section class="container py-5">
+        <h2 class="text-center fw-bold text-warning mb-5">Tips Ramadan</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="accordionTips">
+                    <div class="accordion-item bg-dark border-success">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button bg-success text-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#tipSatu">
+                                <i class="bi bi-1-circle me-2"></i>Jaga Pola Makan Saat Sahur
+                            </button>
+                        </h2>
+                        <div id="tipSatu" class="accordion-collapse collapse show" data-bs-parent="#accordionTips">
+                            <div class="accordion-body bg-dark text-light">
+                                Konsumsi makanan bergizi seimbang saat sahur. Perbanyak serat, protein, dan air putih agar tubuh tetap berenergi sepanjang hari.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-dark border-success">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-success text-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#tipDua">
+                                <i class="bi bi-2-circle me-2"></i>Perbanyak Membaca Al-Quran
+                            </button>
+                        </h2>
+                        <div id="tipDua" class="accordion-collapse collapse" data-bs-parent="#accordionTips">
+                            <div class="accordion-body bg-dark text-light">
+                                Targetkan khatam Al-Quran selama Ramadan. Bagi waktu membaca setiap habis shalat lima waktu agar lebih mudah dicapai.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-dark border-success">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-success text-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#tipTiga">
+                                <i class="bi bi-3-circle me-2"></i>Jaga Lisan dan Emosi
+                            </button>
+                        </h2>
+                        <div id="tipTiga" class="accordion-collapse collapse" data-bs-parent="#accordionTips">
+                            <div class="accordion-body bg-dark text-light">
+                                Hindari perkataan buruk, gosip, dan amarah. Puasa bukan hanya menahan lapar dan haus, tetapi juga melatih kesabaran.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-dark border-success">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-success text-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#tipEmpat">
+                                <i class="bi bi-4-circle me-2"></i>Perbanyak Sedekah
+                            </button>
+                        </h2>
+                        <div id="tipEmpat" class="accordion-collapse collapse" data-bs-parent="#accordionTips">
+                            <div class="accordion-body bg-dark text-light">
+                                Ramadan adalah bulan terbaik untuk bersedekah. Pahala kebaikan dilipatgandakan, jadi manfaatkan kesempatan ini sebaik mungkin.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-success text-center py-4 shadow-lg">
+        <div class="container">
+            <p class="fs-5 mb-1 fw-bold"><i class="bi bi-moon-stars-fill me-2"></i>Ramadan Mubarak 1447 H</p>
+            <p class="mb-0 text-light-emphasis">2311102318 &mdash; Grashela Ayudia Prameswari</p>
+        </div>
+    </footer>
+
+    <!-- Tombol Surprise THR (Floating) -->
+    <button id="btnTHR" class="btn btn-lg shadow-lg" onclick="showTHR()" style="
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1050;
+        background: linear-gradient(135deg, #FFD700, #FFA500);
+        color: #1a1a1a;
+        border: none;
+        border-radius: 50px;
+        padding: 16px 28px;
+        font-weight: 800;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        animation: pulseGlow 2s infinite;
+        cursor: pointer;
+        transition: transform 0.2s;
+    ">
+        <i class="bi bi-gift-fill me-2"></i>Cairin THR
+    </button>
+
+    <!-- Modal THR -->
+    <div id="thrOverlay" style="
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: 1060;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+    ">
+        <div id="thrModal" style="
+            background: linear-gradient(145deg, #1a472a, #0d2818);
+            border: 3px solid #FFD700;
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 460px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: scale(0);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 60px rgba(255, 215, 0, 0.3), 0 20px 60px rgba(0,0,0,0.5);
+        ">
+            <button onclick="closeTHR()" style="
+                position: absolute;
+                top: 12px; right: 16px;
+                background: none;
+                border: none;
+                color: #FFD700;
+                font-size: 1.5rem;
+                cursor: pointer;
+            ">&times;</button>
+
+            <div style="font-size: 4rem; margin-bottom: 10px; animation: bounceIn 0.6s 0.3s both;">
+                🎉
+            </div>
+            <h2 style="
+                color: #FFD700;
+                font-weight: 900;
+                font-size: 2rem;
+                margin-bottom: 8px;
+                text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            ">SELAMAT!</h2>
+            <p style="
+                color: #fff;
+                font-size: 1.15rem;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            ">Anda mendapatkan <strong style="color: #FFD700;">THR</strong>! 🎊</p>
+
+            <div id="thrAmount" style="
+                background: linear-gradient(135deg, #FFD700, #FFA500);
+                color: #1a1a1a;
+                font-size: 2.5rem;
+                font-weight: 900;
+                padding: 16px 24px;
+                border-radius: 16px;
+                margin-bottom: 24px;
+                display: inline-block;
+                min-width: 200px;
+                box-shadow: 0 4px 20px rgba(255, 165, 0, 0.4);
+                letter-spacing: 1px;
+            ">
+                Rp 0
+            </div>
+
+            <p style="color: #aaa; font-size: 0.85rem; margin-bottom: 20px;">
+                * THR ini tidak bisa ditarik tunai 😄
+            </p>
+
+            <button onclick="closeTHR()" style="
+                background: linear-gradient(135deg, #FFD700, #FFA500);
+                color: #1a1a1a;
+                border: none;
+                padding: 12px 36px;
+                border-radius: 50px;
+                font-weight: 700;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: transform 0.2s, box-shadow 0.2s;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <i class="bi bi-emoji-laughing me-1"></i> Alhamdulillah!
+            </button>
+        </div>
+    </div>
+
+    <!-- Canvas Confetti -->
+    <canvas id="confettiCanvas" style="
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        z-index: 1070;
+        pointer-events: none;
+    "></canvas>
+
+    <style>
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.4), 0 4px 20px rgba(255, 165, 0, 0.3);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(255, 215, 0, 0.7), 0 4px 30px rgba(255, 165, 0, 0.5);
+                transform: scale(1.05);
+            }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes floatMoney {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-120px) rotate(20deg); opacity: 0; }
+        }
+        #btnTHR:hover {
+            transform: scale(1.1) !important;
+        }
+        #btnTHR:active {
+            transform: scale(0.95) !important;
+        }
+    </style>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Confetti system
+        const confettiCanvas = document.getElementById('confettiCanvas');
+        const ctx = confettiCanvas.getContext('2d');
+        let confettiPieces = [];
+        let confettiActive = false;
+
+        function resizeCanvas() {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function createConfetti() {
+            const colors = ['#FFD700', '#FFA500', '#FF6347', '#00FF7F', '#1E90FF', '#FF69B4', '#FFFFFF'];
+            for (let i = 0; i < 150; i++) {
+                confettiPieces.push({
+                    x: Math.random() * confettiCanvas.width,
+                    y: Math.random() * confettiCanvas.height - confettiCanvas.height,
+                    w: Math.random() * 10 + 5,
+                    h: Math.random() * 6 + 3,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 3 + 2,
+                    angle: Math.random() * Math.PI * 2,
+                    spin: (Math.random() - 0.5) * 0.2,
+                    drift: (Math.random() - 0.5) * 2,
+                });
+            }
+        }
+
+        function animateConfetti() {
+            if (!confettiActive) return;
+            ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            let active = false;
+            confettiPieces.forEach(p => {
+                if (p.y < confettiCanvas.height + 20) {
+                    active = true;
+                    p.y += p.speed;
+                    p.x += p.drift;
+                    p.angle += p.spin;
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.angle);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                    ctx.restore();
+                }
+            });
+            if (active) {
+                requestAnimationFrame(animateConfetti);
+            } else {
+                ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+                confettiPieces = [];
+                confettiActive = false;
+            }
+        }
+
+        // THR amount counter animation
+        function animateAmount(target) {
+            const el = document.getElementById('thrAmount');
+            let current = 0;
+            const step = Math.ceil(target / 60);
+            const interval = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(interval);
+                }
+                el.textContent = 'Rp ' + current.toLocaleString('id-ID');
+            }, 20);
+        }
+
+        // Random THR amounts
+        const thrAmounts = [50000, 100000, 150000, 200000, 250000, 500000, 1000000, 2000000, 5000000];
+
+        function showTHR() {
+            const overlay = document.getElementById('thrOverlay');
+            const modal = document.getElementById('thrModal');
+
+            overlay.style.display = 'flex';
+            document.getElementById('thrAmount').textContent = 'Rp 0';
+
+            setTimeout(() => {
+                modal.style.transform = 'scale(1)';
+            }, 50);
+
+            // Start confetti
+            confettiActive = true;
+            createConfetti();
+            animateConfetti();
+
+            // Animate amount after a short delay
+            const amount = thrAmounts[Math.floor(Math.random() * thrAmounts.length)];
+            setTimeout(() => animateAmount(amount), 500);
+
+            // Floating money emoji around the button
+            spawnFloatingEmojis();
+        }
+
+        function closeTHR() {
+            const modal = document.getElementById('thrModal');
+            modal.style.transform = 'scale(0)';
+            setTimeout(() => {
+                document.getElementById('thrOverlay').style.display = 'none';
+            }, 400);
+        }
+
+        // Close modal on overlay click
+        document.getElementById('thrOverlay').addEventListener('click', function(e) {
+            if (e.target === this) closeTHR();
+        });
+
+        // Floating money emojis
+        function spawnFloatingEmojis() {
+            const emojis = ['💰', '💵', '💴', '🤑', '💸', '🧧'];
+            for (let i = 0; i < 12; i++) {
+                setTimeout(() => {
+                    const span = document.createElement('span');
+                    span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    span.style.cssText = `
+                        position: fixed;
+                        font-size: ${Math.random() * 20 + 24}px;
+                        left: ${Math.random() * 100}vw;
+                        bottom: -40px;
+                        z-index: 1065;
+                        pointer-events: none;
+                        animation: floatMoney ${Math.random() * 2 + 2}s ease-out forwards;
+                    `;
+                    document.body.appendChild(span);
+                    setTimeout(() => span.remove(), 4000);
+                }, i * 150);
+            }
+        }
+    </script>
+
+</body>
+</html>
+```
+
+Output:
+
+![Screenshot halaman web Ramadan Mubarak dengan fitur THR](result.png)
+
+# Penjelasan
+Program ini merupakan halaman web bertema **Ramadan Mubarak** yang dibangun menggunakan **Bootstrap 5** dan **JavaScript vanilla**. Halaman ini menampilkan berbagai informasi seputar bulan Ramadan dengan desain dark mode yang elegan menggunakan kombinasi warna hijau (success) dan kuning emas (warning).
+
+Pada bagian `<head>`, halaman menggunakan Bootstrap CSS dan Bootstrap Icons dari CDN untuk styling dan ikon. Tidak ada CSS kustom tambahan di bagian head karena seluruh inline style ditempatkan langsung pada elemen HTML dan blok `<style>` internal di bagian bawah body.
+
+Struktur utama halaman terdiri dari beberapa section, yaitu **navbar** dengan navigasi responsif menggunakan `navbar-expand-lg` dan `collapse`, **hero section** dengan judul besar dan tombol CTA, **aktivitas Ramadan** menggunakan komponen Bootstrap Card dalam grid `row` dan `col`, **jadwal imsakiyah** menggunakan komponen Table dengan styling `table-dark` dan `table-striped`, **doa harian Ramadan** menggunakan Card dengan border berwarna, **carousel motivasi** menggunakan komponen Bootstrap Carousel dengan `carousel-indicators` dan kontrol navigasi, **accordion tips Ramadan** menggunakan komponen Bootstrap Accordion, serta **footer**.
+
+Fitur utama yang menggunakan JavaScript adalah **Tombol Floating Cairin THR** dan **Modal THR kustom**. Tombol floating ditempatkan di pojok kanan bawah menggunakan `position: fixed` dengan animasi `pulseGlow` menggunakan `@keyframes` CSS. Ketika tombol diklik, sebuah overlay modal kustom (bukan Bootstrap Modal) muncul menampilkan nominal THR secara acak.
+
+Pada bagian `<script>`, beberapa fitur JavaScript yang diimplementasikan antara lain:
+
+1. **Confetti System menggunakan Canvas API**: Menggunakan `<canvas>` element dan `getContext('2d')` untuk menggambar efek confetti. Fungsi `createConfetti()` membuat 150 partikel confetti dengan properti random (posisi, ukuran, warna, kecepatan, sudut), dan `animateConfetti()` menggunakan `requestAnimationFrame()` untuk animasi yang smooth.
+
+2. **Animasi Count-Up**: Fungsi `animateAmount()` menggunakan `setInterval()` untuk membuat efek angka yang naik secara bertahap dari 0 hingga nominal THR yang didapat, dengan format mata uang Indonesia menggunakan `toLocaleString('id-ID')`.
+
+3. **Random THR Generator**: Array `thrAmounts` berisi berbagai nominal THR (Rp 50.000 hingga Rp 5.000.000). JavaScript menggunakan `Math.random()` dan `Math.floor()` untuk memilih nominal secara acak setiap kali tombol diklik.
+
+4. **DOM Manipulation**: Menggunakan `document.getElementById()` untuk mengakses elemen-elemen HTML dan memanipulasi properti `style.display`, `style.transform`, dan `textContent` untuk menampilkan/menyembunyikan modal dan mengupdate konten.
+
+5. **Event Listener**: Menambahkan event listener pada overlay untuk menutup modal ketika area di luar modal diklik menggunakan perbandingan `e.target === this`.
+
+6. **Floating Emoji Effect**: Fungsi `spawnFloatingEmojis()` secara dinamis membuat 12 elemen `<span>` berisi emoji uang yang mengambang dari bawah ke atas menggunakan `document.createElement()` dan CSS animation `floatMoney`. Setiap emoji memiliki posisi dan durasi random, lalu dihapus otomatis setelah 4 detik menggunakan `setTimeout()`.
+
+7. **Canvas Resize Handler**: Event listener `resize` pada `window` memastikan canvas confetti selalu mengikuti ukuran viewport, sehingga efek confetti tetap tampil dengan benar saat ukuran browser berubah.
+
+Secara keseluruhan, program ini mendemonstrasikan integrasi antara Bootstrap 5 (navbar, card, table, carousel, accordion), CSS kustom dengan animasi keyframes, dan JavaScript vanilla untuk menciptakan pengalaman pengguna yang interaktif dan menyenangkan bertema Ramadan. Fitur Cairin THR menunjukkan penerapan konsep Canvas API, DOM manipulation, event handling, timing functions, dynamic element creation, dan animasi JavaScript.
