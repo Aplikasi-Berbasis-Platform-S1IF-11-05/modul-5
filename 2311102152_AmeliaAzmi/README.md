@@ -192,6 +192,7 @@ Dalam pengembangan web, HTML berperan sebagai struktur dasar halaman, CSS diguna
 
 
 Output:
+<img width="1876" height="932" alt="thr" src="https://github.com/user-attachments/assets/6b85a048-1e15-4ead-a2b4-ec00f3f2f326" />
 
 
 
