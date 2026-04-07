@@ -1,0 +1,148 @@
+:root {
+    --gold: #c9922a;
+    --gold-light: #f0c060;
+    --gold-pale: #ffe8a3;
+    --night: #070d18;
+    --navy: #0b1628;
+    --card-bg: rgba(255,255,255,0.05);
+    --border-gold: rgba(201,146,42,0.3);
+}
+
+/* GLOBAL */
+body {
+    background: var(--night);
+    font-family: 'Nunito', sans-serif;
+    color: #d9c8a8;
+}
+
+/* STAR BACKGROUND */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(30,60,120,0.5), transparent 70%),
+        radial-gradient(1px 1px at 20% 30%, white, transparent),
+        radial-gradient(1px 1px at 70% 60%, white, transparent);
+    z-index: -1;
+}
+
+/* TYPO */
+.font-cinzel { font-family: 'Cinzel Decorative'; }
+.font-arabic { font-family: 'Scheherazade New'; }
+
+.text-gold { color: var(--gold-light); }
+.text-gold-pale { color: var(--gold-pale); }
+
+/* NAVBAR */
+.navbar-ramadan {
+    background: rgba(7,13,24,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-gold);
+}
+
+/* HERO */
+.hero-section { min-height: 90vh; }
+
+.moon-glow {
+    font-size: 6rem;
+    filter: drop-shadow(0 0 40px rgba(201,146,42,0.7));
+    animation: float 5s infinite;
+}
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
+
+.hero-title {
+    font-size: 3rem;
+    background: linear-gradient(135deg,#c9922a,#f0c060,#ffe8a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-arabic {
+    font-size: 2rem;
+    color: var(--gold-light);
+}
+
+blockquote {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.blockquote-footer {
+    color: #8a7a5a !important;
+}
+
+/* CARD */
+.card-ramadan {
+    background: var(--card-bg);
+    border: 1px solid var(--border-gold);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card-ramadan:hover {
+    transform: translateY(-5px);
+}
+
+.prayer-active {
+    border-color: var(--gold);
+    background: rgba(201,146,42,0.15);
+}
+
+#doa .card {
+    line-height: 1.8;
+}
+
+#doa h5 {
+    color: var(--gold-light);
+}
+
+/* BUTTON */
+.btn-gold {
+    background: linear-gradient(135deg,#c9922a,#f0c060);
+    border: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* PULSE */
+.pulse-ring {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(201,146,42,0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(201,146,42,0); }
+}
+
+/* MODAL */
+.modal-ramadan {
+    background: var(--navy);
+    border: 1px solid var(--border-gold);
+}
+
+.thr-envelope {
+    font-size: 4rem;
+}
+
+.thr-amount {
+    font-size: 2rem;
+    color: var(--gold-light);
+}
+
+/* ICON HOVER */
+.card-ramadan i {
+    transition: 0.3s;
+}
+
+.card-ramadan:hover i {
+    transform: scale(1.2);
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid var(--border-gold);
+}
