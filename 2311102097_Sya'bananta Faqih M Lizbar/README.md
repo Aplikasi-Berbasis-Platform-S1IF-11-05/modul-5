@@ -120,7 +120,6 @@ Bootstrap merupakan framework front-end yang dikembangkan untuk mempermudah pros
 </body>
 </html>
 ```
-🔗 [Klik di sini untuk membuka file `index.html`](index.html)
 
 Output:
 <img src="output 1.png" alt="preview" style="width:100%; max-width:900px;">
