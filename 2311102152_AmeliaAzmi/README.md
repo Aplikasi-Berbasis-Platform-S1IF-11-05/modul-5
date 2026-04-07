@@ -61,7 +61,133 @@ Dalam pengembangan web, HTML berperan sebagai struktur dasar halaman, CSS diguna
 # Tugas 5
 ## 1. Source Kode html
 ```
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Mode Suci</title>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">🌙 Ramadan App</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="container text-center py-5">
+        <h1 class="display-4 fw-bold text-warning">Mode Suci Ramadan</h1>
+        <p class="text-light opacity-75">
+            Tingkatkan ibadah dan kumpulkan pahala sebanyak-banyaknya ✨
+        </p>
+
+        <!-- TOMBOL THR -->
+        <button 
+            class="btn btn-warning btn-lg mt-4 fw-bold"
+            data-bs-toggle="modal"
+            data-bs-target="#thrModal">
+            🎁 Cairkan THR
+        </button>
+    </div>
+
+    <!-- FITUR -->
+    <div class="container pb-5">
+        <div class="row g-4 text-center">
+
+            <div class="col-md-4">
+                <div class="card bg-success text-white shadow-lg border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">🕌 Ibadah</h5>
+                        <p>Catat aktivitas ibadah harianmu</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-warning text-dark shadow-lg border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">⏰ Jadwal</h5>
+                        <p>Informasi waktu sahur & berbuka</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-light text-dark shadow-lg border-0">
+                    <div class="card-body">
+                        <h5 class="card-title">💰 Sedekah</h5>
+                        <p>Berbagi kebaikan di bulan Ramadan</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL THR -->
+    <div class="modal fade" id="thrModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title fw-bold text-dark">🎉 SELAMAT!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <h4 class="text-success fw-bold mb-3">
+                        Anda mendapatkan THR!
+                    </h4>
+                    <p class="fs-5">💸 Rp 250.000 💸</p>
+
+                    <!-- BUTTON AMBIL -->
+                    <button class="btn btn-success fw-bold" onclick="ambilTHR()">
+                        Ambil Sekarang
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT THR -->
+    <script>
+        function ambilTHR() {
+            for (let i = 0; i < 20; i++) {
+                let uang = document.createElement("div");
+                uang.innerHTML = "💸";
+                uang.className = "position-fixed";
+                uang.style.left = Math.random() * 100 + "vw";
+                uang.style.top = "-20px";
+                uang.style.fontSize = "24px";
+
+                document.body.appendChild(uang);
+
+                let jatuh = setInterval(() => {
+                    let top = parseInt(uang.style.top);
+                    uang.style.top = top + 5 + "px";
+
+                    if (top > window.innerHeight) {
+                        uang.remove();
+                        clearInterval(jatuh);
+                    }
+                }, 20);
+            }
+        }
+    </script>
+
+</body>
+</html>
 ```
 
 
