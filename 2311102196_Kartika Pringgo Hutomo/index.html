@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramadan Mode Suci</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="display-4 text-warning">Ramadan Kareem 🌙</h1>
+      <p class="lead">Semoga ibadah kita diterima dan hati kita semakin bersih</p>
+      <!-- Tombol THR -->
+      <button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#thrModal">
+        Cairin THR 💸
+      </button>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card text-center shadow-lg">
+          <div class="card-body">
+            <h5 class="card-title text-success">Pesan Spesial</h5>
+            <p class="card-text">
+              Selamat menjalankan ibadah puasa 🤍<br>
+              Semoga kita selalu diberi kesehatan, keberkahan,
+              dan dipertemukan dengan kemenangan di hari yang fitri.
+            </p>
+            <a href="#" class="btn btn-warning">Kirim Doa ✨</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5 text-center">
+      <div class="col-md-4">
+        <div class="p-3 border rounded">
+          <h5>Sahur</h5>
+          <p>Jangan lupa niat dan makan yang cukup</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 border rounded">
+          <h5>Puasa</h5>
+          <p>Jaga hati, lisan, dan perbuatan</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 border rounded">
+          <h5>Berbuka</h5>
+          <p>Awali dengan yang manis dan penuh syukur</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center mt-5">
+      <p class="text-secondary">Dibuat dalam Mode Suci 🕌</p>
+    </footer>
+  </div>
+
+  <!-- Modal THR -->
+  <div class="modal fade" id="thrModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">🎉 Kejutan!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <h3 class="text-success">💸 Selamat!</h3>
+          <p class="fs-5">Anda mendapatkan THR!</p>
+          <h2 class="text-warning" id="nominalTHR">Rp 0</h2>
+          <p class="text-muted">Semoga berkah dan jangan lupa traktir 😆</p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Alhamdulillah 🤲</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const thrModal = document.getElementById('thrModal');
+    thrModal.addEventListener('show.bs.modal', function () {
+      const nominal = Math.floor(Math.random() * 900000 + 100000);
+      document.getElementById('nominalTHR').innerText = 'Rp ' + nominal.toLocaleString('id-ID');
+    });
+  </script>
+</body>
+</html>
