@@ -35,9 +35,11 @@
 
 ### Dasar Teori
 
-Bootstrap adalah framework CSS berbasis komponen yang digunakan untuk membangun antarmuka web secara cepat dan responsif. Framework ini menyediakan berbagai elemen siap pakai seperti grid system, tombol, navigasi, serta komponen UI lainnya yang memudahkan pengembang dalam mengatur tampilan website secara konsisten. Selain itu, Bootstrap juga didukung oleh plugin JavaScript yang membantu meningkatkan interaktivitas dan stabilitas dalam pengembangan antarmuka.
+JavaScript merupakan bahasa pemrograman tingkat tinggi (high-level language) yang bersifat dinamis dan banyak digunakan dalam pengembangan web. Bahasa ini dapat berjalan di berbagai browser seperti Google Chrome dan Mozilla Firefox, serta digunakan untuk membuat tampilan web menjadi lebih interaktif. JavaScript pertama kali dikembangkan oleh Brendan Eich dan awalnya berfungsi sebagai client-side scripting. Namun, saat ini JavaScript juga digunakan di berbagai platform lain seperti server, aplikasi mobile, hingga Internet of Things (IoT), sehingga menjadikannya salah satu bahasa pemrograman paling populer di dunia.
 
-Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis karena kemudahan penggunaan, dokumentasi yang lengkap, serta kemampuannya dalam mempercepat proses pengembangan website.
+Dalam pengembangannya, JavaScript sering dipadukan dengan library atau framework untuk mempermudah proses coding. Salah satu library yang cukup populer adalah jQuery. jQuery dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, pengelolaan event, dan pembuatan animasi. Dengan menggunakan jQuery, pengembang dapat menghindari penulisan kode yang berulang (redundan), sehingga meningkatkan efisiensi serta keterbacaan kode.
+
+Penggunaan framework dan library seperti jQuery juga memberikan keuntungan dalam hal pengembangan aplikasi web yang lebih terstruktur dan mudah dipelihara. Untuk proyek berskala kecil, jQuery sudah cukup efisien digunakan. Namun, untuk aplikasi yang lebih kompleks dengan kebutuhan pengelolaan data dan antarmuka yang dinamis, biasanya digunakan framework modern seperti React atau Angular. Oleh karena itu, pemilihan teknologi harus disesuaikan dengan kebutuhan proyek, kompleksitas fitur, serta skala pengembangan aplikasi.
 
 ### Tugas 5 - Fitur Cairin THR
 
@@ -252,13 +254,13 @@ $(document).ready(function(){
 
 ### Deskripsi Kode
 
-Kode tersebut merupakan halaman web bertema Ramadan yang dibuat menggunakan HTML dengan memanfaatkan framework Bootstrap. Halaman ini dirancang untuk menampilkan beberapa informasi penting, seperti navbar sebagai header, ucapan Ramadan, jadwal buka puasa, menu rekomendasi berbuka, serta tips agar ibadah puasa dapat berjalan dengan lancar. Susunan elemen pada halaman dibuat secara terstruktur sehingga mudah dipahami oleh pengguna, serta dilengkapi dengan fitur tambahan berupa tombol kejutan yang dapat digunakan untuk “mencairkan THR” sebagai elemen interaktif pada halaman.
+Kode tersebut merupakan halaman web bertema Ramadan yang dibuat menggunakan HTML dengan bantuan framework Bootstrap. Halaman ini menampilkan beberapa informasi seperti navbar, ucapan Ramadan, jadwal buka puasa, menu berbuka, serta tips puasa, yang disusun secara terstruktur agar mudah dipahami pengguna.
 
-Penggunaan Bootstrap pada kode ini terlihat dari pemanfaatan berbagai komponen yang telah disediakan, seperti navbar untuk bagian header, grid system untuk mengatur tata letak agar responsif, card untuk mengelompokkan konten, table untuk menampilkan data jadwal, serta alert untuk menyajikan tips dengan tampilan yang lebih menarik. Selain itu, digunakan pula utility class untuk membantu proses styling secara cepat dan Bootstrap Icons untuk menambahkan elemen visual, sehingga tidak diperlukan penggunaan CSS secara manual. Fitur THR diimplementasikan menggunakan komponen modal dari Bootstrap yang akan muncul ketika tombol ditekan.
+Pada kode ini juga ditambahkan JavaScript dan jQuery untuk memberikan interaksi pada halaman. Penggunaan jQuery terlihat pada fitur klik menu berbuka puasa yang akan menampilkan notifikasi sederhana, serta efek pada tombol THR ketika ditekan. JavaScript digunakan untuk mengatur respon tersebut sehingga halaman tidak hanya bersifat statis, tetapi juga lebih interaktif.
 
-Hasil output dari kode tersebut adalah sebuah halaman web bertema Ramadan yang menampilkan informasi seputar Ramadan secara informatif dan terstruktur, serta memiliki fitur interaktif berupa kejutan THR yang muncul dalam bentuk pop-up.
+Hasilnya adalah halaman web yang informatif, responsif, dan memiliki interaksi sederhana berupa pop-up THR serta respon saat pengguna memilih menu berbuka puasa, sehingga pengalaman pengguna menjadi lebih menarik.
 
 ### Refrensi
-[1] Santoso, M. (2025). Perbandingan efektivitas bootstrap dan tailwind CSS dalam pengembangan UI web responsif. Jurnal Teknologi dan Sistem Informasi Bisnis, 7(4), 489–497.
+[1] Supardi, I. Y. (2021). Semua Bisa Menjadi Programmer JavaScript & Node.js. Jakarta: PT Elex Media Komputindo. ISBN: 978-623-00-1976-0.
 
-[2] Sari, I. P., Azzahrah, A., Qathrunada, I. F., Lubis, N., & Anggraini, T. (2022). Perancangan sistem absensi pegawai kantoran secara online pada website berbasis HTML dan CSS. Fakultas Ilmu Komputer dan Teknologi Informasi, Universitas Muhammadiyah Sumatera Utara.
+[2] Maulani, G., Kurniawan, Y. I., Munawir, T., Fauzi, W. M., Ikhsan, M., Jannah, U. M., Bachtiar, A., Kaharu, N. A., & S.Kom., M.Kom. (2025). Pemrograman Web. Pamekasan: Alifba Media. ISBN: 978-634-7124-04-3.
