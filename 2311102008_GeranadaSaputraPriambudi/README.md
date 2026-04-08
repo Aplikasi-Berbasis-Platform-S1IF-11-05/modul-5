@@ -1,6 +1,8 @@
 <div align="center">
   <br />
-  <h1>LAPORAN PRAKTIKUM <br> BOOTSTRAP </h3>
+  <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
+  <br />
+  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -31,33 +33,33 @@
 
 <hr>
 
-# Dasar Teori Bootstrap
+# Dasar Teori Javascript & JQUERY
 
-## Bootstrap
-1. Pengertian Bootstrap
+1. JavaScript (JS)
+JavaScript adalah bahasa pemrograman high-level, scripting, dan interpreted yang bersifat client-side. Artinya, kode dijalankan langsung di browser pengguna tanpa perlu diproses oleh server terlebih dahulu untuk interaksi UI.
 
-Bootstrap adalah framework CSS yang digunakan untuk mempermudah pengembangan tampilan (front-end) website agar lebih cepat, responsif, dan konsisten. Bootstrap menyediakan kumpulan class siap pakai untuk desain layout, komponen UI, serta styling tanpa harus menulis CSS dari nol.
+Manipulasi DOM (Document Object Model): JavaScript memungkinkan pengembang untuk mengubah konten, struktur, dan gaya HTML secara dinamis.
+Event Handling: JS dapat mendeteksi dan merespons tindakan pengguna seperti klik mouse, input keyboard, atau pemuatan halaman.
+Asynchronous: Dengan fitur asinkron, JS dapat melakukan tugas di latar belakang tanpa menghentikan eksekusi kode lainnya.
 
-2. Fungsi dan Kegunaan Bootstrap
+2. jQuery
+jQuery adalah pustaka (library) JavaScript lintas browser yang dirancang untuk menyederhanakan penulisan kode JavaScript. Motto utamanya adalah "Write Less, Do More".
 
-Bootstrap digunakan untuk:
+Sintaks Ringkas: Mengganti operasi DOM yang panjang (seperti document.getElementById) dengan sintaks yang jauh lebih pendek (seperti $('#id')).
+Cross-Browser Compatibility: Menangani perbedaan cara kerja JavaScript di berbagai browser (Chrome, Firefox, Safari, dll) secara otomatis.
+Efek & Animasi: Menyediakan fungsi bawaan untuk membuat animasi transisi seperti fade, slide, dan toggle dengan mudah.
 
-Membuat tampilan website yang responsif (menyesuaikan berbagai ukuran layar)
-Mempercepat proses desain antarmuka (UI)
-Menyediakan komponen siap pakai seperti navbar, card, button, modal, dll
-Menjaga konsistensi desain antar halaman
-3. Kelebihan Bootstrap
+3. AJAX (Asynchronous JavaScript and XML)
+AJAX bukanlah bahasa pemrograman, melainkan teknik yang menggabungkan JavaScript dan XML (atau sekarang lebih sering menggunakan JSON) untuk memperbarui bagian dari halaman web tanpa reload seluruh halaman.
 
-Beberapa keunggulan Bootstrap antara lain:
+User Experience (UX): Membuat aplikasi terasa lebih cepat dan responsif layaknya aplikasi desktop.
+Data Transfer: Memungkinkan aplikasi untuk mengirim dan menerima data dari server di latar belakang.
 
-Mudah digunakan, bahkan untuk pemula
-Responsive grid system (12 kolom)
-Banyak komponen UI siap pakai
-Dokumentasi lengkap
-Mendukung berbagai browser (cross-browser)
-4. Sistem Grid pada Bootstrap
+4. JSON (JavaScript Object Notation)
+JSON adalah format pertukaran data yang ringan, mudah dibaca manusia, dan mudah diproses oleh mesin. Walaupun berasal dari JavaScript, format ini didukung oleh hampir semua bahasa pemrograman modern (termasuk Python/Flask).
 
-Bootstrap menggunakan sistem grid berbasis 12 kolom yang memungkinkan developer mengatur layout dengan mudah. Grid ini bersifat fleksibel dan responsif.
+Struktur Data: Menggunakan format pasangan kunci dan nilai (key-value pairs) serta array.
+Kegunaan: Sangat populer digunakan sebagai format database flat-file sederhana atau untuk pengiriman data melalui API.
 
 
 ### Source code - html
