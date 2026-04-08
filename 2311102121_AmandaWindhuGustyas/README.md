@@ -3,7 +3,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> Boostrap </h3>
+  <h3>MODUL 5 <br> Boostrap + JavaScript  </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -36,7 +36,9 @@
 
 # Dasar Teori
 
-Bootstrap merupakan framework CSS yang digunakan untuk mempermudah pembuatan tampilan website secara cepat, responsif, dan konsisten tanpa perlu menulis CSS manual. Bootstrap menyediakan berbagai komponen siap pakai seperti navbar, button, card, serta sistem grid (container, row, col) untuk mengatur layout agar dapat menyesuaikan berbagai ukuran layar. Selain itu, Bootstrap juga memiliki komponen interaktif seperti modal, yaitu jendela pop-up yang muncul tanpa berpindah halaman dan dapat diaktifkan menggunakan atribut data-bs-toggle dan data-bs-target tanpa perlu JavaScript tambahan. Penggunaan Bootstrap juga berkaitan dengan konsep UI (User Interface) dan UX (User Experience), dimana UI berfokus pada tampilan visual seperti warna dan layout, sedangkan UX berfokus pada pengalaman pengguna saat berinteraksi, seperti munculnya modal saat tombol diklik. Dengan demikian, Bootstrap membantu menghasilkan tampilan web yang lebih menarik, interaktif, dan mudah digunakan.
+1. JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi lebih interaktif dan dinamis. Bahasa ini bersifat interpreted sehingga tidak memerlukan proses kompilasi sebelum dijalankan, serta memiliki dynamic typing yang memungkinkan tipe data berubah secara fleksibel. JavaScript umumnya dijalankan di browser, namun juga dapat digunakan di sisi server dengan bantuan Node.js. Dalam penggunaannya, JavaScript mendukung konsep event-driven, yaitu menjalankan kode berdasarkan aksi pengguna seperti klik atau input, serta mendukung asynchronous programming melalui callback, promise, dan async/await untuk menangani proses tanpa menghambat eksekusi utama. Dalam JavaScript terdapat beberapa komponen dasar seperti variabel yang dideklarasikan menggunakan var, let, atau const, serta tipe data seperti string, number, boolean, object, array, null, dan undefined. JavaScript juga memiliki operator aritmatika, perbandingan, dan logika, serta struktur kontrol seperti percabangan (if-else, switch) dan perulangan (for, while). Selain itu, JavaScript menyediakan fungsi (function) untuk mengelompokkan kode agar lebih terstruktur. Salah satu konsep penting dalam JavaScript adalah Document Object Model (DOM), yang memungkinkan pengembang memanipulasi elemen HTML dan CSS secara langsung, seperti mengubah teks, gaya, atau menangani event. Dengan berbagai kemampuan tersebut, JavaScript menjadi teknologi utama dalam pengembangan web modern, baik untuk frontend maupun backend.
+
+2. Bootstrap merupakan framework CSS yang digunakan untuk mempermudah pembuatan tampilan website secara cepat, responsif, dan konsisten tanpa perlu menulis CSS manual. Bootstrap menyediakan berbagai komponen siap pakai seperti navbar, button, card, serta sistem grid (container, row, col) untuk mengatur layout agar dapat menyesuaikan berbagai ukuran layar. Selain itu, Bootstrap juga memiliki komponen interaktif seperti modal, yaitu jendela pop-up yang muncul tanpa berpindah halaman dan dapat diaktifkan menggunakan atribut data-bs-toggle dan data-bs-target tanpa perlu JavaScript tambahan. Penggunaan Bootstrap juga berkaitan dengan konsep UI (User Interface) dan UX (User Experience), dimana UI berfokus pada tampilan visual seperti warna dan layout, sedangkan UX berfokus pada pengalaman pengguna saat berinteraksi, seperti munculnya modal saat tombol diklik. Dengan demikian, Bootstrap membantu menghasilkan tampilan web yang lebih menarik, interaktif, dan mudah digunakan.
 
 # Tugas 5
 ```

@@ -12,7 +12,7 @@
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: #f8f9fa; 
-            scroll-behavior: smooth;
+            /* scroll-behavior: smooth; Dihapus karena diganti dengan animasi jQuery */
         }
         .arabic-font { font-family: 'Amiri', serif; }
         
@@ -56,8 +56,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#jadwal">Jadwal Imsakiyah</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#donasi">Donasi</a></li>
+                    <li class="nav-item"><a class="nav-link scroll-link" href="#jadwal">Jadwal Imsakiyah</a></li>
+                    <li class="nav-item"><a class="nav-link scroll-link" href="#donasi-section">Donasi</a></li>
                 </ul>
             </div>
         </div>
@@ -68,10 +68,10 @@
             <h1 class="display-3 fw-bold arabic-font text-warning mb-3 animate__animated animate__fadeInDown">Marhaban Ya Ramadan</h1>
             <p class="lead mb-4 animate__animated animate__fadeInUp">Momen untuk refleksi, pembersihan jiwa, dan berbagi kebahagiaan bersama sesama.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center animate__animated animate__zoomIn">
-                <button type="button" class="btn btn-warning btn-lg px-4 gap-3 fw-bold">Cek Jadwal Buka</button>
+                <button type="button" class="btn btn-warning btn-lg px-4 gap-3 fw-bold scroll-link" href="#jadwal">Cek Jadwal Buka</button>
                 <button type="button" class="btn btn-outline-light btn-lg px-4">Artikel Ramadan</button>
                 
-                <button type="button" class="btn btn-thr btn-lg px-4 fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#thrModal" onclick="launchConfetti()">
+                <button type="button" id="btn-thr" class="btn btn-thr btn-lg px-4 fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#thrModal">
                     ✨ Cairin THR!
                 </button>
             </div>
@@ -101,13 +101,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="donasi-section">
                 <div class="card h-100 border-0 shadow-sm p-4">
                     <div class="card-body">
                         <div class="display-6 text-warning mb-3">🤝</div>
                         <h5 class="card-title fw-bold">Sedekah Harian</h5>
                         <p class="card-text text-muted">Mari lipat gandakan pahala dengan berbagi takjil untuk sesama di bulan yang penuh berkah ini.</p>
-                        <a href="#donasi" id="donasi" class="btn btn-outline-warning w-100">Donasi Sekarang</a>
+                        <a href="#" class="btn btn-outline-warning w-100">Donasi Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -184,41 +184,62 @@
     <footer class="bg-dark text-white-50 py-5 mt-5 border-top border-warning border-4">
         <div class="container text-center">
             <p class="mb-2 text-white fw-bold">Ramadan Kareem © 2026</p>
-            <p class="small mb-0">Dibuat dengan penuh keberkahan menggunakan Bootstrap 5 & Passion</p>
+            <p class="small mb-0">Dibuat dengan penuh keberkahan menggunakan Bootstrap 5, jQuery & Passion</p>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        function launchConfetti() {
-            var duration = 5 * 1000;
-            var animationEnd = Date.now() + duration;
-            var defaults = { 
-                startVelocity: 30, 
-                spread: 360, 
-                ticks: 60, 
-                zIndex: 2000,
-                colors: ['#ffc107', '#ffffff', '#e0a800']
-            };
+        // Menggunakan jQuery $(document).ready() untuk memastikan DOM sudah dimuat
+        $(document).ready(function() {
+            
+            // 1. Event listener jQuery untuk tombol THR (menggantikan atribut onclick)
+            $('#btn-thr').on('click', function() {
+                launchConfetti();
+            });
 
-            function randomInRange(min, max) {
-              return Math.random() * (max - min) + min;
+            // 2. Smooth Scrolling menggunakan jQuery untuk link yang memiliki class 'scroll-link'
+            $('.scroll-link').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 80 // Offset 80px untuk menyesuaikan dengan sticky navbar
+                }, 800); // 800ms durasi animasi
+            });
+
+            // Fungsi peluncuran confetti
+            function launchConfetti() {
+                var duration = 5 * 1000;
+                var animationEnd = Date.now() + duration;
+                var defaults = { 
+                    startVelocity: 30, 
+                    spread: 360, 
+                    ticks: 60, 
+                    zIndex: 2000,
+                    colors: ['#ffc107', '#ffffff', '#e0a800']
+                };
+
+                function randomInRange(min, max) {
+                  return Math.random() * (max - min) + min;
+                }
+
+                var interval = setInterval(function() {
+                  var timeLeft = animationEnd - Date.now();
+
+                  if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                  }
+
+                  var particleCount = 50 * (timeLeft / duration);
+                  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                }, 250);
             }
-
-            var interval = setInterval(function() {
-              var timeLeft = animationEnd - Date.now();
-
-              if (timeLeft <= 0) {
-                return clearInterval(interval);
-              }
-
-              var particleCount = 50 * (timeLeft / duration);
-              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
-            }, 250);
-        }
+        });
     </script>
 </body>
 </html>

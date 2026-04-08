@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> Bootstrap </h3>
+  <h3>MODUL 5 <br> JavaScript & jQuery </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,15 +33,27 @@
 
 <hr>
 
-# Dasar Teori Bootstrap
+# Dasar Teori JavaScript & jQuery
 
-## Pengertian Bootstrap
-Bootstrap merupakan framework open-source berbasis HTML, CSS, dan JavaScript yang dirancang khusus untuk mempercepat proses pengembangan antarmuka website yang responsif dan mobile-first. Dengan menyediakan ekosistem komponen UI siap pakai seperti sistem grid 12 kolom, tipografi, tombol, hingga navigasi, Bootstrap memungkinkan pengembang untuk membangun tata letak yang konsisten di berbagai perangkat tanpa harus menulis kode CSS dari nol. Penggunaan utility classes pada framework ini tidak hanya meningkatkan efisiensi waktu kerja, tetapi juga menjamin standar desain yang profesional serta kompatibilitas lintas peramban (cross-browser) yang optimal.
+## Pengertian JavaScript
+JavaScript adalah bahasa pemrograman dinamis yang berfungsi sebagai "otak" di balik interaktivitas sebuah situs web. Jika HTML membangun struktur dan CSS mengatur estetika, JavaScript berperan memberikan instruksi agar elemen-elemen tersebut dapat bergerak dan merespons tindakan pengguna secara real-time. Dengan kemampuan memanipulasi Document Object Model (DOM), JavaScript memungkinkan pengembang untuk mengubah konten, memvalidasi formulir, hingga menciptakan animasi kompleks tanpa harus memuat ulang seluruh halaman. Di era modern, kegunaannya meluas dari sekadar skrip sisi klien (client-side) di browser hingga ke sisi server (server-side) melalui lingkungan seperti Node.js, menjadikannya fondasi utama dalam pengembangan aplikasi web yang responsif dan canggih..
 
-## Contoh Implementasi
-```html
-<button class="btn btn-primary">Klik Saya</button>
-```
+## Konsep Dasar JavaScript
+1. Variabel & Tipe Data: Tempat menyimpan informasi menggunakan const (tetap) atau let (bisa berubah), baik berupa teks, angka, maupun status benar/salah.
+
+2. Fungsi (Functions): Sekumpulan perintah yang dibungkus dalam satu nama agar bisa digunakan berulang kali tanpa menulis ulang kode.
+
+3. Logika & Kondisi: Penggunaan if-else untuk membuat keputusan dan loop (perulangan) untuk menjalankan tugas berkali-kali secara otomatis.
+
+4. DOM (Document Object Model): Jembatan yang memungkinkan JavaScript mengubah isi, struktur, atau gaya (CSS) halaman HTML secara instan.
+
+5. Event (Kejadian): Kemampuan mendeteksi aksi pengguna, seperti klik tombol, ketikan keyboard, atau pergerakan kursor.
+
+6. Asynchronous: Menjalankan proses berat (seperti mengambil data dari internet) di latar belakang agar tampilan web tidak macet/hang.
+
+## Pengertian jQuery
+jQuery adalah sebuah library (pustaka) JavaScript yang dirancang untuk menyederhanakan interaksi antara JavaScript dengan dokumen HTML. Dengan prinsip "Write Less, Do More", jQuery memungkinkan pengembang untuk menulis kode yang kompleks menjadi jauh lebih singkat, sehingga mempercepat proses pembuatan fitur interaktif pada website.
+
 
 ### Source code - html
 ```html

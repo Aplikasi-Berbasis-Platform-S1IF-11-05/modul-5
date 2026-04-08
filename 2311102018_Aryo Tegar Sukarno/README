@@ -2,7 +2,7 @@
     <br />
     <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
     <br />
-    <h3>MODUL 5 <br> BOOTSTRAP</h3>
+    <h3>MODUL 6 <br> JAVASCRIPT & JQUERY</h3>
     <br />
     <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
     <br />
@@ -34,135 +34,168 @@
 
 ## Dasar Teori
 
-Bootstrap merupakan sebuah front-end framework gratis untuk pengembangan antar muka web yang lebih
-cepat dan lebih mudah. Dikembangkan oleh Mark Otto dan Jacom Thornton di Twitter dan dirilis sebagai
-produk open source pada Agustus 2011 di GitHub. Bootstrap mencakup template desain berbasis HTML dan
-CSS untuk tipografi, form, button, navigasi, modal, image carousells dan masih banyak lagi, serta terdapat
-opsional plugin JavaScript. Selain itu, Bootstrap memiliki kemampuan untuk membuat desain responsif
-yang secara otomatis menyesuaikan diri agar terlihat baik di segala perangkat, mulai dari perangkat ponsel
-hingga desktop pc.
+Javascript, seperti namanya, merupakan bahasa pemrograman scripting. Dan seperti bahasa scripting
+lainnya, Javascript umumnya digunakan hanya untuk program yang tidak terlalu besar, biasanya hanya
+beberapa ratus baris. Javascript pada umumnya mengontrol program yang berbasis Java. Jadi memang
+pada dasarnya Javascript tidak dirancang untuk digunakan dalam aplikasi skala besar.
+Meskipun dibuat dengan tujuan awal untuk mengendalikan program Java, komunitas Javascript
+menggunakan bahasa ini untuk tujuan lain, memanipulasi gambar dan isi dari dokumen HTML. Singkatnya,
+pada akhirnya Javascript digunakan untuk satu tujuan utama, “menghidupkan” dokumen HTML dengan
+mengubah konten statis menjadi dinamis dan interaktif. Bersamaan dengan perkembangan Internet dan
+dunia web yang pesat, Javascript akhirnya menjadi bahasa utama dan satu-satunya untuk membuat HTML
+menjadi interaktif di dalam browser.
+6.1.2. Prinsip Dasar Javascript
+Prinsip dasar yang terdapat pada bahasa pemrograman javascript adalah sebagai berikut.
 
-## Tugas 5: Fitur Cairin THR
+1. Javascript mendukung paradigma pemrograman imparatif (Javascript dapat menjalankan perintah
+   program baris demi baris, dengan masing-masing baris berisi satu atau lebih perintah), fungsional
+   (struktur dan elemen-elemen dalam program sebagai fungsi matematis yang tidak memiliki keadaan
+   (state) dan data yang dapat berubah (mutable data)), dan orientasi objek (segala sesuatu yang terlibat
+   dalam program dapat disebut sebagai “objek”).
+2. Javascript memiliki model pemrograman fungsional yang sangat ekspresif.
+3. Pemrograman berorientasi objek (PBO) pada Javascript memiliki perbedaan dari PBO pada umumnya.
+4. Program kompleks pada Javascript umumnya dipandang sebagai program-program kecil yang saling
+   berinteraksi.
+
+## Tugas 5: Toko Kelontong Pak Cik dan Aimar Loh yaa
+
+Buat project bisa menggunakan (CodeIgniter, Laravel, ExpressJS, NestJS, DLL) dimana kalian diminta membuat web inventari toko punya pak cik sama mas aimar (yang ga paham suki) dimana terdapat sebuah crud untuk mengelola produk, dengan tampilan seperti datatable, form create, form edit, dan konfirmasi modal untuk delete. Dan untuk project wajib menggunakan jquery untuk DOM manipulation serta gunakan bootstrap untuk styling css nya, dan untuk data disimpan dalam bentuk json (bukan database). dan buat nilai plus tambahkan dokumentasi project nya (bawaan ai juga udah ada pasti)
 
 Buka lagi file halaman Ramadan kalian dari Task 4, terus tambahin satu tombol surprise. Begitu tombolnya di-klik, harus muncul modal pop-up yang isinya "Selamat, Anda mendapatkan THR!". Bikin UI/UX-nya se-interaktif dan sekeren mungkin biar yang ngeklik beneran kerasa dapet duit. (jujur ane lagi BU)
 
 ### 1. Source Code
 
-<!-- index.html (Ramadan + THR surprise) -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadan · Bonus THR Surprise</title>
-    <!-- Bootstrap 5 + Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        /* tiny extra for interactive feeling but only animation (no layout/styling override) – still pure bootstrap */
-        .btn-surprise {
-            transition: all 0.2s ease;
-        }
-        .btn-surprise:active {
-            transform: scale(0.96);
-        }
-    </style>
-</head>
-<body class="bg-dark bg-gradient">
+let dataTable;
+let currentDeleteId = null;
 
-<nav class="navbar navbar-expand-lg bg-success bg-opacity-75 shadow-sm" data-bs-theme="dark">
-    <div class="container">
-        <span class="navbar-brand fs-3"><i class="bi-moon-stars-fill"></i> Ramadan Suci + THR</span>
-        <div class="ms-auto">
-            <span class="text-warning-emphasis fw-semibold"><i class="bi-cash-stack"></i> Bonus special</span>
-        </div>
-    </div>
-</nav>
+// Load DataTable
+function loadProducts() {
+$.ajax({
+        url: '/api/products',
+        method: 'GET',
+        success: function(products) {
+            if (dataTable) {
+                dataTable.clear().destroy();
+            }
+            const tbody = $('#productsTable tbody');
+            tbody.empty();
+            products.forEach(prod => {
+                const row = `<tr>
+                    <td>${prod.id}</td>
+<td>${escapeHtml(prod.name)}</td>
+                    <td>${formatRupiah(prod.price)}</td>
+<td>${prod.stock}</td>
+                    <td>${escapeHtml(prod.description || '-')}</td>
+<td>
+<button class="btn btn-sm btn-warning edit-btn" data-id="${prod.id}"><i class="bi-pencil"></i> Edit</button>
+<button class="btn btn-sm btn-danger delete-btn" data-id="${prod.id}" data-name="${escapeHtml(prod.name)}"><i class="bi-trash"></i> Hapus</button>
+</td>
+</tr>`;
+tbody.append(row);
+});
+dataTable = $('#productsTable').DataTable({
+pageLength: 10,
+language: { url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json' }
+});
+},
+error: () => alert('Gagal memuat data produk')
+});
+}
 
-<div class="container my-5 py-4 text-center text-white">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <h1 class="display-3 fw-bold text-warning">🌙 Ramadan Kareem 🌙</h1>
-            <p class="lead fs-4 mt-3">Bulan penuh ampunan & berkah. Ada kejutan THR spesial!</p>
-            <!-- TOMBOL SURPRISE -->
-            <button class="btn btn-danger btn-lg px-5 mt-4 btn-surprise shadow-lg" data-bs-toggle="modal" data-bs-target="#thrModal">
-                🧧 Klik Kejutan THR 🧧
-            </button>
-        </div>
-    </div>
-</div>
+function openCreateModal() {
+$('#modalTitle').text('Tambah Produk');
+$('#productId').val('');
+$('#productForm')[0].reset();
+$('#productModal').modal('show');
+}
 
-<!-- 3 kartu amalan (sama seperti task4) -->
-<div class="container mb-5">
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card h-100 border-warning bg-dark text-white bg-opacity-90">
-                <div class="card-body text-center">
-                    <i class="bi-clock-history fs-1 text-warning"></i>
-                    <h5 class="card-title mt-3">Sahur & Berkah</h5>
-                    <p class="card-text">Jangan lupakan sahur, karena ada keberkahan di dalamnya.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 border-warning bg-dark text-white bg-opacity-90">
-                <div class="card-body text-center">
-                    <i class="bi-book-half fs-1 text-warning"></i>
-                    <h5 class="card-title mt-3">Tadarus Al-Qur'an</h5>
-                    <p class="card-text">Satu juz per hari, khatamkan Al-Qur'an di bulan mulia.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card h-100 border-warning bg-dark text-white bg-opacity-90">
-                <div class="card-body text-center">
-                    <i class="bi-heart-handshake fs-1 text-warning"></i>
-                    <h5 class="card-title mt-3">Sedekah & Peduli</h5>
-                    <p class="card-text">Lipatgandakan pahala dengan berbagi kepada sesama.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+function openEditModal(id) {
+$.ajax({
+        url: `/api/products/${id}`,
+method: 'GET',
+success: (product) => {
+$('#modalTitle').text('Edit Produk');
+$('#productId').val(product.id);
+$('#name').val(product.name);
+$('#price').val(product.price);
+$('#stock').val(product.stock);
+$('#description').val(product.description);
+$('#productModal').modal('show');
+},
+error: () => alert('Data tidak ditemukan')
+});
+}
 
-<!-- MODAL SURPRISE THR (Bootstrap) -->
-<div class="modal fade" id="thrModal" tabindex="-1" aria-labelledby="thrModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content bg-warning bg-gradient text-dark">
-            <div class="modal-header border-0">
-                <h5 class="modal-title fs-2 fw-bold" id="thrModalLabel">🎉 SELAMAT! 🎉</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center py-4">
-                <i class="bi bi-cash-stack display-1 text-success"></i>
-                <p class="fs-2 mt-3 fw-bold">Selamat, Anda mendapatkan THR!</p>
-                <div class="border rounded-3 bg-light p-3 mt-2">
-                    <i class="bi bi-currency-dollar"></i> THR Cair + Bonus Iman & Kebaikan ✨
-                </div>
-                <div class="mt-3 text-muted">Terima kasih telah menjadi pengguna setia · Ramadan Mubarak</div>
-            </div>
-            <div class="modal-footer border-0 justify-content-center">
-                <button type="button" class="btn btn-success btn-lg px-4" data-bs-dismiss="modal">Ambil THR 🧧</button>
-            </div>
-        </div>
-    </div>
-</div>
+$('#saveBtn').on('click', () => {
+    const id = $('#productId').val();
+    const productData = {
+        name: $('#name').val(),
+        price: $('#price').val(),
+        stock: $('#stock').val(),
+        description: $('#description').val()
+    };
+    const method = id ? 'PUT' : 'POST';
+    const url = id ? `/api/products/${id}` : '/api/products';
+$.ajax({
+url: url,
+method: method,
+contentType: 'application/json',
+data: JSON.stringify(productData),
+success: () => {
+$('#productModal').modal('hide');
+loadProducts();
+},
+error: (err) => alert('Error: ' + (err.responseJSON?.message || 'Gagal simpan'))
+});
+});
 
-<footer class="bg-black bg-opacity-75 text-center text-white-50 py-4 mt-4">
-    <p class="mb-0"><i class="bi-gift-fill text-warning"></i> Klik tombol merah untuk kejutan THR <i class="bi-gift-fill text-warning"></i></p>
-</footer>
+$(document).on('click', '.edit-btn', function() {
+const id = $(this).data('id');
+openEditModal(id);
+});
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<!-- optional: tiny auto-trigger animation, but modal opened via data attributes -->
-</body>
-</html>
+$(document).on('click', '.delete-btn', function() {
+currentDeleteId = $(this).data('id');
+const name = $(this).data('name');
+$('#deleteProductName').text(name);
+$('#deleteModal').modal('show');
+});
 
-**Kode Lengkap:** [task5.html](task5.html)
+$('#confirmDeleteBtn').on('click', () => {
+    if (currentDeleteId) {
+        $.ajax({
+            url: `/api/products/${currentDeleteId}`,
+method: 'DELETE',
+success: () => {
+$('#deleteModal').modal('hide');
+loadProducts();
+},
+error: () => alert('Gagal menghapus produk')
+});
+}
+});
 
-### 2. Penjelasan
+function formatRupiah(angka) {
+return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+}
 
-halaman web bertema Ramadan yang dibuat menggunakan HTML dan Bootstrap 5. Pada bagian atas terdapat navbar yang menampilkan judul Ramadan Suci + THR. Di bagian utama halaman ditampilkan ucapan Ramadan Kareem serta tombol Kejutan THR yang menjadi fitur utama website. Ketika tombol tersebut diklik, akan muncul sebuah modal atau popup berisi ucapan selamat mendapatkan THR sebagai bentuk kejutan interaktif. Selain itu, terdapat tiga kartu amalan Ramadan yaitu Sahur & Berkah, Tadarus Al-Qur'an, serta Sedekah & Peduli yang bertujuan memberikan pesan positif selama bulan Ramadan. Website ini bersifat responsif, interaktif, dan memanfaatkan komponen Bootstrap sehingga tampilannya rapi tanpa perlu banyak kode JavaScript tambahan.
+function escapeHtml(str) {
+if(!str) return '';
+return str.replace(/[&<>]/g, function(m) {
+if (m === '&') return '&amp;';
+if (m === '<') return '&lt;';
+if (m === '>') return '&gt;';
+return m;
+});
+}
+
+$(document).ready(() => {
+loadProducts();
+});
+
+**Kode Lengkap:**
+ada di file server.js
 
 ### 3. Output
 
-![alt text](t5.jpeg)
+ada di file t6.jpeg

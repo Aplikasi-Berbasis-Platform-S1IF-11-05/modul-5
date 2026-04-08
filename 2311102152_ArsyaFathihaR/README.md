@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> BOOTSTRAP + JAVASCRIPT </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,6 +35,15 @@
 
 # Dasar Teori
 ## 📚 Dasar Teori
+### Bootstrap  
+Bootstrap adalah framework front-end open-source yang digunakan untuk mempermudah pembuatan tampilan website agar lebih responsif dan terstruktur. Bootstrap menyediakan berbagai komponen berbasis CSS dan JavaScript yang siap digunakan sehingga pengembang tidak perlu membuat desain dari awal.
+
+Di fitur ini digunakan untuk:
+- Membuat tampilan website menjadi responsif (menyesuaikan layar)
+- Mengatur layout menggunakan grid system
+- Menggunakan komponen siap pakai seperti button, navbar, dan card
+- Mempercepat proses desain antarmuka (UI)
+---
 
 ### JavaScript
 JavaScript adalah bahasa pemrograman yang digunakan untuk membuat website menjadi interaktif.
@@ -46,6 +55,7 @@ Di fitur ini digunakan untuk:
 - Membuat animasi sederhana (efek uang jatuh)
 
 ---
+
 
 ### jQuery
 jQuery adalah library dari JavaScript yang mempermudah penulisan kode.
@@ -327,8 +337,9 @@ Output:
 ## 📌 Deskripsi
 Fitur **Cairin THR** adalah fitur interaktif pada website bertema Ramadan yang dibuat untuk memberikan pengalaman menarik kepada pengguna.
 
-Pengguna dapat menekan tombol untuk mencairkan THR, lalu sistem akan menampilkan proses hingga akhirnya muncul hasil bahwa pengguna mendapatkan THR. Fitur ini dibuat agar tidak terlihat instan, tapi memiliki alur seperti aplikasi digital modern.
+Pengguna dapat menekan tombol yang tersedia untuk melakukan proses pencairan THR. Setelah tombol ditekan, sistem tidak langsung menampilkan hasil akhir, melainkan akan menampilkan serangkaian proses terlebih dahulu, seperti tampilan loading atau animasi tertentu. Hal ini bertujuan untuk memberikan kesan bahwa sistem sedang memproses data secara real-time.
 
+Setelah proses tersebut selesai, barulah sistem akan menampilkan hasil akhir berupa informasi bahwa pengguna berhasil mendapatkan THR. Alur ini dirancang agar pengalaman pengguna terasa lebih interaktif dan tidak instan, sehingga menyerupai mekanisme yang umum digunakan pada aplikasi digital modern yang menampilkan proses sebelum hasil akhir ditampilkan.
 ---
 
 ## ⚙️ Cara Kerja
