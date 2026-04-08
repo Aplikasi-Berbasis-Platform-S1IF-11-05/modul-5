@@ -2,7 +2,7 @@
     <br />
     <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
     <br />
-    <h3>MODUL 5 <br> BOOTSTRAP </h3>
+    <h3>MODUL 6 <br> JAVASCRIPT & JQUERY </h3>
     <br />
     <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
     <br />
@@ -34,63 +34,107 @@
 
 ## Dasar Teori
 
-Bootstrap merupakan **framework CSS** yang digunakan untuk mempercepat proses pengembangan tampilan web dengan menyediakan kumpulan class siap pakai. Dengan Bootsrap, developer tidak perlu menulis styling dari nol karena sudah tersedia komponen seperti grid system, navbar, card, button, utilities, yang dapat langsung digunakan untuk membangun antarmuka yang konsisten dan responsif.
+JavaScript merupakan bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web. JavaScript berjalan di sisi client (browser) dan memungkinkan halaman web merespons aksi pengguna seperti klik, input, maupun perubahan elemen secara dinamis.
 
-Salah satu konsep utama dalam Bootstrap adalah **grid system**, yaitu sistem layout berbasis baris (`row`) dan kolom (`col`) yang memudahkan pengaturan posisi elemen secara fleksibel dan otomatis menyesuaikan berbagai ukuran layar. Hal ini menjadikan tampilan web lebih responsif tanpa perlu penulisan CSS tambahan.
+Dalam pengembangan web, JavaScript bekerja bersama HTML dan CSS dengan peran yang berbeda, yaitu HTML sebagai struktur, CSS sebagai pengendali logika serta interaksi. Dengan JavaScript, elemen HTML dapat dimanipulasi secara langsung melalui DOM (Document Object Model), seperti mengubah isi, atribut, maupun gaya satu elemen.
 
-Bootstrap juga menyediakan berbagai **komponen UI** seperti navbar, card, button, dan alert yang dapat digunakan dengan hanya menambahkan class tertentu pada elemen HTML. Selain itu, terdapat **utility class** seperti pengaturan warna (`bd-*`, `text-*`), spacing (`m-*`, `p-*`), serta alignment yang membantu mempercepat proses styling tanpa perlu membuat file CSS terpisah.
+Salah satu konsep penting dalam JavaScript adalah **event handling**, yaitu kemampuan untuk menangani berbagai aksi pengguna seperti `click`, `submit`, dan `hover`. Event ini digunakan untuk menjalankan fungsi tertentu sehingga halaman web menjadi lebih responsif dan interaktif.
 
-Dalam penggunaannya, Bootstrap biasanya diintegrasikan melalui **CDN (Content Delivery Network)** sehingga dapat langsung digunakan tanpa instalasi. Dengan pendekatan ini, pengembangan halaman menjadi lebih cepat, terstruktur, dan efisien, terutama untuk membangun tampilan modern berbasis komponen.
+Selain JavaScript, terdapat library bernama **jQuery** yang dikembangkan oleh Resig pada tahun 2006 untuk menyederhanakan penulisan kode JavaScript. jQuery memungkinkan manipulasi elemen HTML dilakukan dengan sintaks yang lebih ringkas dan efisien.
+
+Beberapa fitur utama jQuery meliputi kemampuan untuk melakukan manipulasi DOM dengan selector yang sederhana, menangani event dengan lebih mudah, mendukung teknologi AJAX untuk komunikasi data secara asynchronous, serta menyediakan berbagai animasi bawaan yang dapat digunakan untuk halaman web. Selain itu, jQuery memiliki ukuran file yang relatif ringan sehingga tetap efisien untuk digunakan dalam pengembangan aplikasi web.
+
+Dengan kombinasi JavaScript dan jQuery, proses pengembangan halaman web menjadi lebih cepat, terstruktur, dan mampu menghasilkan interaksi yang lebih dinamis serta meningkatkan pengalaman pengguna.
 
 ## Tugas 4: Mode Suci (Edisi Ramadan)
 
 ### 1. Source Code
+
+```javascript
+class THRController {
+    constructor() {
+        this.thrButton = document.getElementById('thrButton');
+        
+        this.thrModal = new bootstrap.Modal(document.getElementById('thrModal'));
+        
+        this.giftIcon = document.getElementById('giftIcon');
+
+        this.init();
+    }
+
+    init() {
+        this.thrButton.addEventListener('click', () => this.handleClick());
+    }
+
+    handleClick() {
+        this.thrButton.style.transform = 'scale(0.95)';
+
+        setTimeout(() => {
+            this.thrButton.style.transform = 'scale(1)';
+            this.thrModal.show();
+            this.animateGiftIcon();
+        }, 100);
+    }
+
+    animateGiftIcon() {
+        this.giftIcon.style.animation = 'none';
+
+        setTimeout(() => {
+            this.giftIcon.style.animation = 'bounce 0.6s ease-in-out 3';
+        }, 10);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new THRController();
+});
+```
+
+**Kode Lengkap:** [assets/js/thr.js](assets/js/thr.js)
 
 ```html
 ...
     <!-- THR Modal -->
     <div class="modal fade" id="thrModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark border-success border-4">
+            <div class="modal-content">
                 
                 <!-- Header -->
-                <div class="modal-header bg-success border-success border-bottom-3">
-                    <h5 class="modal-title fw-bolder text-dark">
-                        <i class="bi bi-gift-fill me-2"></i>Kejutan Spesial!
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <div class="modal-header pt-4 pb-0">
+                    ...
                 </div>
                 
                 <!-- Body -->
-                <div class="modal-body text-center py-5">
-                    <!-- Icon -->
+                <div class="modal-body">
+                    <!-- Crescent & Star -->
                     <div class="mb-4">
-                        <i class="bi bi-moon-stars text-warning" style="font-size: 3rem;"></i>
+                        <i class="bi bi-moon-stars text-warning" style="font-size: 2.5rem;"></i>
                     </div>
                     
-                    <!-- Main Message -->
-                    <h2 class="fw-bolder text-success mb-3" style="font-size: 2rem;">SELAMAT!</h2>
+                    <!-- Main Blessing -->
+                    <h2 class="fw-bolder mb-3 text-warning">SELAMAT</h2>
                     
                     <!-- Subtitle -->
-                    <p class="lead text-light mb-3">Anda Mendapatkan</p>
+                    <p class="text-light mb-1 fw-semibold" style="font-size: 1.1rem;">Anda Mendapatkan</p>
+                    <p class="text-warning fw-bold mb-5 decoration-text">TUNJANGAN HARI RAYA</p>
                     
-                    <!-- THR Card -->
-                    <div class="card bg-success border-success border-2 mb-4 p-4">
-                        <h3 class="fw-bolder text-dark mb-2">Tunjangan Hari Raya</h3>
-                        <p class="text-dark small mb-0">Semoga membawa berkah untuk Anda dan keluarga</p>
+                    <!-- THR Gift Card -->
+                    <div class="gift-card">
+                        ...
                     </div>
                     
-                    <!-- Doa -->
-                    <p class="text-secondary fst-italic mb-0">
-                        "Semoga setiap rezeki yang Anda terima menjadi berkah dan kebaikan"
-                    </p>
+                    <!-- Doa/Blessing -->
+                    <div class="doa-section">
+                        ...
+                    </div>
+                    
+                    <!-- Bottom -->
+                    <p class="text-warning fw-bold decoration-text">✧ ✧ ✧</p>
                 </div>
                 
                 <!-- Footer -->
-                <div class="modal-footer bg-dark border-success border-top-3">
-                    <button type="button" class="btn btn-success fw-bold" data-bs-dismiss="modal">
-                        <i class="bi bi-check-circle me-2"></i>Terima Kasih
-                    </button>
+                <div class="modal-footer pb-4">
+                    ...
                 </div>
             </div>
         </div>
@@ -102,11 +146,15 @@ Dalam penggunaannya, Bootstrap biasanya diintegrasikan melalui **CDN (Content De
 
 ### 2. Penjelasan
 
-Fitur THR pada halaman ini dibuat dengan memanfaatkan komponen **Modal** dari Bootstrap. Tombol **Buka Surprise** sudah diatur menggunakan atribut `data-bs-toggle="modal"` dan `data-bs-target="#thrModal"`, sehingga ketika tombol tersebut diklik, modal akan muncul secara otomatis tanpa memerlukan JavaScript tambahan. Cara ini membuat interaksi menjadi lebih sederhana, langsung, dan tetap sesuai dengan kebutuhan tugas.
+Kode JavaScript pada fitur ini menggunakan pendekatan **Object-Oriented Programming (OOP)** melalui class `THRController` untuk mengelola interaksi tombol THR dan modal secara terstruktur. Pada construktor, dilakukan inisialisasi elemen DOM seperti tombol (`thrButton`), modal (`thrModal`), dan ikon hadiah (`gidtIcon`) yang akan digunakan dalam proses interaksi.
 
-Modal yang digunakan juga disusun agar tetap selaras dengan tema Ramadan yang diterapkan pada halaman utama. Bagian `modal-dialog-centered` digunakan supaya posisi modal tampil di tengah layar, sedangkan `modal-content bg-dark border-success border-4` memberi kesan gelap namun tetap serasi dengan warna hijau sebagai aksen utama. Pada bagian header, terdapat judul kejutan dengan ikon hadiah, lalu pada bagian body ditampilkan pesan utama, yaitu **"Selamat, Anda mendapatkan THR!"**, beserta informasi pendukung yang memperkuat isi modal.
+Modal diinisialisasi menggunakan `new bootstrap.Model()` yang menggunakan API bawaan Bootstrap untuk mengontrol modal melalui JavaScript tanpa perlu atribut HTML tambahan. Hal ini memberikan fleksibilitas lebih dalam mengatur perilaku modal secara dinamis.
 
-Selain itu, bagian footer pada modal menyediakan tombol **Terima Kasih** yang menggunakan atribut `data-bs-dismiss="modal"` untuk menutup modal secara langsung. Dengan susunan tersebut, fitur THR tidak hanya berfungsi sebagai kejutan, tetapi juga tetap memberikan pengalaman pengguna yang rapi, jelas, dan nyaman saat dijalankan.
+Event handling diterapkan pada method `init()` dengan menambahkan event listiner `click` pada tombol THR. Ketika tombol di klik, method `handleClick()` akan dijalankan untuk memberikan efek animasi skala (scale) sebagai feedback visual, kemudian menampilkan modal menggunakan method `.show()` dari Bootstrap.
+
+Selain itu, terdapat method `animateGiftIcon()` yang berfungsi untuk memicu animasi pada ikon hadian dengan cara mereset dan mengaktifkan kembali properti CSS animation. Teknik ini digunakan agar animasi dapat diputar ulang setiap kali modal ditampilkan.
+
+Terakhir, penggunaan `DomContentLoaded` memastikan bahwa seluruh elemen HTML telah dimuat sebelum inisialisasi class dijalankan, sehingga menghindari error akibat elemen yang belum tersedia di DOM.
 
 ### 3. Output
 
@@ -114,4 +162,4 @@ Selain itu, bagian footer pada modal menyediakan tombol **Terima Kasih** yang me
 
 ## Kesimpulan
 
-Bootstrap memudahkan pembuatan halaman yang responsif dan interaktif melalui komponen siap pakai seperti navbar, card, button, dan modal, sehingga fitur THR dapat ditampilkan dengan cepat, rapi, dan sesuai tema Ramadan.
+JavaScript memungkinkan pembuatan fitur interaktif yang terstruktur dan dinamis melalui pengelolaan event, manipulasi DOM, serta integrasi dan komponen Bootstrap seperti modal.

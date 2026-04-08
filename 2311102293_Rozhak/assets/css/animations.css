@@ -1,0 +1,172 @@
+/* Animations */
+
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(0) scale(1); 
+    }
+    50% { 
+        transform: translateY(-20px) scale(1.1); 
+    }
+}
+
+@keyframes popIn {
+    0% { 
+        opacity: 0;
+        transform: scale(0.5) translateY(-20px);
+    }
+    50% {
+        transform: scale(1.05) translateY(0);
+    }
+    100% { 
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Gift Icon */
+#giftIcon {
+    transition: all 0.3s ease;
+}
+
+/* Modal Entry */
+.modal.show .modal-content {
+    animation: popIn 0.5s ease-out;
+}
+
+/* Button States */
+#thrButton {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#thrButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(212, 175, 55, 0.4);
+}
+
+#thrButton:active {
+    transform: scale(0.95);
+}
+
+/* Modal Container */
+#thrModal .modal-content {
+    background: linear-gradient(180deg, #0a2342 0%, #1a4d5c 50%, #0a2342 100%);
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.2);
+    border: none;
+}
+
+/* Header */
+#thrModal .modal-header {
+    border: none;
+    padding-top: 1.5rem;
+    padding-bottom: 0;
+}
+
+#thrModal .modal-header .w-100 {
+    text-align: center;
+}
+
+#thrModal .modal-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #e8d5b5;
+}
+
+/* Body */
+#thrModal .modal-body {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+#thrModal h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #D4AF37;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+#thrModal .text-light {
+    color: #e8d5b5 !important;
+}
+
+#thrModal .text-warning {
+    color: #D4AF37 !important;
+}
+
+/* Gift Card */
+#thrModal .gift-card {
+    border: 2px solid #D4AF37;
+    border-radius: 8px;
+    padding: 2.5rem;
+    background: rgba(212, 175, 55, 0.05);
+    margin-bottom: 2rem;
+}
+
+#thrModal .gift-card i {
+    font-size: 3rem;
+    color: #FFD700;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+#thrModal .gift-card h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #e8d5b5;
+    margin-bottom: 1rem;
+}
+
+#thrModal .gift-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #e8d5b5;
+    margin: 0;
+}
+
+/* Doa Section */
+#thrModal .doa-section p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+#thrModal .doa-section .doa-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: #e8d5b5;
+}
+
+/* Footer */
+#thrModal .modal-footer {
+    border: none;
+    padding-bottom: 1.5rem;
+    background: transparent;
+}
+
+#thrModal .modal-footer .btn {
+    background: #D4AF37;
+    color: #0a2342;
+    border: 2px solid #D4AF37;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    margin: 0 auto;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+#thrModal .modal-footer .btn:hover {
+    background: #FFD700;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+#thrModal .modal-footer .btn:active {
+    transform: scale(0.98);
+}
+
+/* Decorative */
+.decoration-text {
+    letter-spacing: 3px;
+    font-size: 0.85rem;
+    margin-bottom: 0 !important;
+}
