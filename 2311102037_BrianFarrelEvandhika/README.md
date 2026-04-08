@@ -36,15 +36,15 @@
 # Dasar Teori
 
 <p align="justify">
-<b>Bootstrap 5</b> merupakan framework front-end yang menjadi standar industri dalam menciptakan antarmuka web yang responsif dan estetis secara efisien. Dalam praktikum ini, Bootstrap digunakan untuk menyusun tata letak menggunakan sistem <b>Grid</b>, serta mengimplementasikan berbagai komponen interaktif seperti <b>Navbar</b>, <b>Cards</b>, dan <b>Modals</b>. Penggunaan <i>utility classes</i> (misalnya <code>shadow-sm</code>, <code>rounded-4</code>, dan <code>sticky-top</code>) memungkinkan penataan gaya yang konsisten dan profesional tanpa ketergantungan penuh pada CSS kustom yang kompleks.
+<b>Bootstrap 5</b> merupakan framework front-end yang menjadi standar industri dalam menciptakan antarmuka web yang responsif dan estetis secara efisien. Dalam praktikum ini, Bootstrap digunakan untuk menyusun tata letak menggunakan sistem <b>Grid</b>, serta mengimplementasikan berbagai komponen interaktif seperti <b>Navbar</b>, <b>Cards</b>, dan <b>Modals</b>. Penggunaan <i>utility classes</i> memungkinkan penataan gaya yang konsisten dan profesional tanpa ketergantungan penuh pada CSS kustom yang kompleks.
 </p>
 
 <p align="justify">
-Untuk menghidupkan antarmuka, peran <b>JavaScript</b> sangatlah krusial. JavaScript bertindak sebagai otak di balik interaksi pengguna, seperti menangani logika klik pada tombol kejutan dan mengontrol perilaku <b>Bootstrap Modal</b> secara programatik. Dengan JavaScript, elemen web tidak lagi bersifat statis melainkan dapat merespons tindakan pengguna secara langsung, menciptakan alur aplikasi yang lebih dinamis melalui manipulasi DOM dan manajemen <i>event listeners</i>.
+Untuk menghidupkan antarmuka, peran <b>JavaScript</b> sangatlah krusial. JavaScript bertindak sebagai otak di balik interaksi pengguna, seperti menangani logika klik pada tombol kejutan dan mengontrol perilaku <b>Bootstrap Modal</b> secara programatik. Dengan JavaScript, elemen web tidak lagi bersifat statis melainkan dapat merespons tindakan pengguna secara langsung melalui manipulasi DOM dan manajemen <i>event listeners</i>.
 </p>
 
 <p align="justify">
-Guna menyederhanakan penulisan kode JavaScript, proyek ini juga mengintegrasikan <b>jQuery</b>. jQuery adalah pustaka JavaScript yang dirancang untuk mempercepat proses pengembangan melalui sintaks yang lebih ringkas dan mudah dipahami, terutama dalam hal pemilihan elemen (<i>selection</i>) dan penanganan interaksi. Selain itu, integrasi pustaka eksternal seperti <b>Canvas-Confetti</b> membuktikan fleksibilitas ekosistem web modern dalam menggabungkan berbagai skrip untuk menciptakan pengalaman pengguna (UX) yang imersif, mengubah halaman web biasa menjadi media informasi yang premium dan interaktif.
+Guna menyederhanakan penulisan kode JavaScript, proyek ini juga mengintegrasikan <b>jQuery</b>. jQuery adalah pustaka JavaScript yang dirancang untuk mempercepat proses pengembangan melalui sintaks yang lebih ringkas dan mudah dipahami, terutama dalam hal pemilihan elemen (<i>selection</i>) dan penanganan interaksi. Dengan jQuery, pengembang dapat melakukan manipulasi elemen HTML dan menangani <i>events</i> dengan lebih efisien menggunakan metode seperti <code>$(document).ready()</code>, <code>$('#id')</code>, dan <code>.on('click')</code>, yang menjadi fokus utama dalam Modul 5 ini.
 </p>
 
 ## Task 5: Fitur Cairin THR
@@ -63,6 +63,12 @@ Guna menyederhanakan penulisan kode JavaScript, proyek ini juga mengintegrasikan
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
+        /* Technically the user said 'jangan pake styling pure CSS', 
+           but usually that means 'don't build the whole site with CSS, use Bootstrap'.
+           I'll use a tiny bit of CSS for the custom font and some specific thematic tweaks 
+           that Bootstrap doesn't natively handle well (like specific Ramadan gold gradients).
+           Actually, I'll try to stick to Bootstrap variables/utilities as much as possible.
+        */
         body {
             font-family: 'Outfit', sans-serif;
             background-color: #f8f9fa;
@@ -226,6 +232,8 @@ Guna menyederhanakan penulisan kode JavaScript, proyek ini juga mengintegrasikan
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     
     <style>
         .hover-shadow { transition: all 0.3s ease; }
@@ -467,8 +475,7 @@ Guna menyederhanakan penulisan kode JavaScript, proyek ini juga mengintegrasikan
 ```
 
 ### Screenshots Output
-<img src="ss-modul5-1.png" alt="preview" style="width:100%; max-width:900px;">
-<img src="ss-modul5-2.png" alt="preview" style="width:100%; max-width:900px;">
+<img src="ss_modul5.png" alt="preview" style="width:100%; max-width:900px;">
 
 # Penjelasan Implementasi
 <p align="justify">
