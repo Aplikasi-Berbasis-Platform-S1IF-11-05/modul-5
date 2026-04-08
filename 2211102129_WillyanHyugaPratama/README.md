@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5<br> Bootstrap </h3>
+  <h3>MODUL 5<br> Javascript & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,38 +33,29 @@
 
 <hr>
 
-# Dasar Teori Bootstrap
+# Dasar Teori JavaScript dan jQuery
 
-## 1. Pengertian Bootstrap
-Bootstrap adalah kerangka kerja (framework) open-source berbasis CSS, HTML, dan JavaScript yang paling populer di dunia untuk pengembangan web yang responsif serta mengutamakan tampilan mobile (*mobile-first*). Awalnya dikembangkan oleh tim Twitter, Bootstrap kini menjadi standar industri karena kemampuannya menyederhanakan proses desain interface tanpa harus menulis banyak kode CSS manual.
+## 1. JavaScript (JS)
 
-## 2. Fitur Utama Bootstrap
-*   **Responsive Grid System**: Menggunakan sistem grid berbasis flexbox yang membagi halaman menjadi 12 kolom, memungkinkan tata letak yang adaptif di berbagai ukuran perangkat.
-*   **Mobile-First Approach**: Kode Bootstrap dioptimalkan untuk perangkat seluler terlebih dahulu, kemudian ditingkatkan skalanya untuk layar yang lebih besar menggunakan media queries.
-*   **Pre-styled Components**: Menyediakan katalog komponen antarmuka siap pakai yang kaya, seperti Navbar, Button, Card, Modal, Carousel, dan lainnya.
-*   **Utility-First Classes**: Kumpulan class utilitas untuk mengatur margin, padding, warna, tipografi, dan perataan secara instan.
-*   **JavaScript Plugins**: Integrasi fungsionalitas interaktif yang sudah teruji, seperti toggle dropdown, modal pop-up, dan tooltip menggunakan Vanilla JS (versi terbaru) atau Popper.js.
+JavaScript adalah bahasa pemrograman *high-level*, *scripting*, *dynamically-typed*, dan *interpreted* yang dikembangkan pertama kali oleh **Brendan Eich** di Netscape pada tahun 1995. Saat ini, JavaScript telah menjadi salah satu bahasa pemrograman paling populer di dunia dan merupakan pilar utama dalam pengembangan web modern bersama HTML dan CSS. JavaScript memungkinkan pengembang untuk mengimplementasikan fitur-fitur kompleks pada halaman web, seperti pembaruan konten secara dinamis, validasi formulir, animasi, serta komunikasi asinkron dengan server.
 
-## 3. Sistem Grid Bootstrap
-Sistem grid Bootstrap adalah fondasi utama dalam pembuatan layout. Komponen utamanya adalah:
-1.  **Container**: Elemen pembungkus utama untuk menyelaraskan dan memusatkan konten (`.container` atau `.container-fluid`).
-2.  **Row**: Bertindak sebagai pembungkus horizontal untuk kolom dan memastikan kolom sejajar dengan benar (`.row`).
-3.  **Column**: Unit terkecil yang menentukan lebar konten dalam baris (`.col-*`). Total kolom dalam satu baris adalah 12.
+JavaScript distandarisasi oleh **ECMA International** dengan nama resmi **ECMAScript (ES)**. Versi modern yang banyak digunakan saat ini adalah **ES6 (ECMAScript 2015)** ke atas, yang memperkenalkan banyak fitur penting seperti `let`/`const`, *arrow function*, *template literals*, *destructuring*, *promise*, dan *async/await*.
 
-Bootstrap menggunakan **Breakpoints** sebagai ambang batas lebar layar untuk perubahan tata letak:
-- **Extra Small (xs)**: < 576px
-- **Small (sm)**: ≥ 576px
-- **Medium (md)**: ≥ 768px
-- **Large (lg)**: ≥ 992px
-- **Extra Large (xl)**: ≥ 1200px
-- **Extra Extra Large (xxl)**: ≥ 1400px
+### 1.1. Karakteristik Utama JavaScript
 
-## 4. Utility Classes & Typography
-Beberapa kategori utilitas yang sangat penting dalam Bootstrap 5:
-*   **Spacing**: Menggunakan format `{property}{sides}-{size}` (contoh: `mt-3`, `px-5`) dengan skala 1 sampai 5.
-*   **Colors**: Memanfaatkan palet warna semantik seperti `primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light`, dan `dark`.
-*   **Typography**: Class seperti `.display-1..6`, `.fw-bold`, dan `.text-center` untuk kontrol teks yang presisi.
-*   **Flexbox & Grid Utilities**: Kontrol penuh atas tata letak fleksibel dengan class seperti `d-flex`, `justify-content-between`, dan `align-items-center`.
+| Karakteristik | Penjelasan |
+|---|---|
+| **Client-Side Scripting** | Kode JavaScript dieksekusi langsung di browser pengguna (*client*), bukan di server. Hal ini mengurangi beban server dan memberikan respon interaksi yang lebih cepat kepada pengguna. |
+| **Interpreted** | JavaScript tidak memerlukan proses kompilasi terpisah sebelum dijalankan. Browser memiliki *JavaScript Engine* (seperti V8 di Chrome, SpiderMonkey di Firefox) yang membaca dan mengeksekusi kode secara langsung. |
+| **Dynamically Typed** | Tipe data variabel ditentukan secara otomatis saat program berjalan (*runtime*), bukan saat penulisan kode. Sebuah variabel dapat menyimpan tipe data yang berbeda-beda sepanjang eksekusi program. |
+| **Event-Driven** | JavaScript dirancang untuk merespons berbagai kejadian (*event*) seperti klik mouse (`click`), input keyboard (`keydown`), pengiriman formulir (`submit`), atau perubahan nilai input (`change`). |
+| **Object-Based** | JavaScript mendukung paradigma pemrograman berorientasi objek (*Object-Oriented Programming*) berbasis prototipe (*prototype-based*), bukan berbasis kelas seperti Java atau C++. |
+
+### 1.2. Tipe Data dalam JavaScript
+
+JavaScript memiliki beberapa tipe data dasar:
+- **Primitive Types**: `String`, `Number`, `Boolean`, `Null`, `Undefined`, `Symbol`, dan `BigInt`.
+- **Reference Types**: `Object`, `Array`, dan `Function`.
 
 
 ### Source code - html
