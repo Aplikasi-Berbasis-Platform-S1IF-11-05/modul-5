@@ -35,10 +35,10 @@
 
 # Dasar Teori
 
-#Pengertian JavaScript
+## Pengertian JavaScript
 JavaScript merupakan bahasa pemrograman yang bersifat dinamis dan berperan penting dalam menciptakan interaktivitas pada sebuah website. Jika HTML digunakan untuk membangun struktur dan CSS untuk memperindah tampilan, maka JavaScript bertugas mengatur perilaku elemen agar dapat merespons aksi pengguna secara langsung. Melalui kemampuannya dalam memanipulasi Document Object Model (DOM), JavaScript memungkinkan perubahan konten, validasi formulir, hingga pembuatan animasi tanpa perlu memuat ulang halaman. Saat ini, penggunaannya tidak hanya terbatas pada sisi klien (client-side), tetapi juga berkembang ke sisi server (server-side) dengan bantuan lingkungan seperti Node.js, sehingga menjadi komponen utama dalam pengembangan aplikasi web modern yang dinamis dan interaktif.
 
-#Konsep Dasar JavaScript
+## Konsep Dasar JavaScript
 1. Variabel & Tipe Data
 Digunakan untuk menyimpan nilai atau informasi, baik berupa teks, angka, maupun nilai boolean (true/false), dengan menggunakan const (nilai tetap) atau let (nilai dapat berubah).
 2. Fungsi (Functions)
@@ -52,7 +52,7 @@ Fitur yang memungkinkan JavaScript mendeteksi dan merespons berbagai aksi penggu
 6. Asynchronous
 Teknik untuk menjalankan proses di latar belakang, seperti pengambilan data dari server, sehingga tidak mengganggu kinerja tampilan utama halaman.
 
-#Pengertian jQuery
+## Pengertian jQuery
 jQuery adalah library JavaScript yang dibuat untuk mempermudah interaksi antara kode JavaScript dengan elemen HTML. Dengan konsep “Write Less, Do More”, jQuery membantu menyederhanakan penulisan kode yang kompleks menjadi lebih ringkas dan efisien, sehingga pengembangan fitur interaktif pada website dapat dilakukan dengan lebih cepat dan praktis.
 
 # Tugas 5 — Fitur Cairin THR
