@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> Bootstrap Modal & JavaScript Interaktif </h3>
+  <h3>MODUL 5 <br> JavaScript & JQuery </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,9 +35,7 @@
 
 # Dasar Teori
 
-Bootstrap adalah framework front-end populer yang digunakan untuk membuat tampilan website secara cepat, responsif, dan konsisten tanpa harus menulis banyak CSS dari nol. Bootstrap menyediakan berbagai komponen siap pakai seperti navbar, tombol, card, grid system, dan form yang bisa langsung digunakan hanya dengan menambahkan class tertentu pada HTML. Selain itu, Bootstrap juga memiliki sistem grid berbasis flexbox yang memudahkan developer dalam mengatur layout agar tampil rapi di berbagai ukuran layar, mulai dari desktop hingga smartphone.
 
-Keunggulan utama Bootstrap adalah kemudahan penggunaan dan dokumentasi yang lengkap, sehingga sangat cocok untuk pemula maupun developer profesional. Dengan bantuan JavaScript bawaan, Bootstrap juga mendukung fitur interaktif seperti modal, dropdown, carousel, dan tabs tanpa perlu coding yang rumit. Selain mempercepat proses pengembangan, Bootstrap membantu menjaga konsistensi desain dan membuat website terlihat modern, menarik, serta responsif di berbagai perangkat.
 
 # Tugas 5 — Fitur Cairin THR
 
