@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> JS & JQuery </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,149 +35,164 @@
 
 ## 1. Dasar Teori
 
-Bootstrap adalah framework front-end berbasis HTML, CSS, dan JavaScript yang digunakan untuk mempermudah pengembangan tampilan website agar lebih cepat, responsif, dan konsisten. Bootstrap menyediakan berbagai komponen siap pakai seperti grid system, tombol, card, navbar, form, dan utilitas styling tanpa harus menulis CSS dari awal.
+JavaScript merupakan bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web. JavaScript berjalan di sisi klien (client-side) dan memungkinkan halaman web merespons tindakan pengguna seperti klik tombol, input form, serta manipulasi tampilan secara dinamis tanpa perlu memuat ulang halaman. Dengan JavaScript, elemen HTML dapat diakses melalui DOM (Document Object Model) kemudian diubah konten, atribut, maupun strukturnya. Pada Task 6, JavaScript digunakan untuk menyimpan data produk dalam array, menampilkan data ke tabel, serta menjalankan operasi CRUD seperti tambah, edit, dan hapus data.
 
-Secara teori, Bootstrap bekerja dengan konsep responsive design, yaitu tampilan web dapat menyesuaikan ukuran layar perangkat (desktop, tablet, maupun mobile). Hal ini didukung oleh grid system berbasis 12 kolom yang memungkinkan pengembang mengatur layout halaman secara fleksibel. Selain itu, Bootstrap juga menyediakan utility classes seperti pengaturan warna (bg-success), margin (mt-3), padding (p-4), dan tipografi (fw-bold, fs-3) untuk mempercepat proses styling.
+Untuk mempermudah penggunaan JavaScript, digunakan library jQuery. jQuery merupakan pustaka JavaScript yang dirancang untuk menyederhanakan manipulasi DOM, penanganan event, serta pengambilan data seperti JSON. Dengan jQuery, penulisan kode menjadi lebih ringkas dibandingkan JavaScript murni. Contohnya, pemilihan elemen menggunakan selector `$("#id")`, penanganan event klik menggunakan `.click()`, serta pengambilan data JSON menggunakan `$.getJSON()`.
 
 ## 2. Source Code
 
 ### Source Code HTML
 ```html
 <!DOCTYPE html>
-<!--Fitri Kusumaningtyas-->
+<!-- Fitri Kusumaningtyas 2311102068 -->
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mode Suci Ramadan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mode Suci Ramadan</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-success bg-gradient">
 
-<div class="container py-5">
+    <div class="container py-5">
 
-<h1 class="text-center text-white fw-bold mb-5">
-🌙 Ramadan Kareem 🌙
-</h1>
+        <h1 class="text-center fw-bold mb-5 text-light">
+            🌙 Ramadan Kareem 🌙
+        </h1>
 
-<div class="row g-4">
+        <div class="row g-4">
 
-<div class="col-md-4">
-<div class="card shadow h-100">
-<div class="card-body text-center">
-<h5 class="card-title">🌙 Checklist Ramadan</h5>
-<ul class="list-group list-group-flush">
-<li class="list-group-item">Sholat Malam</li>
-<li class="list-group-item">Membaca Al-Qur'an</li>
-<li class="list-group-item">Sedekah</li>
-<li class="list-group-item">Tarawih</li>
-</ul>
-</div>
-</div>
-</div>
+            <div class="col-md-4">
+                <div class="card shadow border-0 h-100 bg-light">
+                    <div class="card-body text-center">
+                        <h5 class="text-success">🌙 Checklist Ramadan</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Sholat Malam</li>
+                            <li class="list-group-item">Al-Qur'an</li>
+                            <li class="list-group-item">Sedekah</li>
+                            <li class="list-group-item">Tarawih</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<div class="col-md-4">
-<div class="card shadow h-100">
-<div class="card-body text-center">
-<h5 class="card-title">🍽️ Menu Buka</h5>
-<p class="card-text">
-Kurma, Kolak, Air putih, dan makanan hangat
-</p>
-<button class="btn btn-success">
-Rekomendasi Menu
-</button>
-</div>
-</div>
-</div>
+            <div class="col-md-4">
+                <div class="card shadow border-0 h-100 bg-light">
+                    <div class="card-body text-center">
+                        <h5 class="text-success">🍽️ Menu Buka</h5>
+                        <p class="text-muted">Kurma, Kolak, Air putih</p>
+                        <button class="btn btn-success" id="menuBtn">
+                            Rekomendasi
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-<div class="col-md-4">
-<div class="card shadow h-100">
-<div class="card-body text-center">
-<h5 class="card-title">✨ Reminder</h5>
-<p class="card-text">
-Dzikir, sedekah, dan 1D1J
-</p>
-<button class="btn btn-success">
-Set Pengingat
-</button>
-</div>
-</div>
-</div>
+            <div class="col-md-4">
+                <div class="card shadow border-0 h-100 bg-light">
+                    <div class="card-body text-center">
+                        <h5 class="text-success">✨ Reminder</h5>
+                        <p class="text-muted">Dzikir & 1D1J</p>
+                        <button class="btn btn-outline-success" id="reminderBtn">
+                            Set Pengingat
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-</div>
+        </div>
 
-<!-- Jadwal -->
-<div class="card shadow mt-5">
-<div class="card-body">
+        <div class="card shadow border-0 mt-5 bg-light">
+            <div class="card-body">
+                <h4 class="text-center mb-4 text-success">🕌 Jadwal Sholat</h4>
 
-<h4 class="text-center mb-4">🕌 Jadwal Sholat Hari Ini</h4>
+                <table class="table table-bordered text-center">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Waktu</th>
+                            <th>Jam</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Imsak</td><td>04:25</td></tr>
+                        <tr><td>Subuh</td><td>04:35</td></tr>
+                        <tr><td>Dzuhur</td><td>11:58</td></tr>
+                        <tr><td>Ashar</td><td>15:05</td></tr>
+                        <tr><td>Maghrib</td><td>18:08</td></tr>
+                        <tr><td>Isya</td><td>19:15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<table class="table table-striped text-center">
-<thead class="table-success">
-<tr>
-<th>Waktu</th>
-<th>Jam</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Imsak</td><td>04:25</td></tr>
-<tr><td>Subuh</td><td>04:35</td></tr>
-<tr><td>Dzuhur</td><td>11:58</td></tr>
-<tr><td>Ashar</td><td>15:05</td></tr>
-<tr><td>Maghrib</td><td>18:08</td></tr>
-<tr><td>Isya</td><td>19:15</td></tr>
-</tbody>
-</table>
+        <div class="text-center mt-5">
+            <button 
+                id="thrBtn" 
+                class="btn btn-warning btn-lg fw-bold shadow"
+                data-bs-toggle="modal"
+                data-bs-target="#modalTHR">
+                💸 CEK THR
+            </button>
+        </div>
 
-</div>
-</div>
+        <footer class="text-center mt-5">
+            <p class="fw-bold text-light">
+                Selamat Menjalankan Ibadah Ramadan 🤲
+            </p>
+        </footer>
 
-<!-- Tombol THR -->
-<div class="text-center mt-5">
-<button class="btn btn-warning btn-lg fw-bold"
-data-bs-toggle="modal"
-data-bs-target="#modalTHR">
-💸 Cairkan THR
-</button>
-</div>
+    </div>
 
-<footer class="text-center text-white mt-5">
-<p class="mb-0 fs-4 fw-bold">
-Selamat Menjalankan Ibadah Ramadan 🤲
-</p>
-</footer>
+    <div class="modal fade" id="modalTHR">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center bg-light">
 
-</div>
+                <div class="modal-header bg-success text-light">
+                    <h5 class="modal-title">🎉 Kejutan Ramadan</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
 
-<div class="modal fade" id="modalTHR" tabindex="-1">
-<div class="modal-dialog modal-dialog-centered">
-<div class="modal-content text-center">
+                <div class="modal-body">
+                    <h3 class="text-success fw-bold">
+                        Selamat Anda Mendapatkan THR Senilai
+                    </h3>
+                    <p id="thrNominal" class="fw-bold fs-4 text-dark"></p>
+                </div>
 
-<div class="modal-header bg-warning">
-<h5 class="modal-title fw-bold">🎉 Kejutan Ramadan</h5>
-<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-</div>
+                <div class="modal-footer justify-content-center">
+                    <button class="btn btn-success" data-bs-dismiss="modal">
+                        Alhamdulillah 🤲
+                    </button>
+                </div>
 
-<div class="modal-body">
-<h3 class="fw-bold text-success">
-Selamat, Anda mendapatkan THR!
-</h3>
-<p>Semoga rezekinya berkah 💸</p>
-</div>
+            </div>
+        </div>
+    </div>
 
-<div class="modal-footer justify-content-center">
-<button class="btn btn-success" data-bs-dismiss="modal">
-Alhamdulillah 🤲
-</button>
-</div>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-</div>
-</div>
-</div>
+    <script>
+        $(document).ready(function(){
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            $("#menuBtn").click(function(){
+                alert("🍽️ Menu rekomendasi: Kolak + Es buah!");
+            });
+
+            $("#reminderBtn").click(function(){
+                alert("⏰ Jangan lupa ibadah ya!");
+            });
+
+            $("#thrBtn").click(function(){
+                let nominal = Math.floor(Math.random() * 900000 + 100000);
+                $("#thrNominal").text("💸 Rp " + nominal.toLocaleString());
+            });
+
+        });
+    </script>
 
 </body>
 </html>
@@ -187,6 +202,6 @@ Alhamdulillah 🤲
 
 ## Penjelasan Code
 
-Pada Task 5 ditambahkan tombol “Cairkan THR” yang berfungsi sebagai pemicu munculnya modal. Tombol dibuat menggunakan class Bootstrap seperti btn, btn-outline-success, dan btn-lg untuk menghasilkan tampilan yang menarik dan berukuran besar. Atribut data-bs-toggle="modal" digunakan untuk mengaktifkan komponen modal, sedangkan data-bs-target="#modalTHR" digunakan untuk menentukan modal mana yang akan ditampilkan ketika tombol diklik.
+Task 5 ini dibuat menggunakan struktur dasar HTML dengan bantuan framework Bootstrap untuk mempercantik tampilan tanpa menggunakan CSS tambahan. Bagian `<head>` berisi pengaturan metadata seperti charset, viewport agar responsif, serta pemanggilan Bootstrap CSS melalui CDN. Pada bagian `<body>`, digunakan kelas Bootstrap seperti bg-success dan bg-gradient untuk memberikan latar belakang berwarna hijau dengan efek gradasi. Konten utama dibungkus dalam container yang berisi beberapa komponen card, yaitu checklist Ramadan, menu buka, dan reminder, yang ditata menggunakan sistem grid Bootstrap agar responsif. Selain itu, terdapat tabel jadwal sholat yang menggunakan kelas tabel Bootstrap untuk tampilan yang rapi dan terstruktur.
 
-Modal yang dibuat terdiri dari tiga bagian utama yaitu modal-header, modal-body, dan modal-footer. Bagian header menampilkan judul kejutan Ramadan, bagian body berisi pesan utama “Selamat, Anda mendapatkan THR!”, dan bagian footer berisi tombol untuk menutup modal. Agar modal dapat berfungsi dengan baik, ditambahkan library JavaScript Bootstrap pada bagian akhir dokumen menggunakan bootstrap.bundle.min.js. Dengan struktur tersebut, ketika pengguna menekan tombol THR, modal akan muncul di tengah layar dan memberikan efek interaktif sesuai dengan ketentuan Task 5.
+Fitur interaktif pada aplikasi ini diimplementasikan menggunakan JavaScript dan jQuery. Library jQuery dipanggil melalui CDN untuk mempermudah manipulasi DOM dan penanganan event. Pada bagian script, digunakan fungsi `$(document).ready()` untuk memastikan seluruh elemen HTML telah dimuat sebelum kode dijalankan. Event klik diterapkan pada beberapa tombol seperti tombol menu dan reminder untuk menampilkan notifikasi menggunakan fungsi `alert()`. Selain itu, tombol “CEK THR” memicu munculnya modal Bootstrap dengan bantuan atribut `data-bs-toggle dan data-bs-target`. Saat tombol tersebut diklik, JavaScript akan menghasilkan nominal THR secara acak menggunakan fungsi `Math.random()` yang kemudian ditampilkan ke dalam elemen HTML melalui metode `.text()` dari jQuery. Dengan demikian, aplikasi ini menggabungkan Bootstrap, JavaScript, dan jQuery untuk menciptakan tampilan yang menarik serta interaksi yang dinamis bagi pengguna.
