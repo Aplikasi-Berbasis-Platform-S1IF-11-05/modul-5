@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -36,11 +36,13 @@
 # Dasar Teori
 
 <p align="justify">
-Bootstrap adalah framework open-source berbasis HTML, CSS, dan JavaScript yang digunakan untuk membangun antarmuka web responsif secara cepat. Mengusung konsep mobile-first, framework ini mengandalkan sistem grid 12 kolom untuk mengatur tata letak agar otomatis menyesuaikan berbagai ukuran layar.
+Bootstrap adalah framework open-source berbasis HTML, CSS, dan JavaScript yang digunakan untuk membangun antarmuka web responsif dengan cepat. Framework ini menerapkan konsep mobile-first dan menggunakan sistem grid 12 kolom untuk memastikan tata letak dapat menyesuaikan berbagai ukuran layar secara otomatis.
 
-Pada versi terbarunya, Bootstrap 5 beralih sepenuhnya ke JavaScript murni dan mengedepankan penggunaan utility classes. Fitur ini memungkinkan pengembang mengatur desain seperti spacing, warna, dan flexbox langsung melalui atribut class di HTML tanpa perlu menulis CSS kustom. Hal ini menjamin efisiensi kerja serta hasil tampilan yang konsisten dan modern.
+Pada versi terbarunya, Bootstrap 5 telah beralih ke JavaScript murni (vanilla JavaScript) tanpa ketergantungan pada jQuery seperti pada versi sebelumnya. Selain itu, Bootstrap 5 mengandalkan utility classes yang memudahkan pengembang dalam mengatur tampilan seperti spacing, warna, dan layout langsung dari HTML tanpa perlu banyak menulis CSS tambahan, sehingga lebih efisien dan konsisten.
 
-Modal adalah komponen plugin JavaScript dari Bootstrap yang berfungsi untuk menampilkan jendela dialog atau pop-up di atas halaman utama. Komponen ini digunakan untuk memberikan informasi penting, notifikasi, atau interaksi khusus tanpa mengarahkan pengguna ke halaman baru. Modal bekerja dengan cara menciptakan lapisan transparan (backdrop) yang menutupi konten di bawahnya, sehingga fokus pengguna sepenuhnya tertuju pada pesan yang muncul.
+JavaScript sendiri berperan penting dalam membuat halaman web menjadi interaktif, seperti menangani event, manipulasi DOM, serta komunikasi dengan server melalui AJAX. Sementara itu, jQuery merupakan library JavaScript yang menyederhanakan penulisan kode JavaScript, terutama dalam hal manipulasi elemen HTML, animasi, dan request AJAX, meskipun saat ini penggunaannya mulai berkurang karena banyak fitur modern sudah didukung langsung oleh JavaScript.
+
+Modal adalah salah satu komponen berbasis JavaScript pada Bootstrap yang digunakan untuk menampilkan dialog atau pop-up di atas halaman utama. Komponen ini biasanya dimanfaatkan untuk menampilkan informasi penting, notifikasi, atau form interaksi tanpa berpindah halaman. Modal bekerja dengan menambahkan backdrop (lapisan transparan) yang membuat fokus pengguna tertuju pada konten yang ditampilkan.
 </p>
 
 
