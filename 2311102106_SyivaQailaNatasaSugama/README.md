@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> Bootstrap </h3>
+  <h3>MODUL 5 <br> Javascript & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,12 +33,38 @@
 
 <hr>
 
-# Dasar Teori Bootstrap
+# Dasar Teori JavaScript dan jQuery
 
-## Bootstrap
-Bootstrap adalah kerangka kerja (framework) open-source berbasis HTML, CSS, dan JavaScript yang dirancang khusus untuk mempercepat proses pengembangan tampilan web yang responsif dan mobile-first.
+## 1. JavaScript (JS)
+JavaScript adalah bahasa pemrograman *high-level*, *scripting*, *untyped*, dan *interpreted* yang menjadi standar untuk pengembangan web interaktif. JavaScript memungkinkan pengembang untuk mengimplementasikan fitur-fitur kompleks pada halaman web, seperti pembaruan konten secara dinamis, peta interaktif, animasi grafis 2D/3D, dan banyak lagi.
 
-Dasar teori utama Bootstrap terletak pada Grid System yang membagi layar menjadi 12 kolom fleksibel, serta penggunaan Utility Classes yang memungkinkan pengembang mengatur tata letak, warna, dan tipografi hanya dengan menambahkan kelas tertentu pada elemen HTML tanpa perlu menulis kode CSS manual dari nol.
+### Karakteristik Utama JavaScript:
+- **Client-Side Scripting**: Kode JavaScript dieksekusi di browser pengguna (client), bukan di server. Ini mengurangi beban server dan memberikan respon yang lebih cepat.
+- **Interpreted**: JavaScript tidak memerlukan proses kompilasi sebelum dijalankan. Browser membaca dan mengeksekusi kode secara langsung.
+- **Event-Driven**: JavaScript dapat merespons berbagai kejadian (event) yang dilakukan oleh pengguna, seperti klik mouse, input keyboard, atau pengambilan data dari server.
+- **DOM Manipulation**: JavaScript memiliki kemampuan untuk mengakses dan memodifikasi *Document Object Model* (DOM), yang memungkinkan perubahan struktur, gaya, dan konten HTML secara dinamis.
+
+---
+
+## 2. jQuery
+jQuery adalah sebuah *library* atau pustaka JavaScript yang cepat, kecil, dan kaya akan fitur. jQuery dirancang untuk menyederhanakan penulisan JavaScript dengan moto utamanya: **"Write Less, Do More"**. jQuery menangani banyak hal yang rumit dalam JavaScript biasa, seperti manipulasi DOM, penanganan event, animasi, dan AJAX, dengan sintaks yang jauh lebih sederhana.
+
+### Fitur dan Keuntungan jQuery:
+- **Selektor yang Mudah**: Menggunakan sintaks CSS untuk memilih elemen DOM (contoh: `$('.btn')` untuk memilih kelas, `$('#id')` untuk memilih ID).
+- **Cross-Browser Compatibility**: jQuery menangani perbedaan cara kerja JavaScript di berbagai browser secara otomatis, sehingga pengembang tidak perlu menulis kode berbeda untuk setiap browser.
+- **Manipulasi DOM**: Menyediakan metode intuitif untuk menambah, menghapus, atau mengubah elemen dan atribut HTML.
+- **Handling AJAX**: Menyederhanakan proses pengiriman permintaan HTTP asinkron ke server untuk mengambil data tanpa harus memuat ulang halaman secara keseluruhan.
+- **Efek dan Animasi**: Menyediakan fungsi bawaan untuk membuat efek transisi yang mulus seperti `.fadeIn()`, `.slideUp()`, dan `.toggle()`.
+
+---
+
+## 3. AJAX (Asynchronous JavaScript and XML)
+AJAX adalah teknik pengembangan web yang memungkinkan halaman web untuk berkomunikasi dengan server di latar belakang secara asinkron. Dengan AJAX, aplikasi web dapat mengirim dan menerima data dari server tanpa mengganggu tampilan atau perilaku halaman yang sedang aktif (tanpa *full page reload*).
+
+---
+
+## 4. JSON (JavaScript Object Notation)
+JSON adalah format pertukaran data yang ringan, mudah dibaca manusia, dan mudah diproses oleh mesin. JSON sering digunakan dalam pengembangan web untuk mengirim data antara server dan aplikasi web sebagai alternatif XML. Dalam proyek ini, JSON digunakan sebagai *database flat-file* untuk menyimpan informasi produk.
 
 
 ### Source code - html
