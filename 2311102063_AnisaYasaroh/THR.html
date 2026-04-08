@@ -8,7 +8,9 @@ IF-11-REG05 -->
 <head>
   <meta charset="UTF-8">
   <title>Ramadan Kareem</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
@@ -23,9 +25,11 @@ IF-11-REG05 -->
 
       <p class="text-warning fw-bold text-uppercase small mb-2">— Ramadan —</p>
       <h1 class="display-4 fw-bolder mb-3 text-white">Ramadan <span class="text-warning">Kareem</span></h1>
+
       <p class="fs-5 mb-3 text-white">
         Saatnya hati bersinar dengan ketenangan, memperbanyak amal, dan menyebarkan kebaikan kepada semua orang.
       </p>
+
       <p class="fs-6 mb-3 text-white">
         Semoga setiap doa diterima, setiap langkah membawa keberkahan, dan bulan suci ini menjadi momen untuk
         introspeksi serta memperkuat iman.
@@ -54,6 +58,7 @@ IF-11-REG05 -->
             <p class="small text-white mb-0">Isya 19:30</p>
           </div>
         </div>
+
         <div class="col-md-6 col-lg-3">
           <div class="card text-center p-4 shadow-sm bg-dark bg-opacity-50 border border-light rounded-4 h-100">
             <i class="bi bi-book fs-1 text-warning mb-3"></i>
@@ -63,21 +68,21 @@ IF-11-REG05 -->
               lalu.”
             </p>
             <p class="small text-white mb-1">
-              Hadist ini mengingatkan kita untuk berpuasa dengan niat yang ikhlas dan memohon ridha Allah. Mari
-              perbanyak amal dan kebaikan selama bulan suci.
+              Hadist ini mengingatkan kita untuk berpuasa dengan niat yang ikhlas dan memohon ridha Allah.
             </p>
           </div>
         </div>
+
         <div class="col-md-6 col-lg-3">
           <div class="card text-center p-4 shadow-sm bg-dark bg-opacity-50 border border-light rounded-4 h-100">
             <i class="bi bi-moon-stars fs-1 text-warning mb-3"></i>
             <h5 class="fw-bold text-white mb-2">Ibadah</h5>
             <p class="small text-white mb-1">
-              Perbanyak dzikir dan sholat sunnah, baca Al-Quran setiap hari agar hati semakin tenang dan iman bertambah.
-              Jangan lupa bersyukur.
+              Perbanyak dzikir dan sholat sunnah, baca Al-Quran setiap hari agar hati semakin tenang.
             </p>
           </div>
         </div>
+
         <div class="col-md-6 col-lg-3">
           <div class="card text-center p-4 shadow-sm bg-dark bg-opacity-50 border border-light rounded-4 h-100">
             <i class="bi bi-heart fs-1 text-warning mb-3"></i>
@@ -92,7 +97,7 @@ IF-11-REG05 -->
     </div>
   </div>
 
-  <div class="modal fade" id="thrModal" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="thrModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content bg-dark text-center rounded-4 border border-warning">
 
@@ -101,11 +106,14 @@ IF-11-REG05 -->
         </div>
 
         <div class="modal-body px-5 pb-5">
+
           <div id="step1">
             <i class="bi bi-gift text-warning fs-1 mb-3"></i>
             <h5 class="text-white fw-bold">THR Ramadan Tersedia!</h5>
             <p class="text-white small">Klik tombol di bawah untuk membuka hadiahmu.</p>
-            <button id="bukaThr" class="btn btn-warning text-dark fw-bold rounded-pill w-100 mt-3">Buka Hadiah</button>
+            <button id="bukaThr" class="btn btn-warning text-dark fw-bold rounded-pill w-100 mt-3">
+              Buka Hadiah
+            </button>
           </div>
 
           <div id="step2" class="d-none">
@@ -115,6 +123,7 @@ IF-11-REG05 -->
             <h3 class="text-warning fw-bolder my-3">Rp 100.000</h3>
             <button class="btn btn-outline-light rounded-pill w-100" data-bs-dismiss="modal">Tutup</button>
           </div>
+
         </div>
 
       </div>
@@ -122,19 +131,22 @@ IF-11-REG05 -->
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
   <script>
-    const klaimBtn = document.getElementById("klaimThrBtn");
-    const bukaBtn = document.getElementById("bukaThr");
+    $(document).ready(function () {
 
-    klaimBtn.addEventListener("click", () => {
-      klaimBtn.classList.remove("btn-secondary");
-      klaimBtn.classList.add("btn-warning");
+      $("#klaimThrBtn").click(function () {
+        $(this).removeClass("btn-secondary").addClass("btn-warning");
+      });
+
+      $("#bukaThr").click(function () {
+        $("#step1").addClass("d-none");
+        $("#step2").removeClass("d-none");
+      });
+
     });
-
-    bukaBtn.onclick = function () {
-      document.getElementById("step1").classList.add("d-none");
-      document.getElementById("step2").classList.remove("d-none");
-    };
   </script>
 
 </body>
