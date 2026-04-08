@@ -35,7 +35,30 @@
 
 # Dasar Teori
 
+JavaScript merupakan bahasa pemrograman berbasis browser yang berfungsi menyulap halaman web statis menjadi lebih hidup dan interaktif. Berkat bahasa ini, sebuah situs dapat merespons berbagai interaksi pengguna—mulai dari klik, pengisian formulir, pergerakan animasi, hingga pemrosesan data secara dinamis.
 
+Fondasi Utama JavaScript
+Penyimpanan Data: Variabel dan tipe data bertugas menyimpan beragam informasi seperti teks, angka, maupun nilai logika (boolean).
+
+Fungsi (Functions): Blok kode yang mengelompokkan logika tertentu agar program lebih rapi dan dapat dieksekusi berkali-kali tanpa harus menulis ulang instruksinya.
+
+Manipulasi DOM: Document Object Model (DOM) memberi jalan bagi JavaScript untuk menyentuh dan memodifikasi elemen-elemen HTML secara langsung.
+
+Penanganan Event: Mekanisme yang memungkinkan program bereaksi terhadap tindakan pengunjung, seperti ketika menekan tombol atau men-submit data.
+
+Pemrograman Asinkron: Pada versi modernnya, JavaScript memiliki fitur seperti Promise dan async/await agar tugas-tugas berat dapat berjalan di latar belakang tanpa membuat halaman web menjadi lag atau berhenti merespons.
+
+Mengenal jQuery
+jQuery pada dasarnya adalah sebuah pustaka (library) dari JavaScript yang dirancang khusus untuk mempermudah penulisan kode. Alat ini sangat praktis untuk memanipulasi elemen web, membuat animasi, menangani event, serta melakukan request AJAX dengan baris kode yang jauh lebih padat dan dijamin berjalan mulus di berbagai jenis browser.
+
+Kelebihan Menggunakan jQuery
+Penulisan Lebih Singkat: Dibandingkan JavaScript murni (Vanilla JS), jQuery memungkinkan Anda menyelesaikan tugas-tugas manipulasi DOM dengan kode yang jauh lebih efisien.
+
+Seleksi Elemen yang Praktis: Memudahkan pencarian komponen HTML hanya dengan menggunakan pola selektor bergaya CSS.
+
+Kaya Fitur Instan: Menyediakan beragam fungsi bawaan yang siap pakai untuk mengurus animasi, efek visual, dan pengambilan data.
+
+Batu Loncatan yang Ideal: Sangat ramah untuk tahap pembelajaran, menjadikannya pilihan tepat bagi pemula yang ingin memahami konsep interaksi web sebelum melangkah ke framework masa kini.
 
 # Tugas 5 — Fitur Cairin THR
 
