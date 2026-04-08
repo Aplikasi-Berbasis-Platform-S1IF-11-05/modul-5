@@ -46,7 +46,7 @@ Beberapa fitur utama jQuery meliputi kemampuan untuk melakukan manipulasi DOM de
 
 Dengan kombinasi JavaScript dan jQuery, proses pengembangan halaman web menjadi lebih cepat, terstruktur, dan mampu menghasilkan interaksi yang lebih dinamis serta meningkatkan pengalaman pengguna.
 
-## Tugas 4: Mode Suci (Edisi Ramadan)
+## Task 5: Fitur Cairin THR
 
 ### 1. Source Code
 
