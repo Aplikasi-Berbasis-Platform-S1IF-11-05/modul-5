@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,27 +33,43 @@
 
 <hr>
 
-# Dasar Teori Bootstrap
+# Dasar Teori Javascript & JQUERY
 
-## Pengertian Bootstrap
-CSS (Cascading Style Sheets) adalah bahasa style sheet yang digunakan untuk mengatur tampilan dan format dokumen yang ditulis dalam bahasa markup (seperti HTML).
+1. Pengertian Javascript
+JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi lebih interaktif dan dinamis. Dengan JavaScript, developer dapat memanipulasi elemen HTML, menangani event, serta berinteraksi dengan pengguna secara langsung di browser tanpa perlu memuat ulang halaman.
 
-Jika HTML diibaratkan sebagai kerangka bangunan, maka CSS adalah cat, desain interior, dan estetikanya.
+2. Fungsi dan Kegunaan JavaScript
 
-Fungsi Utama: Memisahkan konten (HTML) dari desain (CSS), memungkinkan konsistensi tampilan di seluruh halaman web, dan meningkatkan aksesibilitas serta kontrol tata letak.
+JavaScript memiliki beberapa fungsi utama dalam pengembangan web, antara lain:
 
-Untuk mempercepat pengembangan, pengembang sering menggunakan framework yang sudah menyediakan class siap pakai, seperti:
+Memanipulasi DOM (Document Object Model)
+Menangani event seperti klik, hover, dan input user
+Validasi form sebelum dikirim ke server
+Membuat animasi dan efek interaktif
+Berkomunikasi dengan server menggunakan AJAX
+3. Pengertian jQuery
 
-Bootstrap: Berbasis komponen dan sistem grid yang matang.
+jQuery adalah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript. Dengan jQuery, proses manipulasi DOM, event handling, animasi, dan AJAX menjadi lebih mudah dan efisien dibandingkan JavaScript murni.
 
-Tailwind CSS: Berbasis utility-first untuk kustomisasi desain yang lebih fleksibel.
+4. Keunggulan jQuery
 
-Bulma: Framework berbasis Flexbox yang modern.
+Beberapa keunggulan jQuery antara lain:
 
-## Contoh Implementasi
-```html
-<button class="btn btn-primary">Klik Saya</button>
-```
+Sintaks lebih sederhana dan mudah dipahami
+Mendukung berbagai browser (cross-browser compatibility)
+Mempercepat proses pengembangan
+Memiliki banyak plugin tambahan
+5. Perbedaan JavaScript dan jQuery
+JavaScript adalah bahasa pemrograman utama, sedangkan jQuery adalah library yang dibangun menggunakan JavaScript
+Penulisan kode jQuery lebih singkat dibandingkan JavaScript murni
+JavaScript lebih fleksibel dan tidak bergantung pada library tambahan
+6. Konsep Dasar Penggunaan
+
+Dalam penggunaannya:
+
+JavaScript dapat ditulis langsung di dalam file HTML atau file terpisah (.js)
+jQuery harus di-include terlebih dahulu sebelum digunakan
+Penulisan jQuery biasanya diawali dengan simbol $ sebagai selector
 
 ### Source code - html
 ```html
