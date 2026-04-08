@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -36,19 +36,11 @@
 # Dasar Teori Bootstrap
 
 <p align="justify">
-Bootstrap adalah framework front-end open-source yang dikembangkan oleh Mark Otto dan Jacob Thornton di Twitter untuk mempermudah pembuatan tampilan website yang responsif dan konsisten. Bootstrap menyediakan berbagai komponen siap pakai berbasis HTML, CSS, dan JavaScript seperti grid system, tombol, form, navbar, dan card, sehingga pengembang tidak perlu membuat desain dari nol.
+JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Dengan JavaScript, pengembang dapat memanipulasi elemen HTML dan CSS, menangani event seperti klik atau input pengguna, serta mengelola data secara langsung di sisi klien (client-side). Bahasa ini berjalan di browser dan menjadi salah satu teknologi utama dalam pengembangan web modern bersama HTML dan CSS. Selain itu, JavaScript juga mendukung berbagai konsep pemrograman seperti fungsi, objek, dan asynchronous programming yang memungkinkan pembuatan aplikasi web yang kompleks.
 </p>
 
 <p align="justify">
-Framework ini mengusung konsep responsive design dengan sistem grid 12 kolom serta pendekatan mobile-first, sehingga tampilan dapat menyesuaikan berbagai ukuran layar, mulai dari smartphone hingga desktop. Selain itu, Bootstrap juga menyediakan utility class yang memudahkan pengaturan margin, padding, warna, dan tata letak tanpa perlu banyak menulis CSS tambahan, sehingga proses pengembangan menjadi lebih cepat, efisien, dan terstruktur.
-</p>
-
-<p align="justify">
-Modal pop-up adalah konsep dalam desain antarmuka pengguna (UI) yang digunakan untuk menampilkan konten tambahan di atas halaman utama tanpa berpindah halaman. Modal biasanya muncul sebagai jendela kecil (overlay) yang menonaktifkan interaksi dengan halaman di belakangnya sampai pengguna menutupnya.
-</p>
-
-<p align="justify">
-Modal pop-up sering digunakan untuk menampilkan informasi penting, formulir, konfirmasi tindakan, atau notifikasi. Dalam pengembangannya, modal dapat dibuat menggunakan HTML untuk struktur, CSS untuk tampilan, dan JavaScript atau framework seperti Bootstrap untuk mengatur perilaku interaktif seperti membuka dan menutup modal.
+jQuery adalah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, penanganan event, animasi, dan komunikasi AJAX. Dengan sintaks yang lebih singkat dan mudah dipahami, jQuery membantu pengembang mengurangi penulisan kode yang panjang dan rumit. Library ini juga kompatibel dengan berbagai browser, sehingga memudahkan pengembangan tanpa harus menangani perbedaan implementasi di setiap browser secara manual.
 </p>
 
 ## Task 5: Fitur Cairin THR
@@ -68,7 +60,7 @@ Modal pop-up sering digunakan untuk menampilkan informasi penting, formulir, kon
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: #f8f9fa; 
-            scroll-behavior: smooth;
+            /* scroll-behavior: smooth; Dihapus karena diganti dengan animasi jQuery */
         }
         .arabic-font { font-family: 'Amiri', serif; }
         
@@ -112,8 +104,8 @@ Modal pop-up sering digunakan untuk menampilkan informasi penting, formulir, kon
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#jadwal">Jadwal Imsakiyah</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#donasi">Donasi</a></li>
+                    <li class="nav-item"><a class="nav-link scroll-link" href="#jadwal">Jadwal Imsakiyah</a></li>
+                    <li class="nav-item"><a class="nav-link scroll-link" href="#donasi-section">Donasi</a></li>
                 </ul>
             </div>
         </div>
@@ -124,10 +116,10 @@ Modal pop-up sering digunakan untuk menampilkan informasi penting, formulir, kon
             <h1 class="display-3 fw-bold arabic-font text-warning mb-3 animate__animated animate__fadeInDown">Marhaban Ya Ramadan</h1>
             <p class="lead mb-4 animate__animated animate__fadeInUp">Momen untuk refleksi, pembersihan jiwa, dan berbagi kebahagiaan bersama sesama.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center animate__animated animate__zoomIn">
-                <button type="button" class="btn btn-warning btn-lg px-4 gap-3 fw-bold">Cek Jadwal Buka</button>
+                <button type="button" class="btn btn-warning btn-lg px-4 gap-3 fw-bold scroll-link" href="#jadwal">Cek Jadwal Buka</button>
                 <button type="button" class="btn btn-outline-light btn-lg px-4">Artikel Ramadan</button>
                 
-                <button type="button" class="btn btn-thr btn-lg px-4 fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#thrModal" onclick="launchConfetti()">
+                <button type="button" id="btn-thr" class="btn btn-thr btn-lg px-4 fw-bold shadow-lg" data-bs-toggle="modal" data-bs-target="#thrModal">
                     ✨ Cairin THR!
                 </button>
             </div>
@@ -157,13 +149,13 @@ Modal pop-up sering digunakan untuk menampilkan informasi penting, formulir, kon
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" id="donasi-section">
                 <div class="card h-100 border-0 shadow-sm p-4">
                     <div class="card-body">
                         <div class="display-6 text-warning mb-3">🤝</div>
                         <h5 class="card-title fw-bold">Sedekah Harian</h5>
                         <p class="card-text text-muted">Mari lipat gandakan pahala dengan berbagi takjil untuk sesama di bulan yang penuh berkah ini.</p>
-                        <a href="#donasi" id="donasi" class="btn btn-outline-warning w-100">Donasi Sekarang</a>
+                        <a href="#" class="btn btn-outline-warning w-100">Donasi Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -240,41 +232,60 @@ Modal pop-up sering digunakan untuk menampilkan informasi penting, formulir, kon
     <footer class="bg-dark text-white-50 py-5 mt-5 border-top border-warning border-4">
         <div class="container text-center">
             <p class="mb-2 text-white fw-bold">Ramadan Kareem © 2026</p>
-            <p class="small mb-0">Dibuat dengan penuh keberkahan menggunakan Bootstrap 5 & Passion</p>
+            <p class="small mb-0">Dibuat dengan penuh keberkahan menggunakan Bootstrap 5, jQuery & Passion</p>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        function launchConfetti() {
-            var duration = 5 * 1000;
-            var animationEnd = Date.now() + duration;
-            var defaults = { 
-                startVelocity: 30, 
-                spread: 360, 
-                ticks: 60, 
-                zIndex: 2000,
-                colors: ['#ffc107', '#ffffff', '#e0a800']
-            };
+        // Menggunakan jQuery $(document).ready() untuk memastikan DOM sudah dimuat
+        $(document).ready(function() {
+            
+            $('#btn-thr').on('click', function() {
+                launchConfetti();
+            });
 
-            function randomInRange(min, max) {
-              return Math.random() * (max - min) + min;
+            $('.scroll-link').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 80 // Offset 80px untuk menyesuaikan dengan sticky navbar
+                }, 800); // 800ms durasi animasi
+            });
+
+            // Fungsi peluncuran confetti
+            function launchConfetti() {
+                var duration = 5 * 1000;
+                var animationEnd = Date.now() + duration;
+                var defaults = { 
+                    startVelocity: 30, 
+                    spread: 360, 
+                    ticks: 60, 
+                    zIndex: 2000,
+                    colors: ['#ffc107', '#ffffff', '#e0a800']
+                };
+
+                function randomInRange(min, max) {
+                  return Math.random() * (max - min) + min;
+                }
+
+                var interval = setInterval(function() {
+                  var timeLeft = animationEnd - Date.now();
+
+                  if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                  }
+
+                  var particleCount = 50 * (timeLeft / duration);
+                  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                  confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+                }, 250);
             }
-
-            var interval = setInterval(function() {
-              var timeLeft = animationEnd - Date.now();
-
-              if (timeLeft <= 0) {
-                return clearInterval(interval);
-              }
-
-              var particleCount = 50 * (timeLeft / duration);
-              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
-            }, 250);
-        }
+        });
     </script>
 </body>
 </html>
@@ -285,9 +296,13 @@ Modal pop-up sering digunakan untuk menampilkan informasi penting, formulir, kon
 
 # Penjelasan
 <p align="justify">
-Kode ini menambahkan fitur popup “Cairin THR” pada halaman menggunakan Bootstrap. Saat tombol “Cairin THR!” diklik, akan muncul modal (popup) berisi ucapan, pesan Ramadan, dan nominal THR, serta animasi agar terlihat menarik.
+Kode di atas menggunakan JavaScript dan jQuery untuk menambahkan interaksi dan animasi pada halaman. Bagian <code> $(document).ready() </code> berfungsi memastikan seluruh elemen HTML sudah dimuat sebelum script dijalankan, sehingga tidak terjadi error saat mengambil elemen seperti tombol atau link. Di dalamnya, terdapat event listener pada tombol dengan id <code> #btn-thr </code> yang akan menjalankan fungsi <code>launchConfetti()</code> ketika diklik, sehingga muncul efek animasi confetti sebagai visualisasi “THR cair”.
 </p>
 
 <p align="justify">
-Selain itu, tombol menggunakan fungsi JavaScript <code>launchConfetti()</code> yang menggunakan library canvas-confetti untuk menampilkan efek konfeti, sehingga memberikan kesan meriah dan interaktif saat THR “dicairkan”.
+Selain itu, jQuery juga digunakan untuk membuat smooth scrolling. Ketika link dengan class <code> .scroll-link </code> diklik, halaman tidak langsung lompat, tetapi akan bergeser secara halus ke bagian tujuan menggunakan fungsi <code> animate() </code>.
+</p>
+
+<p align="justify">
+Fungsi <code> launchConfetti() </code> mengatur animasi confetti seperti durasi, jumlah partikel, warna, dan posisi acak. Animasi berjalan selama beberapa detik menggunakan <code> setInterval() </code> lalu berhenti otomatis. Secara keseluruhan, script ini membuat tampilan lebih interaktif dan menarik
 </p>
