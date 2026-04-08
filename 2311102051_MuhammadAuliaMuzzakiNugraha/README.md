@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> Bootstrap </h3>
+  <h3>MODUL 5 <br> JavaScript & jQuery </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,26 +33,50 @@
 
 <hr>
 
-# Dasar Teori Bootstrap
+# Dasar Teori JavaScript dan jQuery
 
-## Pengertian Bootstrap
-Bootstrap adalah framework front-end berbasis HTML, CSS, dan JavaScript yang digunakan untuk mempermudah pembuatan tampilan website yang responsif dan modern. Bootstrap menyediakan berbagai komponen dan sistem layout yang siap digunakan.
+## Pengertian JavaScript
+JavaScript adalah bahasa pemrograman yang berjalan di browser untuk membuat halaman web menjadi interaktif. Dengan JavaScript, website tidak hanya menampilkan konten statis, tetapi juga bisa merespons aksi pengguna seperti klik tombol, pengisian form, animasi, hingga pengolahan data secara dinamis.
+
+## Konsep Dasar JavaScript
+1. Variabel dan tipe data digunakan untuk menyimpan nilai seperti teks, angka, dan boolean.
+2. Fungsi dipakai untuk membungkus logika agar kode lebih terstruktur dan bisa digunakan ulang.
+3. DOM (Document Object Model) memungkinkan JavaScript mengakses dan mengubah elemen HTML secara langsung.
+4. Event handling digunakan untuk menangani interaksi pengguna, misalnya klik, submit, atau input.
+5. JavaScript modern mendukung asynchronous programming (contoh: Promise, async/await) untuk proses yang berjalan tanpa memblokir tampilan.
+
+## Pengertian jQuery
+jQuery adalah library JavaScript yang menyederhanakan penulisan kode JavaScript, terutama untuk manipulasi DOM, event handling, animasi, dan AJAX. jQuery membantu developer menulis kode lebih singkat dan konsisten di berbagai browser.
+
+## Keunggulan jQuery
+1. Sintaks lebih ringkas dibanding JavaScript murni untuk tugas DOM sederhana.
+2. Mempermudah seleksi elemen HTML dengan selector berbasis CSS.
+3. Menyediakan banyak utilitas siap pakai untuk event, efek, dan request data.
+4. Cocok untuk pembelajaran dasar interaktivitas web sebelum beralih ke framework modern.
 
 ---
 
-## Cara Menggunakan Bootstrap (CDN)
+## Cara Menggunakan JavaScript dan jQuery (CDN)
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>Bootstrap Dasar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contoh JavaScript dan jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+  <h1 id="judul">Hello JavaScript & jQuery</h1>
+  <button id="btnUbah">Ubah Teks</button>
 
-  <h1 class="text-center">Hello Bootstrap</h1>
+  <script>
+    document.getElementById("judul").style.color = "teal";
 
+    $("#btnUbah").on("click", function () {
+      $("#judul").text("Teks berhasil diubah dengan jQuery");
+    });
+  </script>
 </body>
 </html>
 ```
@@ -96,4 +120,4 @@ Output:
 <img src="./assets/task2.png" alt="preview" style="width:100%; max-width:900px;">
 
 # Penjelasan
-Halaman website bertema Ramadan untuk Masjid Al-Hikmah pada versi ini dibangun full menggunakan Bootstrap 5.3 tanpa CSS native kustom. Struktur halaman terdiri dari navbar sticky, section beranda, jadwal, program, dan donasi yang disusun dengan grid system serta komponen Bootstrap seperti card, badge, button, alert, dan modal. Tampilan visual diatur menggunakan utility class Bootstrap untuk warna, spasi, tipografi, bayangan, dan responsivitas agar tetap rapi di desktop maupun mobile. Fitur interaktif ditambahkan lewat tombol Surprise THR yang memunculkan modal pop-up berisi pesan "Selamat, Anda mendapatkan THR!". Di dalam modal, JavaScript menjalankan simulasi nominal THR acak dengan animasi hitung angka, status transfer, dan tombol "Acak Lagi" sehingga pengalaman pengguna terasa lebih hidup tanpa bergantung pada stylesheet kustom.
+Halaman website bertema Ramadan untuk Masjid Al-Hikmah pada versi ini memadukan Bootstrap 5.3 untuk struktur tampilan dan JavaScript serta jQuery untuk interaktivitas. Bagian layout seperti navbar sticky, section beranda, jadwal, program, dan donasi disusun menggunakan grid system dan komponen Bootstrap agar responsif di desktop maupun mobile. Pada sisi logika, JavaScript digunakan untuk mengatur perilaku dinamis seperti simulasi nominal THR acak, animasi hitung angka, perubahan status transfer, dan aksi tombol "Acak Lagi". jQuery membantu menyederhanakan proses seleksi elemen serta event handling, sehingga fitur seperti klik tombol dan pembaruan konten dapat ditulis lebih ringkas dan mudah dipelajari.
