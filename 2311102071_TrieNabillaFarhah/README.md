@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> JavaScipt & jQuery </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,9 +35,9 @@
 
 ## Dasar Teori
 
-Bootstrap merupakan framework CSS yang bersifat open-source dan digunakan untuk mempermudah serta mempercepat proses pengembangan antarmuka website. Framework ini menyediakan berbagai komponen siap pakai seperti grid system, tombol, form, navigasi, dan card, sehingga pengembang tidak perlu menulis CSS dari awal. Bootstrap juga menerapkan konsep mobile-first, yaitu desain yang dioptimalkan terlebih dahulu untuk perangkat mobile, kemudian menyesuaikan ke layar yang lebih besar. Dengan demikian, tampilan website menjadi responsif dan dapat menyesuaikan berbagai ukuran layar secara otomatis.
+JavaScript merupakan bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Berbeda dengan HTML dan CSS yang berfokus pada struktur dan tampilan, JavaScript berperan dalam menangani logika, manipulasi elemen DOM (Document Object Model), serta pengolahan event seperti klik, input, dan animasi. JavaScript dapat dijalankan di sisi client (browser) maupun server (menggunakan teknologi seperti Node.js), serta mendukung konsep pemrograman seperti variabel, fungsi, objek, dan asynchronous programming untuk meningkatkan performa aplikasi web.
 
-Secara teknis, Bootstrap menggunakan sistem berbasis class (class-based styling) dan grid system yang dibangun dengan flexbox. Layout dibagi menjadi baris (row) dan kolom (col) untuk memudahkan pengaturan struktur halaman. Selain itu, Bootstrap menyediakan utility class seperti pengaturan warna, margin, padding, dan typography yang dapat langsung digunakan pada elemen HTML. Dengan adanya standarisasi komponen dan styling ini, Bootstrap membantu meningkatkan efisiensi pengembangan, menjaga konsistensi tampilan, serta mempermudah pembuatan website modern yang rapi dan interaktif.
+jQuery adalah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, event handling, animasi, dan AJAX. Dengan sintaks yang lebih ringkas dan mudah dipahami, jQuery memungkinkan pengembang melakukan tugas kompleks hanya dengan sedikit kode dibandingkan JavaScript murni. Secara teoritis, jQuery bekerja dengan prinsip “write less, do more”, serta menyediakan kompatibilitas lintas browser sehingga mempercepat proses pengembangan dan meningkatkan efisiensi dalam membangun aplikasi web interaktif.
 
 ## Penjelasan Kode Bootstrap
 
@@ -63,7 +63,10 @@ IF-11-REG05 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Amiri&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 </head>
+
 
 <body>
 
@@ -85,7 +88,6 @@ IF-11-REG05 -->
                 Selamat Menyambut
             </div>
 
-            <!-- Moon -->
             <svg width="120" height="60" viewBox="0 0 120 60" class="mb-3">
                 <circle cx="60" cy="30" r="20" fill="#c4a96a" opacity="0.15" />
                 <path d="M60 16 C48 16 40 22 40 30 C40 38 48 44 60 44 
@@ -270,12 +272,58 @@ IF-11-REG05 -->
 
 </html>
 ```
+script.js
+```
+function updateClock() {
+    const now = new Date();
+
+    const time = now.toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+
+    document.querySelectorAll('span')[1].innerText = time;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+
+function countdown() {
+    const target = new Date();
+    target.setHours(4, 25, 0);
+
+    const now = new Date();
+    const selisih = target - now;
+
+    if (selisih <= 0) return;
+
+    const jam = Math.floor(selisih / (1000 * 60 * 60));
+    const menit = Math.floor((selisih / (1000 * 60)) % 60);
+    const detik = Math.floor((selisih / 1000) % 60);
+
+    const el = document.querySelectorAll('.fw-bold');
+
+    el[el.length - 3].innerText = jam.toString().padStart(2, '0');
+    el[el.length - 2].innerText = menit.toString().padStart(2, '0');
+    el[el.length - 1].innerText = detik.toString().padStart(2, '0');
+}
+
+setInterval(countdown, 1000);
+
+$(document).ready(function () {
+    $('button').click(function () {
+        console.log("Ketupat diklik - Modal muncul");
+    });
+});
+
+```
 ### Screenshot Output
 <img src="image.png" alt="Keterangan Foto" width="100%">
 <img src="image2.png" alt="Keterangan Foto" width="100%">
 
 ## Penjelasan Code
 
-Kode HTML tersebut digunakan untuk membangun halaman web bertema Ramadan dengan memanfaatkan framework Bootstrap untuk menghasilkan tampilan yang responsif dan terstruktur. Pada bagian head, ditambahkan Bootstrap CSS, Bootstrap Icons, dan Google Fonts untuk mendukung tampilan visual. Struktur utama menggunakan div dengan class min-vh-100, d-flex, dan flex-column agar halaman memenuhi layar dan tersusun secara vertikal. Bagian header menampilkan informasi tahun Hijriyah, jam, dan lokasi menggunakan d-flex justify-content-between. Selanjutnya, bagian hero menampilkan ucapan Ramadan Kareem dengan teks Arab, deskripsi, serta ornamen bulan berbasis SVG untuk memperindah tampilan.
+Kode pada file merupakan implementasi halaman web yang dibangun menggunakan HTML dan Bootstrap untuk menampilkan antarmuka bertema Ramadan seperti header waktu, jadwal sholat, countdown, serta modal interaktif. Secara teoritis, HTML berperan sebagai struktur dasar (structure layer) dalam pengembangan web, sedangkan Bootstrap digunakan untuk menerapkan konsep responsive web design, yaitu tampilan yang dapat menyesuaikan berbagai ukuran layar. Komponen seperti grid system, card, dan modal merupakan bagian dari framework Bootstrap yang mempermudah pembuatan tampilan tanpa harus menulis CSS secara manual, sehingga menghasilkan antarmuka yang rapi dan konsisten.
 
-Pada bagian interaktif, terdapat elemen ketupat (SVG) yang berfungsi sebagai tombol untuk membuka modal menggunakan atribut data-bs-toggle="modal" dan data-bs-target. Bagian jadwal sholat dibuat menggunakan grid system Bootstrap (row dan col) sehingga tampilan tetap responsif di berbagai ukuran layar. Selain itu, terdapat bagian countdown statis yang menampilkan waktu menuju imsak. Modal Bootstrap digunakan untuk menampilkan pesan THR ketika ketupat diklik, dengan struktur terdiri dari header, body, dan footer. Secara keseluruhan, kode ini memanfaatkan komponen dan utility class Bootstrap untuk membuat tampilan yang menarik, interaktif, dan tanpa perlu banyak CSS tambahan
+Dengan penambahan JavaScript dan jQuery, halaman ini menjadi dynamic web page yang tidak hanya menampilkan informasi statis, tetapi juga mampu berinteraksi dengan pengguna. JavaScript digunakan untuk mengelola waktu secara real-time menggunakan objek Date dan fungsi setInterval(), yang merupakan bagian dari konsep asynchronous execution, serta melakukan manipulasi tampilan melalui Document Object Model (DOM). Sementara itu, jQuery mempermudah proses manipulasi elemen dan event handling melalui sintaks seperti $(document).ready() dan click, yang mencerminkan konsep event-driven programming. Secara keseluruhan, kode ini menunjukkan integrasi antara struktur (HTML), desain (Bootstrap), dan logika interaktif (JavaScript dan jQuery) dalam membangun aplikasi web yang dinamis dan user-friendly.
