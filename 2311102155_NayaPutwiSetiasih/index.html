@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>THR Surprise</title>
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: white;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    /* Tombol THR */
+    .btn-thr {
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 50px;
+        background: linear-gradient(45deg, gold, orange);
+        color: black;
+        cursor: pointer;
+        box-shadow: 0 0 20px gold;
+        transition: 0.3s;
+    }
+
+    .btn-thr:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px gold;
+    }
+
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background: linear-gradient(135deg, #ffcc00, #ff9900);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        color: black;
+        animation: popup 0.5s ease;
+        box-shadow: 0 0 30px gold;
+    }
+
+    @keyframes popup {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .close {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        background: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Confetti */
+    .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background: gold;
+        top: -10px;
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(100vh) rotate(360deg);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>🌙 Ramadan Kareem 🌙</h1>
+<button class="btn-thr" onclick="showTHR()">🎁 Cairin THR</button>
+
+<!-- Modal -->
+<div class="modal" id="thrModal">
+    <div class="modal-content">
+        <h2>🎉 Selamat! 🎉</h2>
+        <p style="font-size:20px;">Anda mendapatkan THR! 💸</p>
+        <button class="close" onclick="closeTHR()">Tutup</button>
+    </div>
+</div>
+
+<script>
+function showTHR() {
+    document.getElementById("thrModal").style.display = "flex";
+    createConfetti();
+}
+
+function closeTHR() {
+    document.getElementById("thrModal").style.display = "none";
+}
+
+/* Confetti generator */
+function createConfetti() {
+    for (let i = 0; i < 50; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        document.body.appendChild(confetti);
+
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+}
+</script>
+
+</body>
+</html>

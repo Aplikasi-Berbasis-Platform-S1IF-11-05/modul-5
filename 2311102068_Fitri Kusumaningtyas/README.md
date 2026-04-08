@@ -1,0 +1,192 @@
+<div align="center">
+  <br />
+  <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
+  <br />
+  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <br />
+  <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
+  <br />
+  <br />
+  <br />
+  <h3>Disusun Oleh :</h3>
+  <p>
+    <strong>Fitri Kusumaningtyas</strong>
+    <br>
+    <strong>2311102068</strong>
+    <br>
+    <strong>S1 IF-11-REG05</strong>
+  </p>
+  <br />
+  <h3>Dosen Pengampu :</h3>
+  <p>
+    <strong>Dedi Agung Prabowo, S.Kom., M.Kom</strong>
+  </p>
+  <br />
+  <br />
+  <h4>Asisten Praktikum :</h4>
+  <strong>Apri Pandu Wicaksono </strong>
+  <br>
+  <strong>Hamka Zaenul Ardi</strong>
+  <br />
+  <h3>LABORATORIUM HIGH PERFORMANCE <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2026 </h3>
+</div>
+
+<hr>
+
+## 1. Dasar Teori
+
+Bootstrap adalah framework front-end berbasis HTML, CSS, dan JavaScript yang digunakan untuk mempermudah pengembangan tampilan website agar lebih cepat, responsif, dan konsisten. Bootstrap menyediakan berbagai komponen siap pakai seperti grid system, tombol, card, navbar, form, dan utilitas styling tanpa harus menulis CSS dari awal.
+
+Secara teori, Bootstrap bekerja dengan konsep responsive design, yaitu tampilan web dapat menyesuaikan ukuran layar perangkat (desktop, tablet, maupun mobile). Hal ini didukung oleh grid system berbasis 12 kolom yang memungkinkan pengembang mengatur layout halaman secara fleksibel. Selain itu, Bootstrap juga menyediakan utility classes seperti pengaturan warna (bg-success), margin (mt-3), padding (p-4), dan tipografi (fw-bold, fs-3) untuk mempercepat proses styling.
+
+## 2. Source Code
+
+### Source Code HTML
+```html
+<!DOCTYPE html>
+<!--Fitri Kusumaningtyas-->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mode Suci Ramadan</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-success bg-gradient">
+
+<div class="container py-5">
+
+<h1 class="text-center text-white fw-bold mb-5">
+🌙 Ramadan Kareem 🌙
+</h1>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card shadow h-100">
+<div class="card-body text-center">
+<h5 class="card-title">🌙 Checklist Ramadan</h5>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">Sholat Malam</li>
+<li class="list-group-item">Membaca Al-Qur'an</li>
+<li class="list-group-item">Sedekah</li>
+<li class="list-group-item">Tarawih</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow h-100">
+<div class="card-body text-center">
+<h5 class="card-title">🍽️ Menu Buka</h5>
+<p class="card-text">
+Kurma, Kolak, Air putih, dan makanan hangat
+</p>
+<button class="btn btn-success">
+Rekomendasi Menu
+</button>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow h-100">
+<div class="card-body text-center">
+<h5 class="card-title">✨ Reminder</h5>
+<p class="card-text">
+Dzikir, sedekah, dan 1D1J
+</p>
+<button class="btn btn-success">
+Set Pengingat
+</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Jadwal -->
+<div class="card shadow mt-5">
+<div class="card-body">
+
+<h4 class="text-center mb-4">🕌 Jadwal Sholat Hari Ini</h4>
+
+<table class="table table-striped text-center">
+<thead class="table-success">
+<tr>
+<th>Waktu</th>
+<th>Jam</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Imsak</td><td>04:25</td></tr>
+<tr><td>Subuh</td><td>04:35</td></tr>
+<tr><td>Dzuhur</td><td>11:58</td></tr>
+<tr><td>Ashar</td><td>15:05</td></tr>
+<tr><td>Maghrib</td><td>18:08</td></tr>
+<tr><td>Isya</td><td>19:15</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+<!-- Tombol THR -->
+<div class="text-center mt-5">
+<button class="btn btn-warning btn-lg fw-bold"
+data-bs-toggle="modal"
+data-bs-target="#modalTHR">
+💸 Cairkan THR
+</button>
+</div>
+
+<footer class="text-center text-white mt-5">
+<p class="mb-0 fs-4 fw-bold">
+Selamat Menjalankan Ibadah Ramadan 🤲
+</p>
+</footer>
+
+</div>
+
+<div class="modal fade" id="modalTHR" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content text-center">
+
+<div class="modal-header bg-warning">
+<h5 class="modal-title fw-bold">🎉 Kejutan Ramadan</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+<h3 class="fw-bold text-success">
+Selamat, Anda mendapatkan THR!
+</h3>
+<p>Semoga rezekinya berkah 💸</p>
+</div>
+
+<div class="modal-footer justify-content-center">
+<button class="btn btn-success" data-bs-dismiss="modal">
+Alhamdulillah 🤲
+</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
+### Screenshot output
+<img src="output.png" alt="Screnshot Output" width="100%">
+
+## Penjelasan Code
+
+Pada Task 5 ditambahkan tombol “Cairkan THR” yang berfungsi sebagai pemicu munculnya modal. Tombol dibuat menggunakan class Bootstrap seperti btn, btn-outline-success, dan btn-lg untuk menghasilkan tampilan yang menarik dan berukuran besar. Atribut data-bs-toggle="modal" digunakan untuk mengaktifkan komponen modal, sedangkan data-bs-target="#modalTHR" digunakan untuk menentukan modal mana yang akan ditampilkan ketika tombol diklik.
+
+Modal yang dibuat terdiri dari tiga bagian utama yaitu modal-header, modal-body, dan modal-footer. Bagian header menampilkan judul kejutan Ramadan, bagian body berisi pesan utama “Selamat, Anda mendapatkan THR!”, dan bagian footer berisi tombol untuk menutup modal. Agar modal dapat berfungsi dengan baik, ditambahkan library JavaScript Bootstrap pada bagian akhir dokumen menggunakan bootstrap.bundle.min.js. Dengan struktur tersebut, ketika pengguna menekan tombol THR, modal akan muncul di tengah layar dan memberikan efek interaktif sesuai dengan ketentuan Task 5.

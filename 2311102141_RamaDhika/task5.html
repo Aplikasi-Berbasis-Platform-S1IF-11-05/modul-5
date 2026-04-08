@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ramadan UI</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light">
+
+<div class="container mt-5 text-center">
+
+  <h1 class="mb-4">🌙 Ramadan Kareem</h1>
+
+  <!-- Card -->
+  <div class="card bg-success text-white p-4 shadow">
+    <h3>Selamat Berpuasa</h3>
+    <p>Semoga harimu penuh berkah ✨</p>
+
+    <!-- Tombol THR -->
+    <button class="btn btn-warning btn-lg mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#thrModal">
+      🎁 Cairin THR
+    </button>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="thrModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+
+      <div class="modal-header">
+        <h5 class="modal-title">🎉 Selamat!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <h2 class="text-success">+ Rp 1.000.000</h2>
+        <p>💸 THR berhasil dicairkan!</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-dismiss="modal">
+          Ambil Sekarang 🚀
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- WAJIB ADA (INI KUNCI NYA) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
