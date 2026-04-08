@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> Javascript & JQueary </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,13 +35,55 @@
 
 ### Dasar Teori
 
-Bootstrap merupakan framework front-end berbasis HTML, CSS, dan JavaScript yang digunakan untuk mempermudah pengembangan tampilan website agar lebih responsif dan modern. Framework ini menyediakan berbagai komponen siap pakai seperti navbar, button, card, grid system, dan lain-lain yang dapat langsung digunakan tanpa perlu menulis CSS dari awal. Dengan menggunakan Bootstrap, pengembang dapat mengatur tata letak halaman secara fleksibel melalui sistem grid yang berbasis baris (row) dan kolom (column), sehingga tampilan dapat menyesuaikan berbagai ukuran layar seperti desktop, tablet, maupun smartphone. Selain itu, Bootstrap juga memiliki banyak class utility yang memungkinkan pengaturan warna, spacing, tipografi, dan elemen visual lainnya secara cepat hanya dengan menambahkan class tertentu pada elemen HTML. Hal ini membuat proses pengembangan menjadi lebih efisien, konsisten, dan mudah dipelajari, terutama bagi pemula dalam pengembangan web.
+1. JavaScript
+
+JavaScript merupakan bahasa pemrograman yang digunakan untuk membuat halaman web menjadi lebih interaktif dan dinamis. Berbeda dengan HTML yang berfungsi sebagai struktur dan CSS sebagai pengatur tampilan, JavaScript berperan dalam mengatur logika serta perilaku dari sebuah halaman web.
+
+JavaScript dapat digunakan untuk berbagai keperluan seperti memvalidasi input pengguna, memanipulasi elemen HTML dan CSS, menangani event (seperti klik dan input), hingga berkomunikasi dengan server tanpa perlu memuat ulang halaman (melalui AJAX). Bahasa ini berjalan di sisi client (browser), sehingga dapat meningkatkan pengalaman pengguna secara langsung.
+
+Beberapa konsep dasar dalam JavaScript meliputi:
+
+Variabel dan tipe data (string, number, boolean, array, object)
+Operator (aritmatika, logika, perbandingan)
+Percabangan (if, else, switch)
+Perulangan (for, while)
+Fungsi
+DOM (Document Object Model) untuk memanipulasi elemen HTML
+Event handling untuk merespon aksi pengguna
+
+2. jQuery
+
+jQuery merupakan library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript. Dengan menggunakan jQuery, pengembang dapat melakukan manipulasi HTML, penanganan event, animasi, serta AJAX dengan lebih mudah dan cepat dibandingkan menggunakan JavaScript murni.
+
+jQuery bekerja dengan prinsip “write less, do more”, yang artinya penulisan kode menjadi lebih ringkas namun tetap memiliki fungsi yang sama. Library ini sangat membantu terutama dalam menangani perbedaan kompatibilitas antar browser.
+
+Beberapa fitur utama jQuery antara lain:
+
+Seleksi dan manipulasi elemen HTML dengan mudah menggunakan selector
+Penanganan event yang lebih sederhana
+Efek dan animasi bawaan
+AJAX untuk komunikasi dengan server tanpa reload halaman
+Traversing DOM untuk menelusuri elemen HTML
+
+Contoh penggunaan jQuery:
+
+```
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide();
+    });
+});
+```
+
+Kode tersebut berfungsi untuk menyembunyikan elemen paragraf ketika tombol diklik.
 
 ### Tugas 5 - Fitur Cairin THR
 
 #### Source Code
 
 ```
+<!-- Anisah Syifa 2311102080 -->
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -122,10 +164,10 @@ Bootstrap merupakan framework front-end berbasis HTML, CSS, dan JavaScript yang 
 
         <div class="modal-body">
           <h3 class="fw-bold text-success">💸 Anda mendapatkan THR!</h3>
-          <p class="mt-3">Semoga rezekinya berkah dan tidak hanya di web ini 😭🙏</p>
+          <p class="mt-3">Semoga rezekinya berkah🙏</p>
 
           <div class="alert alert-warning mt-3">
-            +Rp 1.000.000 masuk ke hati ❤️
+            +Rp 1.000.000 masuk ke e wallet❤️
           </div>
         </div>
 
@@ -159,13 +201,7 @@ Bootstrap merupakan framework front-end berbasis HTML, CSS, dan JavaScript yang 
 ### Deskripsi Kode
 
 ```
-Halaman web bertema Ramadan ini merupakan lanjutan dari Modul 4, di mana perbedaannya terletak pada penambahan fitur interaktif berupa tombol “Cairin THR” yang memunculkan modal pop-up menggunakan komponen Bootstrap. Jika pada modul sebelumnya fokus pada pembuatan tampilan statis menggunakan berbagai class bawaan Bootstrap, pada modul ini ditambahkan elemen interaksi untuk meningkatkan pengalaman pengguna tanpa menggunakan JavaScript secara manual. Struktur halaman tetap diawali dengan bagian <head> yang menghubungkan Bootstrap melalui CDN agar seluruh komponen dan fitur dapat digunakan dengan mudah.
+Halaman web bertema Ramadan ini merupakan lanjutan dari Modul 4, di mana perbedaannya terletak pada penambahan fitur interaktif berupa tombol “Cairin THR” yang memunculkan modal pop-up menggunakan komponen Bootstrap. Jika pada modul sebelumnya fokus pada pembuatan tampilan statis menggunakan berbagai class bawaan Bootstrap, pada modul ini ditambahkan elemen interaksi untuk menggunakan JavaScript secara manual. Struktur halaman tetap diawali dengan bagian <head> yang menghubungkan Bootstrap melalui CDN agar seluruh komponen dan fitur dapat digunakan dengan mudah.
 
-Pada bagian <body>, digunakan class bg-light dan text-dark untuk menciptakan tampilan yang cerah dan nyaman dibaca. Navbar menggunakan class navbar dan bg-success sebagai identitas visual dengan nuansa Ramadan. Bagian hero menampilkan judul utama dengan class display-4, fw-bold, dan text-success, serta tombol utama “Cairin THR” yang menggunakan class btn btn-warning btn-lg agar terlihat mencolok. Tombol ini memiliki atribut data-bs-toggle="modal" dan data-bs-target="#thrModal" yang berfungsi untuk memicu munculnya modal pop-up saat diklik.
-
-Bagian konten utama masih menggunakan sistem grid Bootstrap dengan row dan col-md-4 untuk membuat layout responsif dalam tiga kolom. Setiap kolom berisi card dengan class card dan card-body yang menampilkan informasi seperti jadwal puasa, doa harian, dan amalan sunnah. Penambahan class shadow-sm memberikan efek visual yang lebih modern dan menarik.
-
-Fitur utama pada modul ini adalah modal pop-up yang dibuat menggunakan class modal, modal-dialog-centered, dan modal-content sehingga tampil di tengah layar. Modal ini berisi pesan “Selamat, Anda mendapatkan THR!” yang ditampilkan menggunakan kombinasi class seperti fw-bold dan text-success, serta didukung elemen alert alert-warning untuk memberikan kesan interaktif seolah pengguna benar-benar menerima hadiah. Modal juga dilengkapi tombol penutup dengan class btn btn-success.
-
-Terakhir, bagian footer menggunakan class bg-success dan text-white untuk menjaga konsistensi warna dengan keseluruhan tema. Secara keseluruhan, halaman ini menunjukkan pengembangan dari modul sebelumnya dengan menambahkan fitur interaktif berbasis Bootstrap, sehingga tidak hanya menampilkan desain yang responsif tetapi juga meningkatkan pengalaman pengguna melalui interaksi yang lebih menarik.
+Fitur utama pada modul ini adalah modal pop-up yang dibuat menggunakan class modal, modal-dialog-centered, dan modal-content sehingga tampil di tengah layar. Modal ini berisi pesan “Selamat, Anda mendapatkan THR!”.
 ```
