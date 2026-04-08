@@ -262,7 +262,7 @@ Modal adalah salah satu komponen berbasis JavaScript pada Bootstrap yang digunak
 # Penjelasan
 <p align="justify">
 
-Fitur Surprise THR diimplementasikan menggunakan komponen Modal Bootstrap 5, yang berfungsi sebagai jendela dialog interaktif di atas halaman utama. Secara teknis, fitur ini bekerja tanpa penulisan JavaScript kustom, melainkan memanfaatkan data attributes bawaan Bootstrap yaitu data-bs-toggle="modal" dan data-bs-target.
+Fitur Surprise THR diimplementasikan menggunakan komponen Modal dari Bootstrap 5 yang berfungsi sebagai jendela dialog interaktif di atas halaman utama. Berbeda dari implementasi sebelumnya, fitur ini dikendalikan menggunakan jQuery untuk menangani event klik pada tombol THR, kemudian memicu modal melalui JavaScript API milik JavaScript.
 
-Penambahan ini dirancang untuk meningkatkan User Experience (UX) melalui elemen kejutan (surprise element). Modal ini dikonfigurasi dengan class modal-dialog-centered agar muncul tepat di tengah layar, serta dipercantik menggunakan utility classes seperti rounded-5 dan shadow-lg. Penggunaan ikon dari Bootstrap Icons dan tipografi yang kontras pada bagian body modal memberikan kesan visual yang kuat dan interaktif, seolah pengguna benar-benar menerima hadiah secara digital.
+Secara teknis, ketika tombol THR ditekan, jQuery akan menangkap event tersebut dan menjalankan fungsi untuk menampilkan modal dengan membuat instance bootstrap.Modal lalu memanggil method .show(). Pendekatan ini memberikan fleksibilitas lebih dibandingkan penggunaan data attributes, karena memungkinkan penambahan logika tambahan seperti animasi, validasi, atau manipulasi konten secara dinamis.
 </p>
