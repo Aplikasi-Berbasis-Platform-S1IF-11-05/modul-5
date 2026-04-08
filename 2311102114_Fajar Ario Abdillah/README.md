@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> Bootstrap Modal & JavaScript Interaktif </h3>
+  <h3>MODUL 5 <br> Javascript & JQueary </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,193 +35,177 @@
 
 # Dasar Teori
 
-## 1. Bootstrap Modal
+## 1. Pengertian Javascript
 
-Bootstrap adalah framework CSS yang digunakan untuk mempermudah pembuatan tampilan website secara cepat dan responsif tanpa harus menulis CSS dari nol. Bootstrap menyediakan berbagai class siap pakai seperti layout grid, navbar, button, card, form, dan komponen lainnya yang dapat langsung digunakan pada HTML. Dengan menggunakan Bootstrap, developer dapat membuat desain yang rapi, konsisten, dan menyesuaikan berbagai ukuran layar (mobile, tablet, desktop) hanya dengan memanfaatkan class bawaan tanpa perlu banyak styling manual.
+JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi lebih interaktif dan dinamis. Bahasa ini biasanya dijalankan di sisi klien (client-side), yaitu langsung di browser pengguna, sehingga memungkinkan halaman web merespons tindakan pengguna seperti klik, input, dan navigasi tanpa perlu memuat ulang halaman.
+
+JavaScript dapat digunakan untuk berbagai keperluan, seperti memvalidasi form, memanipulasi elemen HTML dan CSS melalui DOM (Document Object Model), serta membuat animasi atau efek visual. Selain itu, dengan perkembangan teknologi, JavaScript juga dapat digunakan di sisi server (server-side) menggunakan platform seperti Node.js.
 
 ---
 
-## 2. Struktur Dasar Modal Bootstrap
+## 2. Sejarah dan Perkembangan Javascript
+
+JavaScript pertama kali dikembangkan oleh Brendan Eich pada tahun 1995 saat bekerja di Netscape Communications. Bahasa ini awalnya dibuat dalam waktu singkat (sekitar 10 hari) dengan nama Mocha, kemudian berubah menjadi LiveScript, dan akhirnya dinamakan JavaScript untuk mengikuti popularitas bahasa Java pada saat itu.
+
+Seiring waktu, JavaScript terus berkembang dan distandarisasi melalui spesifikasi yang disebut ECMAScript (ES), yang dikelola oleh organisasi ECMA International. Versi-versi ECMAScript terus diperbarui untuk menambahkan fitur baru dan meningkatkan performa, seperti ES5, ES6 (ES2015), hingga versi terbaru yang digunakan saat ini.
+
+Saat ini, JavaScript tidak hanya digunakan di sisi klien, tetapi juga di sisi server melalui teknologi seperti Node.js. Selain itu, banyak framework dan library modern seperti React, Angular, dan Vue.js yang dikembangkan untuk mempermudah pembuatan aplikasi web berbasis JavaScript.
+
+---
+
+## 3. Dasar-Dasar Javascipt
+
+Dasar-dasar JavaScript mencakup konsep awal yang perlu dipahami untuk dapat menulis dan menjalankan kode JavaScript. Penulisan kode JavaScript dapat disisipkan langsung ke dalam file HTML atau dipisahkan dalam file khusus berekstensi .js.
+
+Beberapa komponen dasar dalam JavaScript meliputi variabel, tipe data, operator, dan struktur kontrol. Variabel digunakan untuk menyimpan data, dengan tipe data seperti string, number, boolean, dan array. Operator digunakan untuk melakukan operasi terhadap data, seperti perhitungan atau perbandingan.
+
+Selain itu, JavaScript juga memiliki struktur kontrol seperti if-else, switch, serta perulangan seperti for dan while yang digunakan untuk mengatur alur eksekusi program. Pemahaman dasar ini sangat penting sebagai fondasi dalam pengembangan aplikasi berbasis JavaScript.
+
+---
+
+## 4. Fungsi dalam Javascipt
+
+Fungsi dalam JavaScript adalah sekumpulan kode yang dirancang untuk melakukan tugas tertentu dan dapat digunakan kembali (reusable). Fungsi membantu membuat program menjadi lebih terstruktur, efisien, dan mudah dipelihara.
+
+Fungsi dapat menerima parameter sebagai input dan dapat mengembalikan nilai (return value) sebagai output. Dalam JavaScript, fungsi dapat dibuat menggunakan beberapa cara, seperti deklarasi fungsi (function declaration) dan ekspresi fungsi (function expression).
+
+### Contoh Fungsi dalam Javascript:
 
 ```html
-<!-- Trigger Button -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contohModal">
-  Buka Modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="contohModal" tabindex="-1" aria-labelledby="contohModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title" id="contohModalLabel">Judul Modal</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-        Isi konten modal di sini.
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-        <button type="button" class="btn btn-primary">Simpan</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-```
-
-### Atribut Penting Modal:
-
-| Atribut | Fungsi |
-|---------|--------|
-| `data-bs-toggle="modal"` | Menandai elemen sebagai trigger pembuka modal |
-| `data-bs-target="#id"` | Menentukan modal mana yang akan dibuka (berdasarkan ID) |
-| `data-bs-dismiss="modal"` | Menutup modal saat elemen diklik |
-| `modal-dialog-centered` | Membuat modal tampil di tengah layar secara vertikal |
-| `modal fade` | Menambahkan efek transisi fade saat modal muncul |
-
----
-
-## 3. Modal Events (JavaScript)
-
-Bootstrap menyediakan event lifecycle untuk modal yang bisa dimanfaatkan dengan JavaScript:
-
-```javascript
-const myModal = document.getElementById('myModal');
-
-// Dipanggil tepat sebelum modal ditampilkan
-myModal.addEventListener('show.bs.modal', () => {
-  console.log('Modal akan terbuka...');
-});
-
-// Dipanggil setelah modal sepenuhnya terlihat
-myModal.addEventListener('shown.bs.modal', () => {
-  console.log('Modal sudah terbuka!');
-});
-
-// Dipanggil setelah modal sepenuhnya tersembunyi
-myModal.addEventListener('hidden.bs.modal', () => {
-  console.log('Modal sudah tertutup!');
-});
-```
-
-Event `show.bs.modal` sangat berguna untuk menginisialisasi konten dinamis (seperti animasi atau data) tepat sebelum modal muncul ke pengguna.
-
----
-
-## 4. Animasi CSS untuk Interaktivitas
-
-Pada tugas ini digunakan beberapa teknik CSS Animation untuk meningkatkan UX:
-
-### Keyframe Animation
-
-```css
-/* Animasi bounce untuk elemen emoji */
-@keyframes envelope-bounce {
-  0%   { transform: scale(0) rotate(-15deg); opacity: 0; }
-  60%  { transform: scale(1.2) rotate(5deg);  opacity: 1; }
-  100% { transform: scale(1) rotate(0deg);    opacity: 1; }
+// Membuat fungsi
+function hitungLuasPersegi(sisi) {
+    return sisi * sisi;
 }
 
-.elemen {
-  animation: envelope-bounce 0.6s ease-out 0.3s both;
-}
-```
+// Memanggil fungsi
+let hasil = hitungLuasPersegi(5);
 
-### Shimmer / Sweep Effect
-
-```css
-/* Efek kilatan cahaya pada tombol */
-.btn-thr::before {
-  content: '';
-  position: absolute;
-  top: -50%; left: -60%;
-  width: 40%; height: 200%;
-  background: rgba(255,255,255,0.35);
-  transform: skewX(-20deg);
-  animation: sweep 2.5s ease-in-out infinite;
-}
-
-@keyframes sweep {
-  0%   { left: -60%;  }
-  60%  { left: 120%;  }
-  100% { left: 120%;  }
-}
-```
-
-### Pulse Glow
-
-```css
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 24px rgba(201,168,76,0.5); }
-  50%       { box-shadow: 0 0 48px rgba(201,168,76,0.9); }
-}
+// Menampilkan hasil
+console.log("Luas persegi adalah: " + hasil);
 ```
 
 ---
 
-## 5. DOM Manipulation dengan JavaScript
+## 5. DOM (Document Object Modal)
 
-### Membuat Elemen Dinamis (Confetti)
+DOM (Document Object Model) adalah representasi struktur dari dokumen HTML atau XML dalam bentuk objek yang dapat diakses dan dimanipulasi menggunakan JavaScript. Dengan DOM, setiap elemen dalam halaman web seperti teks, gambar, dan tombol dianggap sebagai objek yang dapat diubah secara dinamis.
 
-```javascript
-function spawnConfetti() {
-  const container = document.getElementById('confettiContainer');
-  container.innerHTML = ''; // Reset
+JavaScript dapat menggunakan DOM untuk mengakses, mengubah, menambah, atau menghapus elemen HTML serta mengatur gaya (CSS) dari elemen tersebut. Hal ini memungkinkan halaman web menjadi lebih interaktif tanpa harus memuat ulang halaman.
 
-  for (let i = 0; i < 55; i++) {
-    const piece = document.createElement('div');
-    piece.classList.add('confetti-piece');
-    piece.style.left = Math.random() * 100 + '%';
-    piece.style.backgroundColor = COLORS[Math.floor(Math.random() * COLORS.length)];
-    piece.style.animationDuration = (1.4 + Math.random() * 1.8) + 's';
-    container.appendChild(piece);
-  }
-}
+### Contoh Manipulasi DOM:
+
+```html
+// Mengubah isi teks pada elemen dengan id "judul"
+document.getElementById("judul").innerHTML = "Belajar JavaScript";
+
+// Mengubah warna teks
+document.getElementById("judul").style.color = "blue";
 ```
-
-### Animasi Counter (Count-Up)
-
-```javascript
-function animateTHR() {
-  const target = 1000000;
-  let current = 0;
-  const step = target / 60;
-
-  const interval = setInterval(() => {
-    current += step;
-    if (current >= target) {
-      current = target;
-      clearInterval(interval);
-    }
-    thrAmountEl.textContent = new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR'
-    }).format(Math.floor(current));
-  }, 16); // ~60fps
-}
-```
-
-`Intl.NumberFormat` adalah API bawaan JavaScript untuk memformat angka sesuai locale, termasuk format mata uang Indonesia (Rp).
 
 ---
 
-## 6. Integrasi Modal Event dengan JavaScript
+## 6. Event Handling dalam Javascript
 
-```javascript
-const modalTHR = document.getElementById('modalTHR');
+Event handling dalam JavaScript adalah mekanisme untuk menangani berbagai kejadian (event) yang terjadi pada halaman web, seperti klik tombol, pergerakan mouse, penekanan keyboard, atau pengiriman form. Dengan adanya event handling, halaman web dapat merespons interaksi pengguna secara langsung.
 
-// Jalankan animasi setiap kali modal dibuka
-modalTHR.addEventListener('show.bs.modal', () => {
-  spawnConfetti();
-  animateTHR();
+JavaScript menyediakan berbagai cara untuk menangani event, seperti menggunakan atribut HTML, properti DOM, atau metode `addEventListener()`. Penggunaan event handling sangat penting untuk menciptakan aplikasi web yang interaktif dan responsif.
+
+### Contoh Event Handling:
+
+```html
+// Menambahkan event click pada tombol
+document.getElementById("tombol").addEventListener("click", function() {
+    alert("Tombol telah diklik!");
 });
 ```
 
-Dengan memanfaatkan event `show.bs.modal`, animasi confetti dan counter THR akan selalu dijalankan ulang setiap kali modal dibuka — memberikan pengalaman yang konsisten dan interaktif.
+---
+
+## 7. Pengertian JQuery
+
+jQuery adalah sebuah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam hal manipulasi DOM, penanganan event, serta pembuatan animasi. Dengan jQuery, penulisan kode menjadi lebih singkat, mudah dipahami, dan efisien dibandingkan dengan JavaScript murni.
+
+jQuery bekerja dengan prinsip “write less, do more”, yang berarti pengembang dapat melakukan banyak hal dengan kode yang lebih sedikit. Library ini juga membantu mengatasi perbedaan antar browser (cross-browser compatibility), sehingga kode dapat berjalan dengan baik di berbagai jenis browser.
+
+---
+
+## 8. Keunggulan JQuery
+
+jQuery memiliki berbagai keunggulan yang membuatnya banyak digunakan dalam pengembangan web. Salah satu keunggulan utamanya adalah penulisan kode yang lebih singkat dan sederhana dibandingkan JavaScript murni, sehingga memudahkan pengembang dalam membuat fungsi tertentu.
+
+Selain itu, jQuery mendukung cross-browser compatibility, yang berarti kode yang ditulis dapat berjalan dengan baik di berbagai browser tanpa perlu penyesuaian tambahan. jQuery juga menyediakan banyak fungsi siap pakai untuk manipulasi DOM, penanganan event, serta efek dan animasi.
+
+---
+
+## 9. Sintaks Dasar JQuery
+
+Sintaks dasar jQuery dirancang agar lebih sederhana dan mudah digunakan dibandingkan JavaScript murni. Struktur umum penulisan jQuery adalah:
+
+```html
+$(selector).action();
+```
+
+Di mana:
+* `$(selector)` digunakan untuk memilih elemen HTML yang ingin dimanipulasi
+* `.action()` adalah perintah atau aksi yang akan dilakukan terhadap elemen tersebut
+
+jQuery menggunakan tanda `$` sebagai simbol utama untuk mengakses fungsi-fungsinya. Selector dalam jQuery mirip dengan CSS selector, seperti berdasarkan id, class, atau tag HTML.
+
+### Contoh Sintaks JQuery:
+
+```html
+// Mengubah teks pada elemen dengan id "judul"
+$("#judul").text("Belajar jQuery");
+
+// Menyembunyikan elemen dengan class "konten"
+$(".konten").hide();
+```
+
+---
+
+## 10. Manipulasi Elemen dengan JQuery
+
+Manipulasi elemen dengan jQuery adalah proses mengubah, menambah, atau menghapus elemen HTML pada halaman web secara dinamis. Dengan jQuery, manipulasi DOM menjadi lebih mudah dan efisien dibandingkan menggunakan JavaScript murni.
+
+jQuery menyediakan berbagai metode untuk memanipulasi elemen, seperti mengubah isi teks atau HTML, mengatur atribut, serta mengubah gaya (CSS) dari suatu elemen. Selain itu, jQuery juga memungkinkan penambahan atau penghapusan elemen dengan mudah.
+
+### Contoh Manipulasi Elemen:
+
+```html
+// Mengubah isi teks
+$("#judul").text("Judul Baru");
+
+// Mengubah HTML
+$("#konten").html("<b>Konten Baru</b>");
+
+// Mengubah CSS
+$("#judul").css("color", "red");
+
+// Menambahkan elemen
+$("#list").append("<li>Item Baru</li>");
+```
+
+---
+
+## 11. Event Handling dengan JQuery
+
+Event handling dengan jQuery adalah cara untuk menangani berbagai kejadian (event) yang terjadi pada elemen HTML, seperti klik, hover, atau input dari pengguna. jQuery menyediakan metode yang lebih sederhana dan ringkas dibandingkan JavaScript murni dalam menangani event.
+
+Beberapa metode yang sering digunakan dalam jQuery untuk event handling antara lain `.click()`, `.dblclick()`, `.hover()`, serta `.on()` yang lebih fleksibel untuk berbagai jenis event. Dengan jQuery, penulisan kode menjadi lebih singkat dan mudah dipahami.
+
+### Contoh Event Handling dengan jQuery:
+
+```html
+// Event click pada tombol
+$("#tombol").click(function() {
+    alert("Tombol diklik!");
+});
+
+// Menggunakan metode .on()
+$("#tombol").on("click", function() {
+    console.log("Tombol ditekan");
+});
+```
 
 ---
 
