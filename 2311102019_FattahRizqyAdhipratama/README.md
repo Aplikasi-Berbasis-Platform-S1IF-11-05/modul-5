@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -37,11 +37,11 @@
 # Dasar Teori
 
 <p align="justify">
-Bootstrap merupakan framework front-end yang digunakan untuk mempermudah pembuatan tampilan website agar lebih cepat, rapi, dan responsif. Framework ini menyediakan berbagai class CSS siap pakai seperti grid system, button, navbar, form, card, dan komponen lainnya yang dapat langsung digunakan tanpa harus membuat desain dari awal. Dengan adanya Bootstrap, proses pengembangan website menjadi lebih efisien karena developer hanya perlu memanfaatkan class yang sudah tersedia untuk mengatur tampilan halaman.
+JavaScript merupakan bahasa pemrograman tingkat tinggi yang bersifat interpreted dan digunakan untuk membuat halaman web menjadi interaktif dan dinamis. JavaScript berjalan di sisi client (browser) dan memungkinkan pengembang untuk memanipulasi elemen HTML, CSS, serta merespons berbagai event seperti klik tombol, input form, animasi, validasi data, hingga komunikasi asynchronous menggunakan AJAX. Bahasa ini menjadi salah satu teknologi utama dalam pengembangan web bersama HTML dan CSS. JavaScript juga mendukung berbagai paradigma pemrograman seperti prosedural, berorientasi objek, dan fungsional, sehingga fleksibel digunakan dalam berbagai kebutuhan pengembangan aplikasi web modern.
 </p>
 
 <p align="justify">
-Selain itu, Bootstrap juga mendukung konsep responsive web design, yaitu tampilan website dapat menyesuaikan ukuran layar perangkat seperti laptop, tablet, maupun smartphone. Hal ini sangat membantu dalam praktikum pembuatan web karena mahasiswa dapat lebih fokus pada struktur halaman dan fungsi website tanpa terlalu banyak menulis CSS manual. Dengan penggunaan Bootstrap, tampilan website menjadi lebih modern, konsisten, dan user-friendly.
+jQuery adalah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript, terutama dalam manipulasi DOM, penanganan event, efek animasi, dan AJAX. jQuery memiliki filosofi “write less, do more”, yang berarti developer dapat menulis kode lebih singkat namun tetap menghasilkan fungsi yang kompleks. Dengan menggunakan selector yang mirip CSS, jQuery memudahkan proses pemilihan elemen HTML dan pemberian aksi pada elemen tersebut.
 </p>
 
 # Tugas 5 - Fitur Cairin THR
@@ -79,7 +79,7 @@ S1IF-11-05 -->
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2 fw-bolder text-warning" href="#">
       <i class="bi bi-moon-stars-fill fs-3"></i>
-      <span class="tracking-tight">RAMADHAN 1447H</span>
+      <span>RAMADHAN 1447H</span>
     </a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -95,14 +95,14 @@ S1IF-11-05 -->
   </div>
 </nav>
 
-<header class="py-5 mb-5 bg-gradient">
+<header class="py-5 mb-5">
   <div class="container py-5">
     <div class="row align-items-center g-5">
       <div class="col-lg-6 text-center text-lg-start">
-        <span class="badge text-bg-warning rounded-pill px-3 py-2 mb-3 text-uppercase fw-bold shadow-sm">Selamat Datang</span>
-        <h1 class="display-2 fw-black text-warning mb-3">Marhaban Ya <br><span class="text-white">Ramadhan</span></h1>
-        <p class="lead text-secondary-emphasis mb-4 fs-4">
-          Waktu yang tepat untuk mensucikan hati dan mendekatkan diri kepada Sang Pencipta di tahun 1446 H.
+        <span class="badge text-bg-warning rounded-pill px-3 py-2 mb-3 fw-bold">Selamat Datang</span>
+        <h1 class="display-2 fw-bold text-warning mb-3">Marhaban Ya <br><span class="text-white">Ramadhan</span></h1>
+        <p class="lead text-light mb-4 fs-4">
+          Waktu yang tepat untuk mensucikan hati dan mendekatkan diri kepada Sang Pencipta di tahun 1447 H.
         </p>
         <div class="d-flex justify-content-center justify-content-lg-start gap-3">
           <a href="#jadwal" class="btn btn-warning btn-lg rounded-pill px-5 shadow">Lihat Jadwal</a>
@@ -111,7 +111,7 @@ S1IF-11-05 -->
       </div>
       <div class="col-lg-6 text-center">
         <div class="p-5">
-            <i class="bi bi-mosque text-warning display-1 opacity-75 shadow-lg"></i>
+          <i class="bi bi-mosque text-warning display-1 opacity-75"></i>
         </div>
       </div>
     </div>
@@ -122,19 +122,18 @@ S1IF-11-05 -->
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="fw-bold text-warning h1">Jadwal Ibadah</h2>
-      <p class="text-secondary text-uppercase small tracking-widest">Waktu Indonesia Barat (WIB)</p>
+      <p class="text-secondary">Waktu Indonesia Barat (WIB)</p>
     </div>
-    
     <div class="row g-3">
       <div class="col-6 col-md-4 col-lg-2">
         <div class="card bg-secondary bg-opacity-10 border-secondary text-center p-3 hover-lift h-100">
-          <small class="text-warning fw-bold uppercase">Imsak</small>
+          <small class="text-warning fw-bold">Imsak</small>
           <h3 class="mb-0 mt-2 fw-bold text-white">04:19</h3>
         </div>
       </div>
       <div class="col-6 col-md-4 col-lg-2">
         <div class="card bg-warning text-dark border-0 text-center p-3 hover-lift h-100 shadow">
-          <small class="fw-bold text-uppercase">Subuh</small>
+          <small class="fw-bold">Subuh</small>
           <h3 class="mb-0 mt-2 fw-bold text-white">04:29</h3>
         </div>
       </div>
