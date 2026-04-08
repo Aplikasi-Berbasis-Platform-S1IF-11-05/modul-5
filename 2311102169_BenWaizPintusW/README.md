@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -37,11 +37,11 @@
 # Dasar Teori
 
 <p align="justify">
-Komponen interaktif yang disediakan oleh framework Bootstrap, khususnya komponen modal. Bootstrap tidak hanya menyediakan class untuk styling, tetapi juga menyediakan komponen berbasis JavaScript yang memungkinkan interaksi seperti pop-up tanpa perlu membuat script secara kompleks. Modal merupakan salah satu komponen yang digunakan untuk menampilkan informasi tambahan dalam bentuk jendela overlay di atas halaman utama. Penggunaan atribut seperti data-bs-toggle dan data-bs-target memungkinkan elemen seperti tombol dapat memicu munculnya modal secara otomatis.
+JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi interaktif dan dinamis. Bahasa ini berjalan di sisi client (browser) dan memungkinkan pengembang untuk memanipulasi elemen HTML, mengatur tampilan CSS, serta merespon berbagai event seperti klik, input, dan submit. Selain itu, JavaScript juga mendukung pemrograman berbasis objek (OOP) dan dapat digunakan untuk berkomunikasi dengan server melalui teknik seperti AJAX, sehingga data dapat diperbarui tanpa harus me-reload halaman secara keseluruhan.
 </p>
 
 <p align="justify">
-Selain itu, fitur ini juga menerapkan konsep interaksi pengguna dalam UI (User Interface) dan UX (User Experience), di mana pengguna diberikan pengalaman menarik saat menekan tombol “Cairin THR” dan mendapatkan respon visual berupa pop-up. Penambahan nominal THR yang ditampilkan secara langsung di dalam modal bertujuan memberikan kesan realistis dan meningkatkan keterlibatan pengguna. Dengan memanfaatkan Bootstrap secara maksimal tanpa CSS tambahan, fitur ini tetap terlihat menarik, responsif, dan mudah diimplementasikan, sehingga menunjukkan efisiensi penggunaan framework dalam pengembangan web interaktif.
+jQuery adalah library JavaScript yang dirancang untuk mempermudah penulisan kode JavaScript, terutama dalam manipulasi DOM, penanganan event, animasi, dan AJAX. Dengan sintaks yang lebih sederhana dan ringkas, jQuery membantu pengembang menghemat waktu serta mengurangi kompleksitas kode dibandingkan JavaScript murni. Selain itu, jQuery juga kompatibel dengan berbagai browser, sehingga meminimalkan masalah perbedaan perilaku antar browser dalam pengembangan aplikasi web.
 </p>
 
 # Tugas 5 - Fitur Cairin THR
