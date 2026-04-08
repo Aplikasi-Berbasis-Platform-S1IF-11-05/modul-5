@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> BOOTSTRAP </h3>
+  <h3>MODUL 5 <br> JAVASCRIPT & JQUERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -57,7 +57,6 @@ Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis k
 
 <body class="bg-success-subtle">
 
-<!-- NAVBAR -->
 <nav class="navbar bg-success shadow-sm">
     <div class="container">
         <span class="navbar-brand text-white fw-bold fs-4">
@@ -66,7 +65,7 @@ Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis k
     </div>
 </nav>
 
-<!-- UCAPAN -->
+
 <div class="container text-center py-5">
     <h1 class="display-5 text-success fw-bold">
         🌙 Selamat Menunaikan Ibadah Puasa
@@ -75,7 +74,6 @@ Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis k
         Semoga Ramadan membawa keberkahan, kedamaian, dan kebahagiaan bagi kita semua.
     </p>
 
-    <!-- TOMBOL THR -->
     <button class="btn btn-success btn-lg mt-3 shadow"
         data-bs-toggle="modal"
         data-bs-target="#thrModal">
@@ -83,11 +81,9 @@ Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis k
     </button>
 </div>
 
-<!-- KONTEN -->
 <div class="container pb-5">
     <div class="row g-4">
 
-        <!-- JADWAL -->
         <div class="col-md-6">
             <div class="card shadow-sm rounded-4">
                 <div class="card-header bg-success text-white fw-bold">
@@ -112,7 +108,6 @@ Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis k
             </div>
         </div>
 
-        <!-- MENU -->
         <div class="col-md-6">
             <div class="card shadow-sm rounded-4">
                 <div class="card-header bg-success text-white fw-bold">
@@ -151,7 +146,6 @@ Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis k
             </div>
         </div>
 
-        <!-- TIPS -->
         <div class="col-12">
             <div class="card shadow-sm rounded-4">
                 <div class="card-header bg-success text-white fw-bold">
@@ -193,7 +187,6 @@ Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis k
     </div>
 </div>
 
-<!-- MODAL THR -->
 <div class="modal fade" id="thrModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-center">
@@ -224,6 +217,27 @@ Bootstrap banyak digunakan baik dalam proyek pendidikan maupun aplikasi bisnis k
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+    $(".card-body .card").click(function(){
+        let menu = $(this).text().trim();
+        alert("Kamu memilih: " + menu);
+    });
+
+    $("button[data-bs-target='#thrModal']").click(function(){
+        $(this).addClass("active");
+
+        setTimeout(() => {
+            $(this).removeClass("active");
+        }, 300);
+    });
+
+});
+</script>
 
 </body>
 </html>
