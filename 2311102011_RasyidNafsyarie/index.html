@@ -25,7 +25,7 @@
     </div>
 
     <div class="container mt-4">
-        <div class="alert alert-info text-center" role="alert">
+        <div class="alert alert-info text-center">
             Jangan lupa sahur dan berbuka tepat waktu!
         </div>
     </div>
@@ -37,9 +37,7 @@
                 <div class="card bg-secondary text-light h-100">
                     <div class="card-body">
                         <h5 class="card-title">🕌 Jadwal Ibadah</h5>
-                        <p class="card-text">
-                            Sholat 5 waktu, Tarawih, dan Qiyamul Lail.
-                        </p>
+                        <p class="card-text">Sholat 5 waktu, Tarawih, dan Qiyamul Lail.</p>
                         <button class="btn btn-success">Lihat Detail</button>
                     </div>
                 </div>
@@ -49,9 +47,7 @@
                 <div class="card bg-secondary text-light h-100">
                     <div class="card-body">
                         <h5 class="card-title">📖 Tips Ramadan</h5>
-                        <p class="card-text">
-                            Perbanyak ibadah, jaga pola makan, dan hindari emosi.
-                        </p>
+                        <p class="card-text">Perbanyak ibadah, jaga pola makan, dan hindari emosi.</p>
                         <button class="btn btn-warning">Pelajari</button>
                     </div>
                 </div>
@@ -61,9 +57,7 @@
                 <div class="card bg-secondary text-light h-100">
                     <div class="card-body">
                         <h5 class="card-title">✨ Quote Islami</h5>
-                        <p class="card-text">
-                            "Barang siapa berpuasa dengan iman, maka diampuni dosanya."
-                        </p>
+                        <p class="card-text">"Barang siapa berpuasa dengan iman, maka diampuni dosanya."</p>
                         <button class="btn btn-info">Baca Lagi</button>
                     </div>
                 </div>
@@ -72,12 +66,14 @@
         </div>
     </div>
 
+    <!-- Tombol THR -->
     <div class="container text-center mt-5">
-        <button class="btn btn-warning btn-lg fw-bold shadow" data-bs-toggle="modal" data-bs-target="#thrModal">
+        <button id="btnTHR" class="btn btn-warning btn-lg fw-bold shadow">
             🎁 Cairin THR
         </button>
     </div>
 
+    <!-- Modal -->
     <div class="modal fade" id="thrModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content text-center">
@@ -90,7 +86,7 @@
                 <div class="modal-body">
                     <h3 class="fw-bold text-success">💸 Selamat!</h3>
                     <p class="fs-5">Anda mendapatkan THR!</p>
-                    <p class="text-muted">Sejumlah Rp 5.000.000 </p>
+                    <p class="text-muted">Sejumlah Rp 5.000.000</p>
                 </div>
 
                 <div class="modal-footer justify-content-center">
@@ -107,7 +103,29 @@
         <p class="text-secondary">© 2026 Mode Suci Ramadan</p>
     </footer>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript Custom -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const btnTHR = document.getElementById("btnTHR");
+            const modalElement = document.getElementById("thrModal");
+
+            const thrModal = new bootstrap.Modal(modalElement);
+
+            btnTHR.addEventListener("click", function () {
+                thrModal.show();
+
+                // efek tambahan biar lebih interaktif
+                setTimeout(() => {
+                    console.log("THR berhasil dicairkan 💸");
+                }, 1000);
+            });
+
+        });
+    </script>
 
 </body>
 
