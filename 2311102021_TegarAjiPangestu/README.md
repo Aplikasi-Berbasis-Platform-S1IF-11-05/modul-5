@@ -145,8 +145,27 @@ S1IF-11-05 -->
     <p class="mb-0">2026 Ramadan Kareem </p>
   </footer>
 
+  <!-- ✅ jQuery (WAJIB sebelum Bootstrap JS) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ✅ Script jQuery -->
+  <script>
+    $(document).ready(function(){
+
+      // Alert saat pertama kali buka
+      alert("Selamat datang di Ramadan Kareem 🌙");
+
+      // Saat tab diklik
+      $(".nav-link").click(function(){
+        let menu = $(this).text().trim();
+        console.log("Kamu membuka menu: " + menu);
+      });
+
+    });
+  </script>
 
 </body>
 </html>
