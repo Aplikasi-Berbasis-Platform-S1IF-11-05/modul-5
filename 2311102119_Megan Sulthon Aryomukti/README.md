@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> Bootstrap Modal & JavaScript Interaktif </h3>
+  <h3>MODUL 5 <br> JavaScript & jQuery </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -35,9 +35,25 @@
 
 # Dasar Teori
 
-Bootstrap adalah framework front-end populer yang digunakan untuk membuat tampilan website secara cepat, responsif, dan konsisten tanpa harus menulis banyak CSS dari nol. Bootstrap menyediakan berbagai komponen siap pakai seperti navbar, tombol, card, grid system, dan form yang bisa langsung digunakan hanya dengan menambahkan class tertentu pada HTML. Selain itu, Bootstrap juga memiliki sistem grid berbasis flexbox yang memudahkan developer dalam mengatur layout agar tampil rapi di berbagai ukuran layar, mulai dari desktop hingga smartphone.
+#Pengertian JavaScript
+JavaScript merupakan bahasa pemrograman yang bersifat dinamis dan berperan penting dalam menciptakan interaktivitas pada sebuah website. Jika HTML digunakan untuk membangun struktur dan CSS untuk memperindah tampilan, maka JavaScript bertugas mengatur perilaku elemen agar dapat merespons aksi pengguna secara langsung. Melalui kemampuannya dalam memanipulasi Document Object Model (DOM), JavaScript memungkinkan perubahan konten, validasi formulir, hingga pembuatan animasi tanpa perlu memuat ulang halaman. Saat ini, penggunaannya tidak hanya terbatas pada sisi klien (client-side), tetapi juga berkembang ke sisi server (server-side) dengan bantuan lingkungan seperti Node.js, sehingga menjadi komponen utama dalam pengembangan aplikasi web modern yang dinamis dan interaktif.
 
-Keunggulan utama Bootstrap adalah kemudahan penggunaan dan dokumentasi yang lengkap, sehingga sangat cocok untuk pemula maupun developer profesional. Dengan bantuan JavaScript bawaan, Bootstrap juga mendukung fitur interaktif seperti modal, dropdown, carousel, dan tabs tanpa perlu coding yang rumit. Selain mempercepat proses pengembangan, Bootstrap membantu menjaga konsistensi desain dan membuat website terlihat modern, menarik, serta responsif di berbagai perangkat.
+#Konsep Dasar JavaScript
+1. Variabel & Tipe Data
+Digunakan untuk menyimpan nilai atau informasi, baik berupa teks, angka, maupun nilai boolean (true/false), dengan menggunakan const (nilai tetap) atau let (nilai dapat berubah).
+2. Fungsi (Functions)
+Sekumpulan instruksi yang dibungkus dalam satu nama agar dapat dipanggil dan digunakan kembali tanpa harus menulis ulang kode yang sama.
+3. Logika & Kondisi
+Pemanfaatan struktur seperti if-else untuk pengambilan keputusan serta perulangan (loop) untuk menjalankan proses secara berulang secara otomatis.
+4. DOM (Document Object Model)
+Mekanisme yang memungkinkan JavaScript untuk mengakses dan memodifikasi struktur, isi, maupun tampilan halaman HTML secara langsung.
+5. Event (Kejadian)
+Fitur yang memungkinkan JavaScript mendeteksi dan merespons berbagai aksi pengguna, seperti klik, pengetikan, atau pergerakan mouse.
+6. Asynchronous
+Teknik untuk menjalankan proses di latar belakang, seperti pengambilan data dari server, sehingga tidak mengganggu kinerja tampilan utama halaman.
+
+#Pengertian jQuery
+jQuery adalah library JavaScript yang dibuat untuk mempermudah interaksi antara kode JavaScript dengan elemen HTML. Dengan konsep “Write Less, Do More”, jQuery membantu menyederhanakan penulisan kode yang kompleks menjadi lebih ringkas dan efisien, sehingga pengembangan fitur interaktif pada website dapat dilakukan dengan lebih cepat dan praktis.
 
 # Tugas 5 — Fitur Cairin THR
 
