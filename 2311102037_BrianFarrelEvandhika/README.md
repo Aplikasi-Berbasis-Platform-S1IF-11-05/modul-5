@@ -33,18 +33,18 @@
 
 <hr>
 
-# Dasar Teori Bootstrap
+# Dasar Teori
 
 <p align="justify">
-Bootstrap merupakan framework front-end yang sangat populer untuk membangun antarmuka web yang responsif dan modern. Dalam proyek ini, Bootstrap 5 digunakan untuk mengelola tata letak (layout) menggunakan sistem grid, serta memanfaatkan komponen siap pakai seperti <b>Navbar</b>, <b>Cards</b>, dan <b>Modals</b>. Penggunaan utility classes seperti <code>shadow-sm</code>, <code>rounded-4</code>, dan <code>sticky-top</code> memungkinkan pengembangan UI yang bersih dan profesional tanpa perlu menulis banyak CSS kustom.
+<b>Bootstrap 5</b> merupakan framework front-end yang menjadi standar industri dalam menciptakan antarmuka web yang responsif dan estetis secara efisien. Dalam praktikum ini, Bootstrap digunakan untuk menyusun tata letak menggunakan sistem <b>Grid</b>, serta mengimplementasikan berbagai komponen interaktif seperti <b>Navbar</b>, <b>Cards</b>, dan <b>Modals</b>. Penggunaan <i>utility classes</i> (misalnya <code>shadow-sm</code>, <code>rounded-4</code>, dan <code>sticky-top</code>) memungkinkan penataan gaya yang konsisten dan profesional tanpa ketergantungan penuh pada CSS kustom yang kompleks.
 </p>
 
 <p align="justify">
-Salah satu fitur utama yang diimplementasikan adalah <b>Bootstrap Modal</b>. Modal adalah jendela overlay yang muncul di atas halaman utama untuk memberikan fokus pada informasi tertentu tanpa mengalihkan pengguna ke halaman baru. Pada aplikasi ini, modal digunakan untuk menampilkan kejutan THR dengan transisi yang halus (fade) dan interaksi yang dinamis melalui JavaScript.
+Untuk menghidupkan antarmuka, peran <b>JavaScript</b> sangatlah krusial. JavaScript bertindak sebagai otak di balik interaksi pengguna, seperti menangani logika klik pada tombol kejutan dan mengontrol perilaku <b>Bootstrap Modal</b> secara programatik. Dengan JavaScript, elemen web tidak lagi bersifat statis melainkan dapat merespons tindakan pengguna secara langsung, menciptakan alur aplikasi yang lebih dinamis melalui manipulasi DOM dan manajemen <i>event listeners</i>.
 </p>
 
 <p align="justify">
-Selain itu, integrasi pustaka eksternal seperti <b>Canvas-Confetti</b> menunjukkan fleksibilitas Bootstrap dalam bekerja sama dengan skrip pihak ketiga. Hal ini menciptakan pengalaman pengguna (UX) yang lebih hidup dan interaktif, mengubah elemen statis menjadi elemen yang terasa premium dan "hidup".
+Guna menyederhanakan penulisan kode JavaScript, proyek ini juga mengintegrasikan <b>jQuery</b>. jQuery adalah pustaka JavaScript yang dirancang untuk mempercepat proses pengembangan melalui sintaks yang lebih ringkas dan mudah dipahami, terutama dalam hal pemilihan elemen (<i>selection</i>) dan penanganan interaksi. Selain itu, integrasi pustaka eksternal seperti <b>Canvas-Confetti</b> membuktikan fleksibilitas ekosistem web modern dalam menggabungkan berbagai skrip untuk menciptakan pengalaman pengguna (UX) yang imersif, mengubah halaman web biasa menjadi media informasi yang premium dan interaktif.
 </p>
 
 ## Task 5: Fitur Cairin THR
