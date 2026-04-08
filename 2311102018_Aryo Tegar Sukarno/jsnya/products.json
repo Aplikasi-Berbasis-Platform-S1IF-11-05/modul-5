@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Indomie Goreng",
+    "price": 3500,
+    "stock": 120,
+    "description": "Mie instan rasa goreng original"
+  },
+  {
+    "id": 2,
+    "name": "Teh Botol Sosro",
+    "price": 5000,
+    "stock": 45,
+    "description": "Teh dalam kemasan botol 350ml"
+  },
+  {
+    "id": 3,
+    "name": "Telor",
+    "price": 27000,
+    "stock": 12,
+    "description": ""
+  }
+]

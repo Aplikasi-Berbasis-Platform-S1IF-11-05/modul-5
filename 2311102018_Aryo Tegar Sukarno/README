@@ -1,0 +1,201 @@
+<div align="center">
+    <br />
+    <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
+    <br />
+    <h3>MODUL 6 <br> JAVASCRIPT & JQUERY</h3>
+    <br />
+    <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
+    <br />
+    <br />
+    <br />
+    <h3>Disusun Oleh :</h3>
+    <p>
+        <strong>Aryo Tegar Sukarno</strong>
+        <br>
+        <strong>2311102018</strong>
+        <br>
+        <strong>S1 IF-11-REG05</strong>
+    </p>
+    <br />
+    <h3>Dosen Pengampu :</h3>
+    <p>
+        <strong>Dedi Agung Prabowo, S.Kom., M.Kom</strong>
+    </p>
+    <br />
+    <br />
+    <h4>Asisten Praktikum :</h4>
+    <strong>Apri Pandu Wicaksono </strong>
+    <br>
+    <strong>Hamka Zaenul Ardi</strong>
+    <br />
+    <h3>LABORATORIUM HIGH PERFORMANCE <br>FAKULTAS INFORMATIKA <br>UNIVERSITAS TELKOM PURWOKERTO <br>2026 </h3>
+</div>
+<hr>
+
+## Dasar Teori
+
+Javascript, seperti namanya, merupakan bahasa pemrograman scripting. Dan seperti bahasa scripting
+lainnya, Javascript umumnya digunakan hanya untuk program yang tidak terlalu besar, biasanya hanya
+beberapa ratus baris. Javascript pada umumnya mengontrol program yang berbasis Java. Jadi memang
+pada dasarnya Javascript tidak dirancang untuk digunakan dalam aplikasi skala besar.
+Meskipun dibuat dengan tujuan awal untuk mengendalikan program Java, komunitas Javascript
+menggunakan bahasa ini untuk tujuan lain, memanipulasi gambar dan isi dari dokumen HTML. Singkatnya,
+pada akhirnya Javascript digunakan untuk satu tujuan utama, “menghidupkan” dokumen HTML dengan
+mengubah konten statis menjadi dinamis dan interaktif. Bersamaan dengan perkembangan Internet dan
+dunia web yang pesat, Javascript akhirnya menjadi bahasa utama dan satu-satunya untuk membuat HTML
+menjadi interaktif di dalam browser.
+6.1.2. Prinsip Dasar Javascript
+Prinsip dasar yang terdapat pada bahasa pemrograman javascript adalah sebagai berikut.
+
+1. Javascript mendukung paradigma pemrograman imparatif (Javascript dapat menjalankan perintah
+   program baris demi baris, dengan masing-masing baris berisi satu atau lebih perintah), fungsional
+   (struktur dan elemen-elemen dalam program sebagai fungsi matematis yang tidak memiliki keadaan
+   (state) dan data yang dapat berubah (mutable data)), dan orientasi objek (segala sesuatu yang terlibat
+   dalam program dapat disebut sebagai “objek”).
+2. Javascript memiliki model pemrograman fungsional yang sangat ekspresif.
+3. Pemrograman berorientasi objek (PBO) pada Javascript memiliki perbedaan dari PBO pada umumnya.
+4. Program kompleks pada Javascript umumnya dipandang sebagai program-program kecil yang saling
+   berinteraksi.
+
+## Tugas 5: Toko Kelontong Pak Cik dan Aimar Loh yaa
+
+Buat project bisa menggunakan (CodeIgniter, Laravel, ExpressJS, NestJS, DLL) dimana kalian diminta membuat web inventari toko punya pak cik sama mas aimar (yang ga paham suki) dimana terdapat sebuah crud untuk mengelola produk, dengan tampilan seperti datatable, form create, form edit, dan konfirmasi modal untuk delete. Dan untuk project wajib menggunakan jquery untuk DOM manipulation serta gunakan bootstrap untuk styling css nya, dan untuk data disimpan dalam bentuk json (bukan database). dan buat nilai plus tambahkan dokumentasi project nya (bawaan ai juga udah ada pasti)
+
+Buka lagi file halaman Ramadan kalian dari Task 4, terus tambahin satu tombol surprise. Begitu tombolnya di-klik, harus muncul modal pop-up yang isinya "Selamat, Anda mendapatkan THR!". Bikin UI/UX-nya se-interaktif dan sekeren mungkin biar yang ngeklik beneran kerasa dapet duit. (jujur ane lagi BU)
+
+### 1. Source Code
+
+let dataTable;
+let currentDeleteId = null;
+
+// Load DataTable
+function loadProducts() {
+$.ajax({
+        url: '/api/products',
+        method: 'GET',
+        success: function(products) {
+            if (dataTable) {
+                dataTable.clear().destroy();
+            }
+            const tbody = $('#productsTable tbody');
+            tbody.empty();
+            products.forEach(prod => {
+                const row = `<tr>
+                    <td>${prod.id}</td>
+<td>${escapeHtml(prod.name)}</td>
+                    <td>${formatRupiah(prod.price)}</td>
+<td>${prod.stock}</td>
+                    <td>${escapeHtml(prod.description || '-')}</td>
+<td>
+<button class="btn btn-sm btn-warning edit-btn" data-id="${prod.id}"><i class="bi-pencil"></i> Edit</button>
+<button class="btn btn-sm btn-danger delete-btn" data-id="${prod.id}" data-name="${escapeHtml(prod.name)}"><i class="bi-trash"></i> Hapus</button>
+</td>
+</tr>`;
+tbody.append(row);
+});
+dataTable = $('#productsTable').DataTable({
+pageLength: 10,
+language: { url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json' }
+});
+},
+error: () => alert('Gagal memuat data produk')
+});
+}
+
+function openCreateModal() {
+$('#modalTitle').text('Tambah Produk');
+$('#productId').val('');
+$('#productForm')[0].reset();
+$('#productModal').modal('show');
+}
+
+function openEditModal(id) {
+$.ajax({
+        url: `/api/products/${id}`,
+method: 'GET',
+success: (product) => {
+$('#modalTitle').text('Edit Produk');
+$('#productId').val(product.id);
+$('#name').val(product.name);
+$('#price').val(product.price);
+$('#stock').val(product.stock);
+$('#description').val(product.description);
+$('#productModal').modal('show');
+},
+error: () => alert('Data tidak ditemukan')
+});
+}
+
+$('#saveBtn').on('click', () => {
+    const id = $('#productId').val();
+    const productData = {
+        name: $('#name').val(),
+        price: $('#price').val(),
+        stock: $('#stock').val(),
+        description: $('#description').val()
+    };
+    const method = id ? 'PUT' : 'POST';
+    const url = id ? `/api/products/${id}` : '/api/products';
+$.ajax({
+url: url,
+method: method,
+contentType: 'application/json',
+data: JSON.stringify(productData),
+success: () => {
+$('#productModal').modal('hide');
+loadProducts();
+},
+error: (err) => alert('Error: ' + (err.responseJSON?.message || 'Gagal simpan'))
+});
+});
+
+$(document).on('click', '.edit-btn', function() {
+const id = $(this).data('id');
+openEditModal(id);
+});
+
+$(document).on('click', '.delete-btn', function() {
+currentDeleteId = $(this).data('id');
+const name = $(this).data('name');
+$('#deleteProductName').text(name);
+$('#deleteModal').modal('show');
+});
+
+$('#confirmDeleteBtn').on('click', () => {
+    if (currentDeleteId) {
+        $.ajax({
+            url: `/api/products/${currentDeleteId}`,
+method: 'DELETE',
+success: () => {
+$('#deleteModal').modal('hide');
+loadProducts();
+},
+error: () => alert('Gagal menghapus produk')
+});
+}
+});
+
+function formatRupiah(angka) {
+return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+}
+
+function escapeHtml(str) {
+if(!str) return '';
+return str.replace(/[&<>]/g, function(m) {
+if (m === '&') return '&amp;';
+if (m === '<') return '&lt;';
+if (m === '>') return '&gt;';
+return m;
+});
+}
+
+$(document).ready(() => {
+loadProducts();
+});
+
+**Kode Lengkap:**
+ada di file server.js
+
+### 3. Output
+
+ada di file t6.jpeg
