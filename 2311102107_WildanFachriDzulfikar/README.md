@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM </h1>
   <br />
-  <h3>MODUL 5 <br> Bootstrap </h3>
+  <h3>MODUL 5 <br> Javascript & JQEERY </h3>
   <br />
   <img width="512" height="512" alt="telyu" src="https://github.com/user-attachments/assets/724a3291-bcf9-448d-a395-3886a8659d79" />
   <br />
@@ -33,38 +33,43 @@
 
 <hr>
 
-# Dasar Teori Bootstrap
+# Dasar Teori Javascript & JQUERY
 
-## 1. Pengertian Bootstrap
-Bootstrap adalah kerangka kerja (framework) open-source berbasis CSS, HTML, dan JavaScript yang dikembangkan oleh tim Twitter. Tujuan utamanya adalah untuk mempermudah dan mempercepat pengembangan web yang responsif serta mengutamakan tampilan mobile (mobile-first).
+1. Pengertian Javascript
+JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web menjadi lebih interaktif dan dinamis. Dengan JavaScript, developer dapat memanipulasi elemen HTML, menangani event, serta berinteraksi dengan pengguna secara langsung di browser tanpa perlu memuat ulang halaman.
 
-## 2. Fitur Utama Bootstrap
-*   **Responsive Grid System**: Memungkinkan pembuatan layout yang fleksibel dan adaptif terhadap berbagai ukuran layar.
-*   **Pre-styled Components**: Menyediakan ribuan komponen UI seperti Button, Navbar, Card, Modal, dan Form yang siap pakai.
-*   **Utility Classes**: Kumpulan class untuk mengatur margin, padding, warna, tipografi, dan perataan secara instan tanpa menulis CSS manual.
-*   **JavaScript Plugins**: Integrasi fungsionalitas interaktif seperti drop-down, carousel, dan accordion menggunakan library Popper.js dan jQuery (pada versi lama) atau Vanilla JS (pada versi terbaru).
+2. Fungsi dan Kegunaan JavaScript
 
-## 3. Sistem Grid Bootstrap
-Sistem grid Bootstrap menggunakan flexbox dan memiliki struktur 12 kolom per baris. Struktur dasarnya terdiri dari:
-1.  **Container**: Pembungkus utama untuk menyelaraskan konten (`.container` atau `.container-fluid`).
-2.  **Row**: Pembungkus horizontal untuk kolom (`.row`).
-3.  **Column**: Unit terkecil dalam baris yang menentukan lebar elemen (`.col-*`).
+JavaScript memiliki beberapa fungsi utama dalam pengembangan web, antara lain:
 
-Bootstrap menggunakan **Breakpoints** untuk menentukan kapan layout harus berubah:
-- **xs**: < 576px
-- **sm**: ≥ 576px
-- **md**: ≥ 768px
-- **lg**: ≥ 992px
-- **xl**: ≥ 1200px
-- **xxl**: ≥ 1400px
+Memanipulasi DOM (Document Object Model)
+Menangani event seperti klik, hover, dan input user
+Validasi form sebelum dikirim ke server
+Membuat animasi dan efek interaktif
+Berkomunikasi dengan server menggunakan AJAX
+3. Pengertian jQuery
 
-## 4. Utility Classes & Components
-Beberapa utility dan komponen penting yang sering digunakan:
-*   **Spacing**: `m-*` (margin), `p-*` (padding) dengan skala 1-5.
-*   **Colors**: `text-primary`, `bg-success`, `text-warning`, dll.
-*   **Flexbox**: `d-flex`, `justify-content-center`, `align-items-center`.
-*   **Cards**: `.card` untuk membungkus konten dalam satu kotak yang rapi.
-*   **Accordion**: `.accordion` untuk menampilkan konten yang dapat di-expand/collapse.
+jQuery adalah library JavaScript yang dirancang untuk menyederhanakan penulisan kode JavaScript. Dengan jQuery, proses manipulasi DOM, event handling, animasi, dan AJAX menjadi lebih mudah dan efisien dibandingkan JavaScript murni.
+
+4. Keunggulan jQuery
+
+Beberapa keunggulan jQuery antara lain:
+
+Sintaks lebih sederhana dan mudah dipahami
+Mendukung berbagai browser (cross-browser compatibility)
+Mempercepat proses pengembangan
+Memiliki banyak plugin tambahan
+5. Perbedaan JavaScript dan jQuery
+JavaScript adalah bahasa pemrograman utama, sedangkan jQuery adalah library yang dibangun menggunakan JavaScript
+Penulisan kode jQuery lebih singkat dibandingkan JavaScript murni
+JavaScript lebih fleksibel dan tidak bergantung pada library tambahan
+6. Konsep Dasar Penggunaan
+
+Dalam penggunaannya:
+
+JavaScript dapat ditulis langsung di dalam file HTML atau file terpisah (.js)
+jQuery harus di-include terlebih dahulu sebelum digunakan
+Penulisan jQuery biasanya diawali dengan simbol $ sebagai selector
 
 
 ### Source code - html
